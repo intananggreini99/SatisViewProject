@@ -449,5 +449,6 @@ Tambahkan lisensi sesuai kebutuhan proyek dan kebijakan institusi.
 **Status:** Development / Prototype
 
 SatisView dikembangkan sebagai platform analitik survei untuk mendukung evaluasi kualitas pelayanan dan fasilitas kampus dalam konteks Zona Integritas.
-#   S a t i s V i e w P r o j e c t  
+#   S a t i s V i e w P r o j e c t 
+ 
  
