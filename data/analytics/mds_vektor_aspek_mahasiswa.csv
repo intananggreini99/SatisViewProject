@@ -1,0 +1,12 @@
+aspek,korelasi_dim1,korelasi_dim2
+Administrasi Akademik,0.664,0.812
+Kemahasiswaan,0.64,0.817
+Administrasi Keuangan,0.598,0.783
+Administrasi Umum,0.652,0.831
+Ruang Kuliah,0.704,0.698
+Laboratorium,0.675,0.678
+Perpustakaan,0.584,0.745
+TIK dan Sistem Informasi kampus,0.818,0.503
+Toilet kampus,0.721,0.584
+Parkir kampus,0.834,0.569
+Lingkungan Kampus,0.669,0.659

@@ -1,0 +1,614 @@
+response_id,aspek
+MHS_0005,Parkir kampus
+MHS_0006,Kemahasiswaan
+MHS_0006,Parkir kampus
+MHS_0007,Kemahasiswaan
+MHS_0007,Laboratorium
+MHS_0007,Parkir kampus
+MHS_0008,Kemahasiswaan
+MHS_0008,Parkir kampus
+MHS_0009,Administrasi Akademik
+MHS_0009,Administrasi Keuangan
+MHS_0009,Toilet kampus
+MHS_0010,Kemahasiswaan
+MHS_0010,Laboratorium
+MHS_0010,TIK dan Sistem Informasi kampus
+MHS_0011,Parkir kampus
+MHS_0013,Kemahasiswaan
+MHS_0013,Laboratorium
+MHS_0013,Parkir kampus
+MHS_0014,Parkir kampus
+MHS_0015,Administrasi Akademik
+MHS_0015,Laboratorium
+MHS_0015,Toilet kampus
+MHS_0015,Parkir kampus
+MHS_0016,Parkir kampus
+MHS_0017,Parkir kampus
+MHS_0018,Parkir kampus
+MHS_0019,Kemahasiswaan
+MHS_0019,Parkir kampus
+MHS_0021,Parkir kampus
+MHS_0022,Kemahasiswaan
+MHS_0022,Perpustakaan
+MHS_0022,TIK dan Sistem Informasi kampus
+MHS_0022,Parkir kampus
+MHS_0023,Parkir kampus
+MHS_0024,Kemahasiswaan
+MHS_0024,Laboratorium
+MHS_0024,Toilet kampus
+MHS_0024,Parkir kampus
+MHS_0026,Kemahasiswaan
+MHS_0026,Parkir kampus
+MHS_0027,Kemahasiswaan
+MHS_0027,Toilet kampus
+MHS_0027,Parkir kampus
+MHS_0028,Parkir kampus
+MHS_0029,Parkir kampus
+MHS_0030,Parkir kampus
+MHS_0031,Kemahasiswaan
+MHS_0031,Parkir kampus
+MHS_0032,Administrasi Akademik
+MHS_0032,TIK dan Sistem Informasi kampus
+MHS_0032,Parkir kampus
+MHS_0033,Kemahasiswaan
+MHS_0033,Laboratorium
+MHS_0033,TIK dan Sistem Informasi kampus
+MHS_0033,Parkir kampus
+MHS_0034,TIK dan Sistem Informasi kampus
+MHS_0035,Kemahasiswaan
+MHS_0035,Parkir kampus
+MHS_0036,Kemahasiswaan
+MHS_0036,Parkir kampus
+MHS_0038,TIK dan Sistem Informasi kampus
+MHS_0039,Kemahasiswaan
+MHS_0039,Parkir kampus
+MHS_0042,Ruang Kuliah
+MHS_0043,Kemahasiswaan
+MHS_0043,Administrasi Umum
+MHS_0043,Parkir kampus
+MHS_0044,Parkir kampus
+MHS_0045,Kemahasiswaan
+MHS_0045,Parkir kampus
+MHS_0046,Administrasi Akademik
+MHS_0046,Kemahasiswaan
+MHS_0046,Ruang Kuliah
+MHS_0046,Parkir kampus
+MHS_0046,Lingkungan Kampus
+MHS_0047,Parkir kampus
+MHS_0051,Kemahasiswaan
+MHS_0051,Administrasi Umum
+MHS_0051,TIK dan Sistem Informasi kampus
+MHS_0051,Toilet kampus
+MHS_0054,Ruang Kuliah
+MHS_0055,Ruang Kuliah
+MHS_0055,Laboratorium
+MHS_0055,Perpustakaan
+MHS_0055,TIK dan Sistem Informasi kampus
+MHS_0056,Administrasi Akademik
+MHS_0056,Perpustakaan
+MHS_0056,Toilet kampus
+MHS_0056,Parkir kampus
+MHS_0056,Lingkungan Kampus
+MHS_0057,TIK dan Sistem Informasi kampus
+MHS_0058,Kemahasiswaan
+MHS_0058,Parkir kampus
+MHS_0058,Lingkungan Kampus
+MHS_0059,Administrasi Akademik
+MHS_0059,Laboratorium
+MHS_0059,TIK dan Sistem Informasi kampus
+MHS_0059,Parkir kampus
+MHS_0060,Kemahasiswaan
+MHS_0060,Laboratorium
+MHS_0060,TIK dan Sistem Informasi kampus
+MHS_0060,Parkir kampus
+MHS_0061,TIK dan Sistem Informasi kampus
+MHS_0061,Parkir kampus
+MHS_0063,Toilet kampus
+MHS_0063,Parkir kampus
+MHS_0066,Kemahasiswaan
+MHS_0067,Kemahasiswaan
+MHS_0067,Parkir kampus
+MHS_0067,Lingkungan Kampus
+MHS_0068,TIK dan Sistem Informasi kampus
+MHS_0068,Parkir kampus
+MHS_0068,Klinik Kampus
+MHS_0070,Kemahasiswaan
+MHS_0070,Parkir kampus
+MHS_0072,TIK dan Sistem Informasi kampus
+MHS_0072,Parkir kampus
+MHS_0074,Parkir kampus
+MHS_0076,TIK dan Sistem Informasi kampus
+MHS_0077,Ruang Kuliah
+MHS_0077,TIK dan Sistem Informasi kampus
+MHS_0078,Laboratorium
+MHS_0080,Parkir kampus
+MHS_0081,Parkir kampus
+MHS_0082,TIK dan Sistem Informasi kampus
+MHS_0083,TIK dan Sistem Informasi kampus
+MHS_0083,Parkir kampus
+MHS_0084,Kemahasiswaan
+MHS_0084,TIK dan Sistem Informasi kampus
+MHS_0085,Ruang Kuliah
+MHS_0085,TIK dan Sistem Informasi kampus
+MHS_0085,Parkir kampus
+MHS_0086,Kemahasiswaan
+MHS_0086,Parkir kampus
+MHS_0089,Kemahasiswaan
+MHS_0089,Parkir kampus
+MHS_0091,Kemahasiswaan
+MHS_0091,Parkir kampus
+MHS_0092,Kemahasiswaan
+MHS_0092,Administrasi Keuangan
+MHS_0092,TIK dan Sistem Informasi kampus
+MHS_0092,Parkir kampus
+MHS_0093,Kemahasiswaan
+MHS_0093,Parkir kampus
+MHS_0094,Kemahasiswaan
+MHS_0094,Parkir kampus
+MHS_0096,Kemahasiswaan
+MHS_0096,Laboratorium
+MHS_0096,TIK dan Sistem Informasi kampus
+MHS_0096,Toilet kampus
+MHS_0096,Parkir kampus
+MHS_0098,TIK dan Sistem Informasi kampus
+MHS_0098,Parkir kampus
+MHS_0099,Kemahasiswaan
+MHS_0099,Laboratorium
+MHS_0099,TIK dan Sistem Informasi kampus
+MHS_0099,Parkir kampus
+MHS_0101,TIK dan Sistem Informasi kampus
+MHS_0102,Parkir kampus
+MHS_0102,Klinik Kampus
+MHS_0103,Parkir kampus
+MHS_0104,Lingkungan Kampus
+MHS_0105,TIK dan Sistem Informasi kampus
+MHS_0106,Kemahasiswaan
+MHS_0106,Parkir kampus
+MHS_0106,Lingkungan Kampus
+MHS_0107,Parkir kampus
+MHS_0108,Kemahasiswaan
+MHS_0108,Ruang Kuliah
+MHS_0108,Laboratorium
+MHS_0108,Parkir kampus
+MHS_0108,Lingkungan Kampus
+MHS_0109,TIK dan Sistem Informasi kampus
+MHS_0110,TIK dan Sistem Informasi kampus
+MHS_0110,Parkir kampus
+MHS_0114,Ruang Kuliah
+MHS_0114,Perpustakaan
+MHS_0114,TIK dan Sistem Informasi kampus
+MHS_0114,Parkir kampus
+MHS_0115,Administrasi Akademik
+MHS_0115,Administrasi Keuangan
+MHS_0115,TIK dan Sistem Informasi kampus
+MHS_0115,Parkir kampus
+MHS_0116,Administrasi Akademik
+MHS_0116,Kemahasiswaan
+MHS_0116,Laboratorium
+MHS_0116,Parkir kampus
+MHS_0118,TIK dan Sistem Informasi kampus
+MHS_0119,Administrasi Akademik
+MHS_0120,Kemahasiswaan
+MHS_0120,Toilet kampus
+MHS_0120,Parkir kampus
+MHS_0120,Lingkungan Kampus
+MHS_0122,Parkir kampus
+MHS_0123,Kemahasiswaan
+MHS_0123,TIK dan Sistem Informasi kampus
+MHS_0124,TIK dan Sistem Informasi kampus
+MHS_0124,Parkir kampus
+MHS_0126,Administrasi Akademik
+MHS_0126,Kemahasiswaan
+MHS_0126,Parkir kampus
+MHS_0127,Kemahasiswaan
+MHS_0127,Parkir kampus
+MHS_0128,Parkir kampus
+MHS_0129,Parkir kampus
+MHS_0131,Parkir kampus
+MHS_0135,Administrasi Akademik
+MHS_0135,Kemahasiswaan
+MHS_0135,Administrasi Umum
+MHS_0136,TIK dan Sistem Informasi kampus
+MHS_0138,Toilet kampus
+MHS_0139,Toilet kampus
+MHS_0141,Parkir kampus
+MHS_0142,Ruang Kuliah
+MHS_0142,Perpustakaan
+MHS_0143,TIK dan Sistem Informasi kampus
+MHS_0143,Parkir kampus
+MHS_0144,Parkir kampus
+MHS_0146,Parkir kampus
+MHS_0147,Ruang Kuliah
+MHS_0147,Parkir kampus
+MHS_0150,Kemahasiswaan
+MHS_0150,TIK dan Sistem Informasi kampus
+MHS_0151,Perpustakaan
+MHS_0151,TIK dan Sistem Informasi kampus
+MHS_0151,Parkir kampus
+MHS_0154,Administrasi Akademik
+MHS_0154,Kemahasiswaan
+MHS_0154,Administrasi Umum
+MHS_0154,Ruang Kuliah
+MHS_0154,Laboratorium
+MHS_0154,TIK dan Sistem Informasi kampus
+MHS_0154,Parkir kampus
+MHS_0154,Lingkungan Kampus
+MHS_0155,TIK dan Sistem Informasi kampus
+MHS_0155,Toilet kampus
+MHS_0155,Parkir kampus
+MHS_0156,Kemahasiswaan
+MHS_0156,Parkir kampus
+MHS_0157,Kemahasiswaan
+MHS_0157,Ruang Kuliah
+MHS_0157,Laboratorium
+MHS_0158,Kemahasiswaan
+MHS_0158,Parkir kampus
+MHS_0159,Ruang Kuliah
+MHS_0159,TIK dan Sistem Informasi kampus
+MHS_0159,Parkir kampus
+MHS_0161,Toilet kampus
+MHS_0161,Parkir kampus
+MHS_0161,Lingkungan Kampus
+MHS_0162,Kemahasiswaan
+MHS_0162,Laboratorium
+MHS_0162,TIK dan Sistem Informasi kampus
+MHS_0162,Parkir kampus
+MHS_0162,Lingkungan Kampus
+MHS_0163,Ruang Kuliah
+MHS_0163,Parkir kampus
+MHS_0164,Kemahasiswaan
+MHS_0164,Ruang Kuliah
+MHS_0164,Laboratorium
+MHS_0165,Kemahasiswaan
+MHS_0165,Perpustakaan
+MHS_0165,TIK dan Sistem Informasi kampus
+MHS_0165,Lingkungan Kampus
+MHS_0166,Laboratorium
+MHS_0166,TIK dan Sistem Informasi kampus
+MHS_0166,Parkir kampus
+MHS_0167,TIK dan Sistem Informasi kampus
+MHS_0167,Parkir kampus
+MHS_0168,TIK dan Sistem Informasi kampus
+MHS_0169,Kemahasiswaan
+MHS_0169,Ruang Kuliah
+MHS_0169,TIK dan Sistem Informasi kampus
+MHS_0170,Kemahasiswaan
+MHS_0170,Parkir kampus
+MHS_0170,Lingkungan Kampus
+MHS_0171,TIK dan Sistem Informasi kampus
+MHS_0172,Kemahasiswaan
+MHS_0172,TIK dan Sistem Informasi kampus
+MHS_0172,Parkir kampus
+MHS_0173,Parkir kampus
+MHS_0174,TIK dan Sistem Informasi kampus
+MHS_0175,Kemahasiswaan
+MHS_0175,Parkir kampus
+MHS_0177,Ruang Kuliah
+MHS_0177,Laboratorium
+MHS_0177,TIK dan Sistem Informasi kampus
+MHS_0177,Parkir kampus
+MHS_0181,Kemahasiswaan
+MHS_0181,TIK dan Sistem Informasi kampus
+MHS_0183,Toilet kampus
+MHS_0183,Parkir kampus
+MHS_0183,Klinik Kampus
+MHS_0184,Laboratorium
+MHS_0184,Parkir kampus
+MHS_0185,Administrasi Akademik
+MHS_0186,Parkir kampus
+MHS_0187,TIK dan Sistem Informasi kampus
+MHS_0187,Toilet kampus
+MHS_0187,Parkir kampus
+MHS_0189,TIK dan Sistem Informasi kampus
+MHS_0189,Toilet kampus
+MHS_0189,Parkir kampus
+MHS_0190,Parkir kampus
+MHS_0191,Kemahasiswaan
+MHS_0191,Parkir kampus
+MHS_0193,Laboratorium
+MHS_0194,Kemahasiswaan
+MHS_0194,Laboratorium
+MHS_0194,Parkir kampus
+MHS_0196,Laboratorium
+MHS_0196,Parkir kampus
+MHS_0198,Ruang Kuliah
+MHS_0198,Perpustakaan
+MHS_0198,Parkir kampus
+MHS_0202,Parkir kampus
+MHS_0207,Parkir kampus
+MHS_0208,TIK dan Sistem Informasi kampus
+MHS_0213,TIK dan Sistem Informasi kampus
+MHS_0213,Toilet kampus
+MHS_0213,Parkir kampus
+MHS_0215,Parkir kampus
+MHS_0216,Administrasi Umum
+MHS_0216,TIK dan Sistem Informasi kampus
+MHS_0216,Parkir kampus
+MHS_0217,TIK dan Sistem Informasi kampus
+MHS_0218,Ruang Kuliah
+MHS_0218,Perpustakaan
+MHS_0218,TIK dan Sistem Informasi kampus
+MHS_0220,TIK dan Sistem Informasi kampus
+MHS_0220,Parkir kampus
+MHS_0221,Parkir kampus
+MHS_0222,Parkir kampus
+MHS_0224,Parkir kampus
+MHS_0225,Parkir kampus
+MHS_0226,Kemahasiswaan
+MHS_0226,Parkir kampus
+MHS_0227,Laboratorium
+MHS_0227,Parkir kampus
+MHS_0230,Kemahasiswaan
+MHS_0230,TIK dan Sistem Informasi kampus
+MHS_0233,Ruang Kuliah
+MHS_0233,TIK dan Sistem Informasi kampus
+MHS_0234,Toilet kampus
+MHS_0237,Parkir kampus
+MHS_0238,Parkir kampus
+MHS_0239,Lingkungan Kampus
+MHS_0240,TIK dan Sistem Informasi kampus
+MHS_0242,Administrasi Akademik
+MHS_0242,Kemahasiswaan
+MHS_0242,Ruang Kuliah
+MHS_0242,Toilet kampus
+MHS_0242,Parkir kampus
+MHS_0242,Lingkungan Kampus
+MHS_0242,Klinik Kampus
+MHS_0244,Administrasi Akademik
+MHS_0244,Kemahasiswaan
+MHS_0244,Perpustakaan
+MHS_0244,TIK dan Sistem Informasi kampus
+MHS_0244,Parkir kampus
+MHS_0245,Parkir kampus
+MHS_0246,Kemahasiswaan
+MHS_0246,Parkir kampus
+MHS_0247,Administrasi Akademik
+MHS_0247,TIK dan Sistem Informasi kampus
+MHS_0250,Parkir kampus
+MHS_0251,Administrasi Akademik
+MHS_0251,TIK dan Sistem Informasi kampus
+MHS_0252,Parkir kampus
+MHS_0253,Laboratorium
+MHS_0253,Parkir kampus
+MHS_0256,Parkir kampus
+MHS_0257,Kemahasiswaan
+MHS_0257,Lingkungan Kampus
+MHS_0260,Laboratorium
+MHS_0261,Kemahasiswaan
+MHS_0262,Kemahasiswaan
+MHS_0263,Kemahasiswaan
+MHS_0263,Ruang Kuliah
+MHS_0263,Parkir kampus
+MHS_0264,Laboratorium
+MHS_0264,TIK dan Sistem Informasi kampus
+MHS_0265,TIK dan Sistem Informasi kampus
+MHS_0265,Parkir kampus
+MHS_0266,Parkir kampus
+MHS_0267,Parkir kampus
+MHS_0268,TIK dan Sistem Informasi kampus
+MHS_0268,Parkir kampus
+MHS_0269,TIK dan Sistem Informasi kampus
+MHS_0269,Parkir kampus
+MHS_0270,Parkir kampus
+MHS_0272,Parkir kampus
+MHS_0273,Kemahasiswaan
+MHS_0273,Perpustakaan
+MHS_0273,Parkir kampus
+MHS_0274,Administrasi Akademik
+MHS_0274,Kemahasiswaan
+MHS_0274,TIK dan Sistem Informasi kampus
+MHS_0275,Parkir kampus
+MHS_0276,Parkir kampus
+MHS_0277,Laboratorium
+MHS_0277,TIK dan Sistem Informasi kampus
+MHS_0277,Parkir kampus
+MHS_0278,Kemahasiswaan
+MHS_0279,Parkir kampus
+MHS_0280,Parkir kampus
+MHS_0281,TIK dan Sistem Informasi kampus
+MHS_0281,Lingkungan Kampus
+MHS_0281,Klinik Kampus
+MHS_0282,Ruang Kuliah
+MHS_0282,Laboratorium
+MHS_0285,Parkir kampus
+MHS_0286,Parkir kampus
+MHS_0287,Laboratorium
+MHS_0287,Perpustakaan
+MHS_0287,TIK dan Sistem Informasi kampus
+MHS_0287,Toilet kampus
+MHS_0287,Parkir kampus
+MHS_0287,Lingkungan Kampus
+MHS_0287,Klinik Kampus
+MHS_0288,Administrasi Akademik
+MHS_0288,Kemahasiswaan
+MHS_0288,Administrasi Keuangan
+MHS_0288,Ruang Kuliah
+MHS_0288,TIK dan Sistem Informasi kampus
+MHS_0288,Parkir kampus
+MHS_0289,Kemahasiswaan
+MHS_0289,Parkir kampus
+MHS_0289,Lingkungan Kampus
+MHS_0290,Kemahasiswaan
+MHS_0290,TIK dan Sistem Informasi kampus
+MHS_0290,Toilet kampus
+MHS_0290,Parkir kampus
+MHS_0291,Kemahasiswaan
+MHS_0291,Ruang Kuliah
+MHS_0291,TIK dan Sistem Informasi kampus
+MHS_0291,Parkir kampus
+MHS_0291,Lingkungan Kampus
+MHS_0293,TIK dan Sistem Informasi kampus
+MHS_0293,Parkir kampus
+MHS_0294,Ruang Kuliah
+MHS_0294,Toilet kampus
+MHS_0297,Parkir kampus
+MHS_0298,Toilet kampus
+MHS_0299,TIK dan Sistem Informasi kampus
+MHS_0301,Administrasi Akademik
+MHS_0301,Laboratorium
+MHS_0301,Parkir kampus
+MHS_0302,Kemahasiswaan
+MHS_0302,Parkir kampus
+MHS_0303,Kemahasiswaan
+MHS_0303,Ruang Kuliah
+MHS_0303,Laboratorium
+MHS_0303,Toilet kampus
+MHS_0304,Ruang Kuliah
+MHS_0305,Toilet kampus
+MHS_0305,Parkir kampus
+MHS_0306,Kemahasiswaan
+MHS_0306,Parkir kampus
+MHS_0307,Administrasi Akademik
+MHS_0307,Parkir kampus
+MHS_0308,Laboratorium
+MHS_0310,Kemahasiswaan
+MHS_0310,TIK dan Sistem Informasi kampus
+MHS_0310,Parkir kampus
+MHS_0310,Klinik Kampus
+MHS_0311,Parkir kampus
+MHS_0311,Lingkungan Kampus
+MHS_0313,Administrasi Akademik
+MHS_0313,TIK dan Sistem Informasi kampus
+MHS_0313,Lingkungan Kampus
+MHS_0315,Parkir kampus
+MHS_0316,Kemahasiswaan
+MHS_0323,Klinik Kampus
+MHS_0324,Kemahasiswaan
+MHS_0324,Ruang Kuliah
+MHS_0324,Parkir kampus
+MHS_0326,TIK dan Sistem Informasi kampus
+MHS_0326,Parkir kampus
+MHS_0327,Parkir kampus
+MHS_0330,Laboratorium
+MHS_0330,Parkir kampus
+MHS_0332,Toilet kampus
+MHS_0333,Parkir kampus
+MHS_0334,Parkir kampus
+MHS_0335,Laboratorium
+MHS_0335,Perpustakaan
+MHS_0335,TIK dan Sistem Informasi kampus
+MHS_0335,Parkir kampus
+MHS_0336,Kemahasiswaan
+MHS_0336,Ruang Kuliah
+MHS_0336,Parkir kampus
+MHS_0337,Parkir kampus
+MHS_0339,Laboratorium
+MHS_0339,TIK dan Sistem Informasi kampus
+MHS_0339,Parkir kampus
+MHS_0340,Administrasi Akademik
+MHS_0340,Ruang Kuliah
+MHS_0340,TIK dan Sistem Informasi kampus
+MHS_0340,Toilet kampus
+MHS_0340,Parkir kampus
+MHS_0341,Parkir kampus
+MHS_0343,Lingkungan Kampus
+MHS_0344,Kemahasiswaan
+MHS_0344,Ruang Kuliah
+MHS_0344,Parkir kampus
+MHS_0347,TIK dan Sistem Informasi kampus
+MHS_0347,Toilet kampus
+MHS_0349,Parkir kampus
+MHS_0350,TIK dan Sistem Informasi kampus
+MHS_0352,Kemahasiswaan
+MHS_0352,Parkir kampus
+MHS_0352,Lingkungan Kampus
+MHS_0353,Parkir kampus
+MHS_0355,Kemahasiswaan
+MHS_0355,Parkir kampus
+MHS_0356,Kemahasiswaan
+MHS_0356,Ruang Kuliah
+MHS_0356,Parkir kampus
+MHS_0357,Ruang Kuliah
+MHS_0357,TIK dan Sistem Informasi kampus
+MHS_0357,Parkir kampus
+MHS_0361,Lingkungan Kampus
+MHS_0361,Klinik Kampus
+MHS_0363,TIK dan Sistem Informasi kampus
+MHS_0363,Parkir kampus
+MHS_0364,Parkir kampus
+MHS_0365,Administrasi Akademik
+MHS_0365,Kemahasiswaan
+MHS_0365,Laboratorium
+MHS_0365,TIK dan Sistem Informasi kampus
+MHS_0365,Parkir kampus
+MHS_0366,Administrasi Akademik
+MHS_0366,Kemahasiswaan
+MHS_0366,Ruang Kuliah
+MHS_0366,Parkir kampus
+MHS_0367,Kemahasiswaan
+MHS_0367,Parkir kampus
+MHS_0368,Kemahasiswaan
+MHS_0368,Administrasi Keuangan
+MHS_0368,Ruang Kuliah
+MHS_0368,Parkir kampus
+MHS_0369,Kemahasiswaan
+MHS_0369,Laboratorium
+MHS_0369,Parkir kampus
+MHS_0370,Parkir kampus
+MHS_0371,Parkir kampus
+MHS_0372,Kemahasiswaan
+MHS_0372,Parkir kampus
+MHS_0373,Ruang Kuliah
+MHS_0373,TIK dan Sistem Informasi kampus
+MHS_0373,Parkir kampus
+MHS_0374,Laboratorium
+MHS_0374,TIK dan Sistem Informasi kampus
+MHS_0374,Toilet kampus
+MHS_0374,Parkir kampus
+MHS_0376,TIK dan Sistem Informasi kampus
+MHS_0376,Parkir kampus
+MHS_0377,Kemahasiswaan
+MHS_0377,Ruang Kuliah
+MHS_0377,Laboratorium
+MHS_0377,Parkir kampus
+MHS_0378,Kemahasiswaan
+MHS_0378,TIK dan Sistem Informasi kampus
+MHS_0378,Parkir kampus
+MHS_0383,Ruang Kuliah
+MHS_0383,TIK dan Sistem Informasi kampus
+MHS_0383,Parkir kampus
+MHS_0384,Ruang Kuliah
+MHS_0384,TIK dan Sistem Informasi kampus
+MHS_0385,Ruang Kuliah
+MHS_0385,TIK dan Sistem Informasi kampus
+MHS_0385,Parkir kampus
+MHS_0386,Kemahasiswaan
+MHS_0386,Laboratorium
+MHS_0386,TIK dan Sistem Informasi kampus
+MHS_0386,Parkir kampus
+MHS_0387,Parkir kampus
+MHS_0387,Lingkungan Kampus
+MHS_0388,Ruang Kuliah
+MHS_0388,Toilet kampus
+MHS_0388,Parkir kampus
+MHS_0389,Laboratorium
+MHS_0389,TIK dan Sistem Informasi kampus
+MHS_0392,Kemahasiswaan
+MHS_0392,Parkir kampus
+MHS_0396,Laboratorium
+MHS_0396,Toilet kampus
+MHS_0397,Parkir kampus
+MHS_0399,Parkir kampus
+MHS_0400,Laboratorium
+MHS_0403,TIK dan Sistem Informasi kampus
+MHS_0404,Parkir kampus
+MHS_0405,Kemahasiswaan
+MHS_0405,TIK dan Sistem Informasi kampus
+MHS_0405,Parkir kampus
+MHS_0406,TIK dan Sistem Informasi kampus
+MHS_0406,Parkir kampus
+MHS_0407,Lingkungan Kampus
+MHS_0408,Kemahasiswaan
+MHS_0408,Parkir kampus
+MHS_0409,TIK dan Sistem Informasi kampus
+MHS_0410,Kemahasiswaan
+MHS_0411,Kemahasiswaan
+MHS_0411,Parkir kampus
+MHS_0412,TIK dan Sistem Informasi kampus
+MHS_0413,Kemahasiswaan
+MHS_0413,Parkir kampus
+MHS_0415,TIK dan Sistem Informasi kampus
+MHS_0415,Toilet kampus
+MHS_0416,Kemahasiswaan
+MHS_0416,Parkir kampus
+MHS_0418,TIK dan Sistem Informasi kampus
