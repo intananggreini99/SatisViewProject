@@ -1,0 +1,68 @@
+item_kode,pertanyaan,aspek,rata_rata,n_responden
+ITEM_01,Persyaratan untuk mengurus layanan akademik jelas dan mudah dipenuhi,Administrasi Akademik,3.17,418
+ITEM_02,Langkah-langkah untuk mendapatkan layanan akademik jelas dan mudah dilakukan,Administrasi Akademik,3.16,418
+ITEM_03,Layanan akademik diselesaikan dengan cepat sesuai waktu yang dijanjikan,Administrasi Akademik,3.07,418
+ITEM_04,"Informasi mengenai biaya layanan, jika ada, jelas dan sesuai dengan ketentuan",Administrasi Akademik,3.23,418
+ITEM_05,Hasil layanan akademik yang diterima sesuai dengan kebutuhan,Administrasi Akademik,3.2,418
+ITEM_06,Petugas mampu memberikan informasi dan membantu menyelesaikan kebutuhan akademik,Administrasi Akademik,3.12,418
+ITEM_07,"Petugas ramah, sopan, dan membantu saat memberikan layanan",Administrasi Akademik,3.04,418
+ITEM_08,Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut,Administrasi Akademik,3.0,418
+ITEM_09,Fasilitas dan sistem layanan akademik mudah digunakan dan berfungsi dengan baik,Administrasi Akademik,3.06,418
+ITEM_10,Persyaratan untuk mendapatkan layanan kemahasiswaan jelas dan mudah dipenuhi,Kemahasiswaan,3.18,418
+ITEM_11,Langkah-langkah untuk mendapatkan layanan kemahasiswaan jelas dan mudah dilakukan,Kemahasiswaan,3.16,418
+ITEM_12,Layanan kemahasiswaan diproses dengan cepat sesuai waktu yang dijanjikan,Kemahasiswaan,3.04,418
+ITEM_13,"Informasi mengenai biaya layanan, jika ada, jelas dan sesuai ketentuan",Kemahasiswaan,3.19,418
+ITEM_14,Layanan yang diterima sesuai dengan kebutuhan sebagai mahasiswa,Kemahasiswaan,3.18,418
+ITEM_15,Petugas mampu memberikan informasi dan membantu menyelesaikan kebutuhan mahasiswa,Kemahasiswaan,3.15,418
+ITEM_16,"Petugas ramah, sopan, dan membantu saat memberikan layanan",Kemahasiswaan,3.14,418
+ITEM_17,Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut,Kemahasiswaan,3.08,418
+ITEM_18,Fasilitas dan media informasi layanan kemahasiswaan mudah diakses dan digunakan,Kemahasiswaan,3.09,418
+ITEM_19,Informasi dan pengelolaan layanan beasiswa mahasiswa jelas dan mudah diakses,Kemahasiswaan,3.16,418
+ITEM_20,Persyaratan untuk mengurus administrasi keuangan jelas dan mudah dipenuhi,Administrasi Keuangan,3.23,418
+ITEM_21,Proses pembayaran dan pengurusan administrasi keuangan jelas dan mudah dilakukan,Administrasi Keuangan,3.28,418
+ITEM_22,Masalah administrasi keuangan ditangani dengan cepat,Administrasi Keuangan,3.2,418
+ITEM_23,"Informasi mengenai UKT, tagihan, dan biaya lainnya jelas dan mudah dipahami",Administrasi Keuangan,3.33,418
+ITEM_24,Informasi dan hasil layanan keuangan yang diterima benar dan sesuai kebutuhan,Administrasi Keuangan,3.25,418
+ITEM_25,Petugas mampu menjelaskan dan membantu menyelesaikan masalah administrasi keuangan,Administrasi Keuangan,3.23,418
+ITEM_26,"Petugas ramah, sopan, dan membantu saat memberikan layanan",Administrasi Keuangan,3.21,418
+ITEM_27,Masalah pembayaran atau tagihan mudah disampaikan dan mendapatkan penyelesaian,Administrasi Keuangan,3.22,418
+ITEM_28,Sistem dan fasilitas layanan keuangan mudah digunakan dan berfungsi dengan baik,Administrasi Keuangan,3.24,418
+ITEM_29,Persyaratan untuk mendapatkan layanan administrasi umum jelas dan mudah dipenuhi,Administrasi Umum,3.21,418
+ITEM_30,Langkah-langkah mendapatkan layanan jelas dan mudah dilakukan,Administrasi Umum,3.21,418
+ITEM_31,Layanan diselesaikan dengan cepat sesuai waktu yang dijanjikan,Administrasi Umum,3.15,418
+ITEM_32,"Informasi mengenai biaya layanan, jika ada, jelas dan sesuai ketentuan",Administrasi Umum,3.22,418
+ITEM_33,Hasil layanan yang diterima sesuai dengan kebutuhan,Administrasi Umum,3.18,418
+ITEM_34,Petugas mampu memberikan informasi dan membantu kebutuhan mahasiswa,Administrasi Umum,3.19,418
+ITEM_35,"Petugas ramah, sopan, dan membantu saat memberikan layanan",Administrasi Umum,3.11,418
+ITEM_36,Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut,Administrasi Umum,3.13,418
+ITEM_37,Tempat dan fasilitas pelayanan nyaman dan mendukung proses pelayanan,Administrasi Umum,3.22,418
+ITEM_38,Ruang kuliah bersih dan nyaman digunakan,Ruang Kuliah,3.36,418
+ITEM_39,Pencahayaan dan suhu/ventilasi ruang kuliah sudah nyaman,Ruang Kuliah,3.11,418
+ITEM_40,"Meja, kursi, papan tulis, proyektor/TV, dan fasilitas pembelajaran lainnya tersedia dan berfungsi dengan baik",Ruang Kuliah,3.14,418
+ITEM_41,Alat dan fasilitas laboratorium tersedia sesuai kebutuhan praktikum,Laboratorium,3.15,418
+ITEM_42,Alat laboratorium dalam kondisi baik dan dapat digunakan,Laboratorium,3.05,418
+ITEM_43,"Laboratorium bersih, nyaman, dan aman digunakan untuk praktikum",Laboratorium,3.36,418
+ITEM_44,"Buku, referensi, dan sumber belajar yang tersedia sesuai dengan kebutuhan",Perpustakaan,3.28,418
+ITEM_45,Layanan dan sumber digital perpustakaan mudah diakses,Perpustakaan,3.2,418
+ITEM_46,Ruang perpustakaan nyaman digunakan untuk membaca dan belajar,Perpustakaan,3.43,418
+ITEM_47,Internet/Wi-Fi kampus mudah diakses dan memiliki koneksi yang memadai,TIK dan Sistem Informasi kampus,2.53,418
+ITEM_48,Sistem informasi/aplikasi kampus mudah digunakan dan dapat diakses saat dibutuhkan,TIK dan Sistem Informasi kampus,2.84,418
+ITEM_49,"Ketika terjadi kendala TIK, bantuan atau penanganannya mudah diperoleh",TIK dan Sistem Informasi kampus,2.79,418
+ITEM_50,"Toilet kampus bersih, tidak bau dan nyaman digunakan",Toilet kampus,3.08,418
+ITEM_51,"Air, sabun, dan fasilitas pendukung toilet tersedia dengan baik",Toilet kampus,2.91,418
+ITEM_52,Jumlah dan kondisi toilet memadai untuk kebutuhan mahasiswa,Toilet kampus,3.16,418
+ITEM_53,Tempat parkir cukup untuk menampung kendaraan mahasiswa,Parkir kampus,2.18,418
+ITEM_54,Area parkir tertata dan mudah digunakan,Parkir kampus,2.4,418
+ITEM_55,Kendaraan cukup aman ketika diparkir di lingkungan kampus,Parkir kampus,2.95,418
+ITEM_56,Lingkungan kampus bersih dan nyaman,Lingkungan Kampus,3.33,418
+ITEM_57,Lingkungan kampus aman untuk aktivitas mahasiswa,Lingkungan Kampus,3.33,418
+ITEM_58,"Ruang terbuka, penghijauan, dan fasilitas umum di kampus sudah memadai",Lingkungan Kampus,3.16,418
+KLINIK_01,Persyaratan untuk mendapatkan layanan klinik mudah dipenuhi,Klinik Kampus,3.39,115
+KLINIK_02,Proses untuk mendapatkan layanan klinik mudah dilakukan,Klinik Kampus,3.38,115
+KLINIK_03,Pelayanan klinik dapat diperoleh dengan cepat saat dibutuhkan,Klinik Kampus,3.33,115
+KLINIK_04,"Informasi mengenai jadwal, jenis layanan, dan ketentuan pelayanan klinik disampaikan dengan jelas",Klinik Kampus,3.14,115
+KLINIK_05,Layanan klinik yang diberikan sesuai dengan kebutuhan mahasiswa,Klinik Kampus,3.34,115
+KLINIK_06,Petugas klinik mampu memberikan pelayanan dan informasi dengan baik,Klinik Kampus,3.4,115
+KLINIK_07,"Petugas klinik ramah, sopan, dan membantu",Klinik Kampus,3.44,115
+KLINIK_08,Keluhan atau kendala terkait layanan klinik mudah disampaikan dan mendapatkan tindak lanjut,Klinik Kampus,3.32,115
+KLINIK_09,"Ruang dan fasilitas klinik bersih, nyaman, dan mendukung pelayanan",Klinik Kampus,3.43,115

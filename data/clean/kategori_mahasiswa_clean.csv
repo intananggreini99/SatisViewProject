@@ -1,0 +1,1144 @@
+response_id,jenis_pertanyaan,pilihan
+MHS_0001,prioritas,Layanan Kemahasiswaan
+MHS_0001,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0001,prioritas,Parkir
+MHS_0002,prioritas,Layanan Kemahasiswaan
+MHS_0002,prioritas,Administrasi Keuangan
+MHS_0002,prioritas,Parkir
+MHS_0003,prioritas,Administrasi Akademik
+MHS_0003,prioritas,Layanan Kemahasiswaan
+MHS_0003,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0004,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0004,prioritas,Toilet
+MHS_0005,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0005,prioritas,Parkir
+MHS_0006,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0006,prioritas,Parkir
+MHS_0006,prioritas,Lingkungan Kampus
+MHS_0007,prioritas,Laboratorium
+MHS_0007,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0007,prioritas,Parkir
+MHS_0008,prioritas,Laboratorium
+MHS_0008,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0008,prioritas,Parkir
+MHS_0009,prioritas,Administrasi Akademik
+MHS_0009,prioritas,Administrasi Umum
+MHS_0009,prioritas,Toilet
+MHS_0010,prioritas,Laboratorium
+MHS_0010,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0010,prioritas,Parkir
+MHS_0011,prioritas,Administrasi Akademik
+MHS_0011,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0011,prioritas,Parkir
+MHS_0012,prioritas,Administrasi Akademik
+MHS_0012,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0012,prioritas,Toilet
+MHS_0013,prioritas,Laboratorium
+MHS_0013,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0013,prioritas,Parkir
+MHS_0014,prioritas,Administrasi Akademik
+MHS_0014,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0014,prioritas,Parkir
+MHS_0015,prioritas,Laboratorium
+MHS_0015,prioritas,Toilet
+MHS_0015,prioritas,Parkir
+MHS_0016,prioritas,Laboratorium
+MHS_0016,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0016,prioritas,Parkir
+MHS_0017,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0017,prioritas,Toilet
+MHS_0017,prioritas,Parkir
+MHS_0018,prioritas,Toilet
+MHS_0018,prioritas,Parkir
+MHS_0018,prioritas,Lingkungan Kampus
+MHS_0019,prioritas,Administrasi Akademik
+MHS_0019,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0019,prioritas,Parkir
+MHS_0020,prioritas,Administrasi Akademik
+MHS_0020,prioritas,Layanan Kemahasiswaan
+MHS_0020,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0021,prioritas,Layanan Kemahasiswaan
+MHS_0021,prioritas,Toilet
+MHS_0021,prioritas,Parkir
+MHS_0022,prioritas,Perpustakaan
+MHS_0022,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0022,prioritas,Parkir
+MHS_0023,prioritas,Parkir
+MHS_0024,prioritas,Laboratorium
+MHS_0024,prioritas,Toilet
+MHS_0024,prioritas,Parkir
+MHS_0025,prioritas,Layanan Kemahasiswaan
+MHS_0025,prioritas,Administrasi Keuangan
+MHS_0025,prioritas,Toilet
+MHS_0026,prioritas,Ruang Kuliah
+MHS_0026,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0026,prioritas,Parkir
+MHS_0027,prioritas,Toilet
+MHS_0027,prioritas,Parkir
+MHS_0028,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0028,prioritas,Toilet
+MHS_0028,prioritas,Parkir
+MHS_0029,prioritas,Administrasi Umum
+MHS_0029,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0029,prioritas,Parkir
+MHS_0030,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0030,prioritas,Toilet
+MHS_0030,prioritas,Parkir
+MHS_0031,prioritas,Administrasi Umum
+MHS_0031,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0031,prioritas,Parkir
+MHS_0032,prioritas,Administrasi Akademik
+MHS_0032,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0032,prioritas,Parkir
+MHS_0033,prioritas,Laboratorium
+MHS_0033,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0033,prioritas,Parkir
+MHS_0034,prioritas,Layanan Kemahasiswaan
+MHS_0034,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0034,prioritas,Parkir
+MHS_0035,prioritas,Toilet
+MHS_0035,prioritas,Parkir
+MHS_0036,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0036,prioritas,Toilet
+MHS_0036,prioritas,Parkir
+MHS_0037,prioritas,Ruang Kuliah
+MHS_0037,prioritas,Toilet
+MHS_0037,prioritas,Parkir
+MHS_0038,prioritas,Administrasi Akademik
+MHS_0038,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0038,prioritas,Parkir
+MHS_0039,prioritas,Administrasi Akademik
+MHS_0039,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0039,prioritas,Parkir
+MHS_0040,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0040,prioritas,Toilet
+MHS_0040,prioritas,Parkir
+MHS_0041,prioritas,Parkir
+MHS_0042,prioritas,Laboratorium
+MHS_0042,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0042,prioritas,Parkir
+MHS_0043,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0043,prioritas,Toilet
+MHS_0043,prioritas,Parkir
+MHS_0044,prioritas,Administrasi Akademik
+MHS_0044,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0044,prioritas,Parkir
+MHS_0045,prioritas,Laboratorium
+MHS_0045,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0045,prioritas,Parkir
+MHS_0046,prioritas,Parkir
+MHS_0047,prioritas,Administrasi Akademik
+MHS_0047,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0047,prioritas,Parkir
+MHS_0048,prioritas,Laboratorium
+MHS_0048,prioritas,Perpustakaan
+MHS_0048,prioritas,Parkir
+MHS_0049,prioritas,Administrasi Akademik
+MHS_0049,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0049,prioritas,Parkir
+MHS_0050,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0050,prioritas,Parkir
+MHS_0050,prioritas,Layanan Klinik
+MHS_0051,prioritas,Layanan Kemahasiswaan
+MHS_0051,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0051,prioritas,Toilet
+MHS_0052,prioritas,Laboratorium
+MHS_0052,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0052,prioritas,Parkir
+MHS_0053,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0053,prioritas,Parkir
+MHS_0054,prioritas,Ruang Kuliah
+MHS_0054,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0054,prioritas,Parkir
+MHS_0055,prioritas,Ruang Kuliah
+MHS_0055,prioritas,Perpustakaan
+MHS_0055,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0056,prioritas,Perpustakaan
+MHS_0056,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0056,prioritas,Parkir
+MHS_0057,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0057,prioritas,Toilet
+MHS_0057,prioritas,Parkir
+MHS_0058,prioritas,Layanan Kemahasiswaan
+MHS_0058,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0058,prioritas,Parkir
+MHS_0059,prioritas,Laboratorium
+MHS_0059,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0059,prioritas,Parkir
+MHS_0060,prioritas,Laboratorium
+MHS_0060,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0060,prioritas,Parkir
+MHS_0061,prioritas,Administrasi Akademik
+MHS_0061,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0061,prioritas,Parkir
+MHS_0062,prioritas,Administrasi Keuangan
+MHS_0062,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0062,prioritas,Parkir
+MHS_0063,prioritas,Toilet
+MHS_0063,prioritas,Parkir
+MHS_0064,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0064,prioritas,Parkir
+MHS_0065,prioritas,Parkir
+MHS_0066,prioritas,Layanan Kemahasiswaan
+MHS_0066,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0066,prioritas,Parkir
+MHS_0067,prioritas,Laboratorium
+MHS_0067,prioritas,Parkir
+MHS_0067,prioritas,Lingkungan Kampus
+MHS_0068,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0068,prioritas,Parkir
+MHS_0068,prioritas,Layanan Klinik
+MHS_0069,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0069,prioritas,Parkir
+MHS_0070,prioritas,Ruang Kuliah
+MHS_0070,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0070,prioritas,Parkir
+MHS_0071,prioritas,Ruang Kuliah
+MHS_0071,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0071,prioritas,Parkir
+MHS_0072,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0072,prioritas,Parkir
+MHS_0073,prioritas,Administrasi Umum
+MHS_0073,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0073,prioritas,Parkir
+MHS_0074,prioritas,Laboratorium
+MHS_0074,prioritas,Toilet
+MHS_0074,prioritas,Parkir
+MHS_0075,prioritas,Layanan Kemahasiswaan
+MHS_0075,prioritas,Laboratorium
+MHS_0075,prioritas,Parkir
+MHS_0076,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0076,prioritas,Parkir
+MHS_0077,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0078,prioritas,Administrasi Umum
+MHS_0078,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0078,prioritas,Parkir
+MHS_0079,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0079,prioritas,Toilet
+MHS_0079,prioritas,Parkir
+MHS_0080,prioritas,Laboratorium
+MHS_0080,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0080,prioritas,Parkir
+MHS_0081,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0081,prioritas,Parkir
+MHS_0081,prioritas,Lingkungan Kampus
+MHS_0082,prioritas,Layanan Kemahasiswaan
+MHS_0082,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0082,prioritas,Layanan Klinik
+MHS_0083,prioritas,Ruang Kuliah
+MHS_0083,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0083,prioritas,Parkir
+MHS_0084,prioritas,Layanan Kemahasiswaan
+MHS_0084,prioritas,Toilet
+MHS_0084,prioritas,Parkir
+MHS_0085,prioritas,Perpustakaan
+MHS_0085,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0085,prioritas,Parkir
+MHS_0086,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0086,prioritas,Parkir
+MHS_0087,prioritas,Ruang Kuliah
+MHS_0087,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0087,prioritas,Parkir
+MHS_0088,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0088,prioritas,Parkir
+MHS_0089,prioritas,Toilet
+MHS_0089,prioritas,Parkir
+MHS_0090,prioritas,Ruang Kuliah
+MHS_0090,prioritas,Toilet
+MHS_0090,prioritas,Lingkungan Kampus
+MHS_0091,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0091,prioritas,Parkir
+MHS_0091,prioritas,Lingkungan Kampus
+MHS_0092,prioritas,Administrasi Keuangan
+MHS_0092,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0092,prioritas,Parkir
+MHS_0093,prioritas,Administrasi Akademik
+MHS_0093,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0093,prioritas,Parkir
+MHS_0094,prioritas,Administrasi Akademik
+MHS_0094,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0094,prioritas,Parkir
+MHS_0095,prioritas,Parkir
+MHS_0096,prioritas,Ruang Kuliah
+MHS_0096,prioritas,Laboratorium
+MHS_0096,prioritas,Parkir
+MHS_0097,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0097,prioritas,Parkir
+MHS_0098,prioritas,Perpustakaan
+MHS_0098,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0098,prioritas,Parkir
+MHS_0099,prioritas,Laboratorium
+MHS_0099,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0099,prioritas,Parkir
+MHS_0100,prioritas,Perpustakaan
+MHS_0100,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0100,prioritas,Parkir
+MHS_0101,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0102,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0102,prioritas,Parkir
+MHS_0102,prioritas,Layanan Klinik
+MHS_0103,prioritas,Parkir
+MHS_0104,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0104,prioritas,Parkir
+MHS_0104,prioritas,Lingkungan Kampus
+MHS_0105,prioritas,Administrasi Akademik
+MHS_0105,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0105,prioritas,Toilet
+MHS_0106,prioritas,Parkir
+MHS_0107,prioritas,Layanan Kemahasiswaan
+MHS_0107,prioritas,Laboratorium
+MHS_0107,prioritas,Parkir
+MHS_0108,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0108,prioritas,Toilet
+MHS_0108,prioritas,Parkir
+MHS_0109,prioritas,Administrasi Akademik
+MHS_0109,prioritas,Laboratorium
+MHS_0109,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0110,prioritas,Laboratorium
+MHS_0110,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0110,prioritas,Parkir
+MHS_0111,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0111,prioritas,Toilet
+MHS_0111,prioritas,Parkir
+MHS_0112,prioritas,Administrasi Akademik
+MHS_0112,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0112,prioritas,Parkir
+MHS_0113,prioritas,Administrasi Akademik
+MHS_0113,prioritas,Toilet
+MHS_0113,prioritas,Lingkungan Kampus
+MHS_0114,prioritas,Laboratorium
+MHS_0114,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0114,prioritas,Parkir
+MHS_0115,prioritas,Administrasi Akademik
+MHS_0115,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0115,prioritas,Parkir
+MHS_0116,prioritas,Layanan Kemahasiswaan
+MHS_0116,prioritas,Laboratorium
+MHS_0116,prioritas,Parkir
+MHS_0117,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0117,prioritas,Parkir
+MHS_0118,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0119,prioritas,Administrasi Akademik
+MHS_0119,prioritas,Layanan Kemahasiswaan
+MHS_0119,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0120,prioritas,Toilet
+MHS_0120,prioritas,Parkir
+MHS_0120,prioritas,Lingkungan Kampus
+MHS_0121,prioritas,Laboratorium
+MHS_0121,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0121,prioritas,Lingkungan Kampus
+MHS_0122,prioritas,Ruang Kuliah
+MHS_0122,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0122,prioritas,Parkir
+MHS_0123,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0123,prioritas,Toilet
+MHS_0123,prioritas,Parkir
+MHS_0124,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0124,prioritas,Parkir
+MHS_0125,prioritas,Ruang Kuliah
+MHS_0125,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0125,prioritas,Parkir
+MHS_0126,prioritas,Layanan Kemahasiswaan
+MHS_0126,prioritas,Laboratorium
+MHS_0126,prioritas,Parkir
+MHS_0127,prioritas,Parkir
+MHS_0128,prioritas,Ruang Kuliah
+MHS_0128,prioritas,Toilet
+MHS_0128,prioritas,Parkir
+MHS_0129,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0129,prioritas,Toilet
+MHS_0129,prioritas,Parkir
+MHS_0130,prioritas,Ruang Kuliah
+MHS_0130,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0130,prioritas,Parkir
+MHS_0131,prioritas,Administrasi Keuangan
+MHS_0131,prioritas,Laboratorium
+MHS_0131,prioritas,Parkir
+MHS_0132,prioritas,Layanan Kemahasiswaan
+MHS_0132,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0132,prioritas,Parkir
+MHS_0133,prioritas,Layanan Kemahasiswaan
+MHS_0133,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0133,prioritas,Parkir
+MHS_0134,prioritas,Administrasi Akademik
+MHS_0134,prioritas,Layanan Kemahasiswaan
+MHS_0134,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0135,prioritas,Administrasi Akademik
+MHS_0135,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0135,prioritas,Parkir
+MHS_0136,prioritas,Administrasi Akademik
+MHS_0136,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0136,prioritas,Parkir
+MHS_0137,prioritas,Layanan Kemahasiswaan
+MHS_0137,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0137,prioritas,Parkir
+MHS_0138,prioritas,Ruang Kuliah
+MHS_0138,prioritas,Toilet
+MHS_0138,prioritas,Lingkungan Kampus
+MHS_0139,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0139,prioritas,Toilet
+MHS_0139,prioritas,Lingkungan Kampus
+MHS_0140,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0140,prioritas,Parkir
+MHS_0141,prioritas,Layanan Kemahasiswaan
+MHS_0141,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0141,prioritas,Parkir
+MHS_0142,prioritas,Perpustakaan
+MHS_0142,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0142,prioritas,Parkir
+MHS_0143,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0143,prioritas,Parkir
+MHS_0143,prioritas,Lingkungan Kampus
+MHS_0144,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0144,prioritas,Toilet
+MHS_0144,prioritas,Parkir
+MHS_0145,prioritas,Layanan Kemahasiswaan
+MHS_0145,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0145,prioritas,Parkir
+MHS_0146,prioritas,Laboratorium
+MHS_0146,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0146,prioritas,Parkir
+MHS_0147,prioritas,Ruang Kuliah
+MHS_0147,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0147,prioritas,Lingkungan Kampus
+MHS_0148,prioritas,Ruang Kuliah
+MHS_0148,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0148,prioritas,Parkir
+MHS_0149,prioritas,Layanan Kemahasiswaan
+MHS_0149,prioritas,Administrasi Umum
+MHS_0149,prioritas,Ruang Kuliah
+MHS_0150,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0150,prioritas,Parkir
+MHS_0151,prioritas,Perpustakaan
+MHS_0151,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0151,prioritas,Parkir
+MHS_0152,prioritas,Layanan Kemahasiswaan
+MHS_0153,prioritas,Laboratorium
+MHS_0153,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0153,prioritas,Parkir
+MHS_0154,prioritas,Ruang Kuliah
+MHS_0154,prioritas,Laboratorium
+MHS_0154,prioritas,Parkir
+MHS_0155,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0155,prioritas,Toilet
+MHS_0155,prioritas,Parkir
+MHS_0156,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0156,prioritas,Parkir
+MHS_0157,prioritas,Layanan Kemahasiswaan
+MHS_0157,prioritas,Ruang Kuliah
+MHS_0157,prioritas,Laboratorium
+MHS_0158,prioritas,Ruang Kuliah
+MHS_0158,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0158,prioritas,Parkir
+MHS_0159,prioritas,Ruang Kuliah
+MHS_0159,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0159,prioritas,Parkir
+MHS_0160,prioritas,Administrasi Akademik
+MHS_0160,prioritas,Administrasi Umum
+MHS_0160,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0161,prioritas,Toilet
+MHS_0161,prioritas,Parkir
+MHS_0161,prioritas,Lingkungan Kampus
+MHS_0162,prioritas,Laboratorium
+MHS_0162,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0162,prioritas,Parkir
+MHS_0163,prioritas,Laboratorium
+MHS_0163,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0163,prioritas,Parkir
+MHS_0164,prioritas,Administrasi Akademik
+MHS_0164,prioritas,Layanan Kemahasiswaan
+MHS_0164,prioritas,Administrasi Keuangan
+MHS_0165,prioritas,Perpustakaan
+MHS_0165,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0165,prioritas,Lingkungan Kampus
+MHS_0166,prioritas,Laboratorium
+MHS_0166,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0166,prioritas,Parkir
+MHS_0167,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0167,prioritas,Parkir
+MHS_0168,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0169,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0169,prioritas,Parkir
+MHS_0170,prioritas,Laboratorium
+MHS_0170,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0170,prioritas,Parkir
+MHS_0171,prioritas,Administrasi Akademik
+MHS_0171,prioritas,Perpustakaan
+MHS_0171,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0172,prioritas,Administrasi Akademik
+MHS_0172,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0172,prioritas,Parkir
+MHS_0173,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0173,prioritas,Parkir
+MHS_0173,prioritas,Lingkungan Kampus
+MHS_0174,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0174,prioritas,Toilet
+MHS_0174,prioritas,Parkir
+MHS_0175,prioritas,Administrasi Keuangan
+MHS_0175,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0175,prioritas,Parkir
+MHS_0176,prioritas,Administrasi Akademik
+MHS_0176,prioritas,Laboratorium
+MHS_0176,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0177,prioritas,Administrasi Akademik
+MHS_0177,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0177,prioritas,Parkir
+MHS_0178,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0178,prioritas,Parkir
+MHS_0178,prioritas,Layanan Klinik
+MHS_0179,prioritas,Ruang Kuliah
+MHS_0179,prioritas,Perpustakaan
+MHS_0179,prioritas,Lingkungan Kampus
+MHS_0180,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0180,prioritas,Toilet
+MHS_0180,prioritas,Parkir
+MHS_0181,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0181,prioritas,Toilet
+MHS_0181,prioritas,Parkir
+MHS_0182,prioritas,Ruang Kuliah
+MHS_0182,prioritas,Perpustakaan
+MHS_0182,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0183,prioritas,Ruang Kuliah
+MHS_0183,prioritas,Toilet
+MHS_0183,prioritas,Parkir
+MHS_0184,prioritas,Laboratorium
+MHS_0184,prioritas,Parkir
+MHS_0184,prioritas,Lingkungan Kampus
+MHS_0185,prioritas,Administrasi Akademik
+MHS_0185,prioritas,Layanan Kemahasiswaan
+MHS_0185,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0186,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0186,prioritas,Toilet
+MHS_0186,prioritas,Parkir
+MHS_0187,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0187,prioritas,Toilet
+MHS_0187,prioritas,Parkir
+MHS_0188,prioritas,Laboratorium
+MHS_0188,prioritas,Toilet
+MHS_0188,prioritas,Parkir
+MHS_0189,prioritas,Ruang Kuliah
+MHS_0189,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0189,prioritas,Parkir
+MHS_0190,prioritas,Laboratorium
+MHS_0190,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0190,prioritas,Parkir
+MHS_0191,prioritas,Parkir
+MHS_0192,prioritas,Laboratorium
+MHS_0192,prioritas,Perpustakaan
+MHS_0192,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0193,prioritas,Laboratorium
+MHS_0193,prioritas,Toilet
+MHS_0193,prioritas,Parkir
+MHS_0194,prioritas,Laboratorium
+MHS_0194,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0194,prioritas,Parkir
+MHS_0195,prioritas,Administrasi Akademik
+MHS_0195,prioritas,Layanan Kemahasiswaan
+MHS_0195,prioritas,Parkir
+MHS_0196,prioritas,Layanan Kemahasiswaan
+MHS_0196,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0196,prioritas,Parkir
+MHS_0197,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0197,prioritas,Toilet
+MHS_0197,prioritas,Parkir
+MHS_0198,prioritas,Perpustakaan
+MHS_0198,prioritas,Parkir
+MHS_0199,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0199,prioritas,Toilet
+MHS_0199,prioritas,Parkir
+MHS_0200,prioritas,Administrasi Akademik
+MHS_0200,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0200,prioritas,Parkir
+MHS_0201,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0201,prioritas,Toilet
+MHS_0202,prioritas,Administrasi Akademik
+MHS_0202,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0202,prioritas,Parkir
+MHS_0203,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0203,prioritas,Toilet
+MHS_0203,prioritas,Parkir
+MHS_0204,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0204,prioritas,Parkir
+MHS_0205,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0206,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0206,prioritas,Toilet
+MHS_0206,prioritas,Parkir
+MHS_0207,prioritas,Parkir
+MHS_0208,prioritas,Administrasi Umum
+MHS_0208,prioritas,Laboratorium
+MHS_0208,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0209,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0209,prioritas,Parkir
+MHS_0209,prioritas,Lingkungan Kampus
+MHS_0210,prioritas,Layanan Kemahasiswaan
+MHS_0210,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0210,prioritas,Parkir
+MHS_0211,prioritas,Administrasi Umum
+MHS_0211,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0212,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0212,prioritas,Toilet
+MHS_0212,prioritas,Parkir
+MHS_0213,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0213,prioritas,Toilet
+MHS_0213,prioritas,Parkir
+MHS_0214,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0214,prioritas,Toilet
+MHS_0214,prioritas,Parkir
+MHS_0215,prioritas,Perpustakaan
+MHS_0215,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0215,prioritas,Parkir
+MHS_0216,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0216,prioritas,Parkir
+MHS_0217,prioritas,Layanan Kemahasiswaan
+MHS_0217,prioritas,Perpustakaan
+MHS_0217,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0218,prioritas,Perpustakaan
+MHS_0218,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0219,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0219,prioritas,Parkir
+MHS_0220,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0220,prioritas,Parkir
+MHS_0221,prioritas,Layanan Kemahasiswaan
+MHS_0221,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0221,prioritas,Parkir
+MHS_0222,prioritas,Layanan Kemahasiswaan
+MHS_0222,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0222,prioritas,Parkir
+MHS_0223,prioritas,Administrasi Akademik
+MHS_0223,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0223,prioritas,Lingkungan Kampus
+MHS_0224,prioritas,Layanan Kemahasiswaan
+MHS_0224,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0224,prioritas,Parkir
+MHS_0225,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0225,prioritas,Parkir
+MHS_0226,prioritas,Administrasi Akademik
+MHS_0226,prioritas,Laboratorium
+MHS_0226,prioritas,Parkir
+MHS_0227,prioritas,Laboratorium
+MHS_0227,prioritas,Parkir
+MHS_0228,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0228,prioritas,Toilet
+MHS_0228,prioritas,Parkir
+MHS_0229,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0229,prioritas,Toilet
+MHS_0229,prioritas,Parkir
+MHS_0230,prioritas,Layanan Kemahasiswaan
+MHS_0230,prioritas,Administrasi Keuangan
+MHS_0230,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0231,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0231,prioritas,Toilet
+MHS_0231,prioritas,Parkir
+MHS_0232,prioritas,Administrasi Akademik
+MHS_0232,prioritas,Parkir
+MHS_0232,prioritas,Layanan Klinik
+MHS_0233,prioritas,Ruang Kuliah
+MHS_0233,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0234,prioritas,Laboratorium
+MHS_0234,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0234,prioritas,Parkir
+MHS_0235,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0235,prioritas,Parkir
+MHS_0235,prioritas,Lingkungan Kampus
+MHS_0236,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0236,prioritas,Parkir
+MHS_0237,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0237,prioritas,Toilet
+MHS_0237,prioritas,Parkir
+MHS_0238,prioritas,Administrasi Keuangan
+MHS_0238,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0238,prioritas,Parkir
+MHS_0239,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0239,prioritas,Toilet
+MHS_0239,prioritas,Parkir
+MHS_0240,prioritas,Administrasi Akademik
+MHS_0240,prioritas,Administrasi Umum
+MHS_0240,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0241,prioritas,Administrasi Akademik
+MHS_0241,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0241,prioritas,Parkir
+MHS_0242,prioritas,Ruang Kuliah
+MHS_0242,prioritas,Toilet
+MHS_0242,prioritas,Parkir
+MHS_0243,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0243,prioritas,Lingkungan Kampus
+MHS_0244,prioritas,Layanan Kemahasiswaan
+MHS_0244,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0244,prioritas,Parkir
+MHS_0245,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0245,prioritas,Parkir
+MHS_0245,prioritas,Lingkungan Kampus
+MHS_0246,prioritas,Administrasi Akademik
+MHS_0246,prioritas,Perpustakaan
+MHS_0246,prioritas,Parkir
+MHS_0247,prioritas,Administrasi Akademik
+MHS_0247,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0247,prioritas,Parkir
+MHS_0248,prioritas,Administrasi Akademik
+MHS_0248,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0248,prioritas,Parkir
+MHS_0249,prioritas,Laboratorium
+MHS_0249,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0250,prioritas,Ruang Kuliah
+MHS_0250,prioritas,Parkir
+MHS_0250,prioritas,Lingkungan Kampus
+MHS_0251,prioritas,Administrasi Akademik
+MHS_0251,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0252,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0252,prioritas,Toilet
+MHS_0252,prioritas,Parkir
+MHS_0253,prioritas,Ruang Kuliah
+MHS_0253,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0253,prioritas,Parkir
+MHS_0254,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0254,prioritas,Toilet
+MHS_0254,prioritas,Parkir
+MHS_0255,prioritas,Administrasi Keuangan
+MHS_0255,prioritas,Perpustakaan
+MHS_0255,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0256,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0256,prioritas,Parkir
+MHS_0256,prioritas,Layanan Klinik
+MHS_0257,prioritas,Parkir
+MHS_0258,prioritas,Laboratorium
+MHS_0258,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0258,prioritas,Parkir
+MHS_0259,prioritas,Layanan Kemahasiswaan
+MHS_0259,prioritas,Laboratorium
+MHS_0259,prioritas,Parkir
+MHS_0260,prioritas,Ruang Kuliah
+MHS_0260,prioritas,Laboratorium
+MHS_0260,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0261,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0261,prioritas,Toilet
+MHS_0261,prioritas,Parkir
+MHS_0262,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0262,prioritas,Parkir
+MHS_0262,prioritas,Layanan Klinik
+MHS_0263,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0263,prioritas,Parkir
+MHS_0263,prioritas,Layanan Klinik
+MHS_0264,prioritas,Layanan Kemahasiswaan
+MHS_0264,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0264,prioritas,Parkir
+MHS_0265,prioritas,Administrasi Akademik
+MHS_0265,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0265,prioritas,Parkir
+MHS_0266,prioritas,Laboratorium
+MHS_0266,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0266,prioritas,Parkir
+MHS_0267,prioritas,Administrasi Umum
+MHS_0267,prioritas,Laboratorium
+MHS_0267,prioritas,Parkir
+MHS_0268,prioritas,Laboratorium
+MHS_0268,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0268,prioritas,Parkir
+MHS_0269,prioritas,Laboratorium
+MHS_0269,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0269,prioritas,Parkir
+MHS_0270,prioritas,Ruang Kuliah
+MHS_0270,prioritas,Laboratorium
+MHS_0270,prioritas,Parkir
+MHS_0271,prioritas,Laboratorium
+MHS_0271,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0271,prioritas,Parkir
+MHS_0272,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0272,prioritas,Parkir
+MHS_0272,prioritas,Lingkungan Kampus
+MHS_0273,prioritas,Laboratorium
+MHS_0273,prioritas,Perpustakaan
+MHS_0273,prioritas,Parkir
+MHS_0274,prioritas,Layanan Kemahasiswaan
+MHS_0274,prioritas,Laboratorium
+MHS_0274,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0275,prioritas,Laboratorium
+MHS_0275,prioritas,Toilet
+MHS_0275,prioritas,Parkir
+MHS_0276,prioritas,Laboratorium
+MHS_0276,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0276,prioritas,Parkir
+MHS_0277,prioritas,Laboratorium
+MHS_0277,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0277,prioritas,Parkir
+MHS_0278,prioritas,Parkir
+MHS_0279,prioritas,Laboratorium
+MHS_0279,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0279,prioritas,Parkir
+MHS_0280,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0280,prioritas,Parkir
+MHS_0280,prioritas,Lingkungan Kampus
+MHS_0281,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0281,prioritas,Lingkungan Kampus
+MHS_0282,prioritas,Ruang Kuliah
+MHS_0282,prioritas,Laboratorium
+MHS_0282,prioritas,Parkir
+MHS_0283,prioritas,Ruang Kuliah
+MHS_0283,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0283,prioritas,Parkir
+MHS_0284,prioritas,Parkir
+MHS_0285,prioritas,Parkir
+MHS_0286,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0286,prioritas,Parkir
+MHS_0286,prioritas,Layanan Klinik
+MHS_0287,prioritas,Perpustakaan
+MHS_0287,prioritas,Parkir
+MHS_0287,prioritas,Layanan Klinik
+MHS_0288,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0288,prioritas,Parkir
+MHS_0289,prioritas,Layanan Kemahasiswaan
+MHS_0289,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0289,prioritas,Parkir
+MHS_0290,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0290,prioritas,Toilet
+MHS_0290,prioritas,Parkir
+MHS_0291,prioritas,Ruang Kuliah
+MHS_0291,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0291,prioritas,Parkir
+MHS_0292,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0292,prioritas,Parkir
+MHS_0292,prioritas,Layanan Klinik
+MHS_0293,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0293,prioritas,Toilet
+MHS_0293,prioritas,Parkir
+MHS_0294,prioritas,Administrasi Akademik
+MHS_0294,prioritas,Layanan Kemahasiswaan
+MHS_0294,prioritas,Ruang Kuliah
+MHS_0295,prioritas,Administrasi Akademik
+MHS_0296,prioritas,Administrasi Akademik
+MHS_0296,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0296,prioritas,Parkir
+MHS_0297,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0297,prioritas,Toilet
+MHS_0297,prioritas,Parkir
+MHS_0298,prioritas,Layanan Kemahasiswaan
+MHS_0298,prioritas,Laboratorium
+MHS_0298,prioritas,Toilet
+MHS_0299,prioritas,Administrasi Akademik
+MHS_0299,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0299,prioritas,Parkir
+MHS_0300,prioritas,Laboratorium
+MHS_0300,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0300,prioritas,Parkir
+MHS_0301,prioritas,Administrasi Umum
+MHS_0301,prioritas,Laboratorium
+MHS_0301,prioritas,Parkir
+MHS_0302,prioritas,Layanan Kemahasiswaan
+MHS_0302,prioritas,Ruang Kuliah
+MHS_0302,prioritas,Parkir
+MHS_0303,prioritas,Ruang Kuliah
+MHS_0303,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0303,prioritas,Toilet
+MHS_0304,prioritas,Laboratorium
+MHS_0305,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0305,prioritas,Toilet
+MHS_0305,prioritas,Parkir
+MHS_0306,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0306,prioritas,Parkir
+MHS_0306,prioritas,Lingkungan Kampus
+MHS_0307,prioritas,Administrasi Akademik
+MHS_0307,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0307,prioritas,Parkir
+MHS_0308,prioritas,Administrasi Akademik
+MHS_0308,prioritas,Laboratorium
+MHS_0308,prioritas,Parkir
+MHS_0309,prioritas,Ruang Kuliah
+MHS_0309,prioritas,Parkir
+MHS_0309,prioritas,Lingkungan Kampus
+MHS_0310,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0310,prioritas,Parkir
+MHS_0310,prioritas,Layanan Klinik
+MHS_0311,prioritas,Ruang Kuliah
+MHS_0311,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0311,prioritas,Parkir
+MHS_0312,prioritas,Ruang Kuliah
+MHS_0312,prioritas,Parkir
+MHS_0312,prioritas,Layanan Klinik
+MHS_0313,prioritas,Administrasi Akademik
+MHS_0313,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0314,prioritas,Administrasi Keuangan
+MHS_0314,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0314,prioritas,Parkir
+MHS_0315,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0315,prioritas,Toilet
+MHS_0315,prioritas,Parkir
+MHS_0316,prioritas,Administrasi Akademik
+MHS_0316,prioritas,Layanan Kemahasiswaan
+MHS_0316,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0317,prioritas,Administrasi Akademik
+MHS_0317,prioritas,Administrasi Umum
+MHS_0317,prioritas,Toilet
+MHS_0318,prioritas,Administrasi Akademik
+MHS_0318,prioritas,Layanan Kemahasiswaan
+MHS_0318,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0319,prioritas,Administrasi Akademik
+MHS_0319,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0319,prioritas,Parkir
+MHS_0320,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0320,prioritas,Parkir
+MHS_0321,prioritas,Administrasi Akademik
+MHS_0321,prioritas,Layanan Kemahasiswaan
+MHS_0321,prioritas,Administrasi Umum
+MHS_0322,prioritas,Administrasi Akademik
+MHS_0322,prioritas,Layanan Kemahasiswaan
+MHS_0322,prioritas,Parkir
+MHS_0323,prioritas,Administrasi Akademik
+MHS_0323,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0323,prioritas,Layanan Klinik
+MHS_0324,prioritas,Ruang Kuliah
+MHS_0324,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0324,prioritas,Parkir
+MHS_0325,prioritas,Ruang Kuliah
+MHS_0325,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0325,prioritas,Parkir
+MHS_0326,prioritas,Perpustakaan
+MHS_0326,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0326,prioritas,Lingkungan Kampus
+MHS_0327,prioritas,Parkir
+MHS_0328,prioritas,Perpustakaan
+MHS_0328,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0328,prioritas,Parkir
+MHS_0329,prioritas,Laboratorium
+MHS_0329,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0329,prioritas,Parkir
+MHS_0330,prioritas,Laboratorium
+MHS_0330,prioritas,Parkir
+MHS_0331,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0331,prioritas,Toilet
+MHS_0331,prioritas,Parkir
+MHS_0332,prioritas,Administrasi Umum
+MHS_0332,prioritas,Perpustakaan
+MHS_0332,prioritas,Toilet
+MHS_0333,prioritas,Ruang Kuliah
+MHS_0333,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0333,prioritas,Parkir
+MHS_0334,prioritas,Parkir
+MHS_0335,prioritas,Laboratorium
+MHS_0335,prioritas,Toilet
+MHS_0335,prioritas,Parkir
+MHS_0336,prioritas,Toilet
+MHS_0336,prioritas,Parkir
+MHS_0336,prioritas,Lingkungan Kampus
+MHS_0337,prioritas,Layanan Kemahasiswaan
+MHS_0337,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0337,prioritas,Parkir
+MHS_0338,prioritas,Laboratorium
+MHS_0338,prioritas,Toilet
+MHS_0338,prioritas,Parkir
+MHS_0339,prioritas,Laboratorium
+MHS_0339,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0339,prioritas,Parkir
+MHS_0340,prioritas,Administrasi Umum
+MHS_0340,prioritas,Ruang Kuliah
+MHS_0340,prioritas,Parkir
+MHS_0341,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0341,prioritas,Parkir
+MHS_0341,prioritas,Lingkungan Kampus
+MHS_0342,prioritas,Laboratorium
+MHS_0342,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0342,prioritas,Parkir
+MHS_0343,prioritas,Laboratorium
+MHS_0343,prioritas,Parkir
+MHS_0343,prioritas,Lingkungan Kampus
+MHS_0344,prioritas,Parkir
+MHS_0345,prioritas,Ruang Kuliah
+MHS_0345,prioritas,Laboratorium
+MHS_0345,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0346,prioritas,Laboratorium
+MHS_0346,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0346,prioritas,Parkir
+MHS_0347,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0347,prioritas,Toilet
+MHS_0348,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0348,prioritas,Toilet
+MHS_0349,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0349,prioritas,Parkir
+MHS_0350,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0351,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0351,prioritas,Toilet
+MHS_0351,prioritas,Parkir
+MHS_0352,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0352,prioritas,Parkir
+MHS_0352,prioritas,Lingkungan Kampus
+MHS_0353,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0353,prioritas,Parkir
+MHS_0354,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0354,prioritas,Toilet
+MHS_0354,prioritas,Parkir
+MHS_0355,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0355,prioritas,Parkir
+MHS_0356,prioritas,Layanan Kemahasiswaan
+MHS_0356,prioritas,Ruang Kuliah
+MHS_0356,prioritas,Parkir
+MHS_0357,prioritas,Ruang Kuliah
+MHS_0357,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0357,prioritas,Parkir
+MHS_0358,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0358,prioritas,Parkir
+MHS_0359,prioritas,Layanan Kemahasiswaan
+MHS_0359,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0359,prioritas,Parkir
+MHS_0360,prioritas,Laboratorium
+MHS_0360,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0360,prioritas,Parkir
+MHS_0361,prioritas,Administrasi Akademik
+MHS_0361,prioritas,Lingkungan Kampus
+MHS_0361,prioritas,Layanan Klinik
+MHS_0362,prioritas,Parkir
+MHS_0363,prioritas,Ruang Kuliah
+MHS_0363,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0363,prioritas,Parkir
+MHS_0364,prioritas,Ruang Kuliah
+MHS_0364,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0364,prioritas,Parkir
+MHS_0365,prioritas,Administrasi Akademik
+MHS_0365,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0365,prioritas,Parkir
+MHS_0366,prioritas,Administrasi Akademik
+MHS_0366,prioritas,Ruang Kuliah
+MHS_0366,prioritas,Parkir
+MHS_0367,prioritas,Administrasi Umum
+MHS_0367,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0367,prioritas,Parkir
+MHS_0368,prioritas,Administrasi Keuangan
+MHS_0368,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0368,prioritas,Parkir
+MHS_0369,prioritas,Layanan Kemahasiswaan
+MHS_0369,prioritas,Laboratorium
+MHS_0369,prioritas,Parkir
+MHS_0370,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0370,prioritas,Toilet
+MHS_0370,prioritas,Parkir
+MHS_0371,prioritas,Layanan Kemahasiswaan
+MHS_0371,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0371,prioritas,Parkir
+MHS_0372,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0372,prioritas,Parkir
+MHS_0373,prioritas,Ruang Kuliah
+MHS_0373,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0373,prioritas,Parkir
+MHS_0374,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0374,prioritas,Toilet
+MHS_0374,prioritas,Parkir
+MHS_0375,prioritas,Administrasi Akademik
+MHS_0375,prioritas,Layanan Kemahasiswaan
+MHS_0375,prioritas,Administrasi Umum
+MHS_0376,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0376,prioritas,Toilet
+MHS_0376,prioritas,Parkir
+MHS_0377,prioritas,Administrasi Akademik
+MHS_0377,prioritas,Ruang Kuliah
+MHS_0377,prioritas,Parkir
+MHS_0378,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0378,prioritas,Parkir
+MHS_0379,prioritas,Ruang Kuliah
+MHS_0379,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0379,prioritas,Parkir
+MHS_0380,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0380,prioritas,Toilet
+MHS_0380,prioritas,Parkir
+MHS_0381,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0381,prioritas,Parkir
+MHS_0381,prioritas,Lingkungan Kampus
+MHS_0382,prioritas,Ruang Kuliah
+MHS_0382,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0382,prioritas,Parkir
+MHS_0383,prioritas,Ruang Kuliah
+MHS_0383,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0383,prioritas,Parkir
+MHS_0384,prioritas,Ruang Kuliah
+MHS_0384,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0384,prioritas,Parkir
+MHS_0385,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0385,prioritas,Toilet
+MHS_0385,prioritas,Parkir
+MHS_0386,prioritas,Ruang Kuliah
+MHS_0386,prioritas,Laboratorium
+MHS_0386,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0387,prioritas,Laboratorium
+MHS_0387,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0387,prioritas,Parkir
+MHS_0388,prioritas,Ruang Kuliah
+MHS_0388,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0388,prioritas,Parkir
+MHS_0389,prioritas,Administrasi Akademik
+MHS_0389,prioritas,Ruang Kuliah
+MHS_0389,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0390,prioritas,Ruang Kuliah
+MHS_0390,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0390,prioritas,Parkir
+MHS_0391,prioritas,Layanan Kemahasiswaan
+MHS_0391,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0391,prioritas,Lingkungan Kampus
+MHS_0392,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0392,prioritas,Parkir
+MHS_0393,prioritas,Layanan Kemahasiswaan
+MHS_0393,prioritas,Toilet
+MHS_0394,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0394,prioritas,Toilet
+MHS_0394,prioritas,Parkir
+MHS_0395,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0395,prioritas,Toilet
+MHS_0395,prioritas,Parkir
+MHS_0396,prioritas,Ruang Kuliah
+MHS_0396,prioritas,Laboratorium
+MHS_0396,prioritas,Perpustakaan
+MHS_0397,prioritas,Administrasi Akademik
+MHS_0397,prioritas,Layanan Kemahasiswaan
+MHS_0397,prioritas,Parkir
+MHS_0398,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0398,prioritas,Parkir
+MHS_0398,prioritas,Lingkungan Kampus
+MHS_0399,prioritas,Administrasi Umum
+MHS_0399,prioritas,Ruang Kuliah
+MHS_0399,prioritas,Parkir
+MHS_0400,prioritas,Laboratorium
+MHS_0401,prioritas,Administrasi Akademik
+MHS_0401,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0401,prioritas,Parkir
+MHS_0402,prioritas,Laboratorium
+MHS_0402,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0402,prioritas,Parkir
+MHS_0403,prioritas,Layanan Kemahasiswaan
+MHS_0403,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0403,prioritas,Layanan Klinik
+MHS_0404,prioritas,Laboratorium
+MHS_0404,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0404,prioritas,Parkir
+MHS_0405,prioritas,Laboratorium
+MHS_0405,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0405,prioritas,Parkir
+MHS_0406,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0406,prioritas,Parkir
+MHS_0406,prioritas,Lingkungan Kampus
+MHS_0407,prioritas,Administrasi Akademik
+MHS_0407,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0408,prioritas,Administrasi Akademik
+MHS_0408,prioritas,Parkir
+MHS_0408,prioritas,Layanan Klinik
+MHS_0409,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0410,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0410,prioritas,Parkir
+MHS_0411,prioritas,Administrasi Umum
+MHS_0411,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0411,prioritas,Parkir
+MHS_0412,prioritas,Laboratorium
+MHS_0412,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0412,prioritas,Parkir
+MHS_0413,prioritas,Layanan Kemahasiswaan
+MHS_0413,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0413,prioritas,Parkir
+MHS_0414,prioritas,Layanan Kemahasiswaan
+MHS_0414,prioritas,Administrasi Umum
+MHS_0414,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0415,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0415,prioritas,Toilet
+MHS_0415,prioritas,Parkir
+MHS_0416,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0416,prioritas,Toilet
+MHS_0416,prioritas,Parkir
+MHS_0417,prioritas,Laboratorium
+MHS_0417,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0417,prioritas,Toilet
+MHS_0418,prioritas,Laboratorium
+MHS_0418,prioritas,Internet/Wi-Fi dan Sistem Informasi
+MHS_0418,prioritas,Parkir
