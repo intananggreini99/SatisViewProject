@@ -1,0 +1,21 @@
+{
+  "name": "satisview-backend",
+  "version": "1.2.0",
+  "description": "API dashboard SatisView: membaca hasil analisis di PostgreSQL & laporan di HDFS",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

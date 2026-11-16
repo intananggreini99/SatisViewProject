@@ -1,0 +1,19 @@
+# Dependensi tambahan untuk task SatisView. Diinstal dengan constraint resmi
+# Apache Airflow agar tidak bentrok dengan paket bawaan image.
+pandas==2.1.4
+numpy==1.26.4
+openpyxl==3.1.5
+requests==2.32.3
+psycopg2-binary==2.9.10
+google-auth==2.38.0
+gdown==5.2.0
+
+# Dipakai kode Preprocessing & Analisis tim (Preprocessing&Analysis.zip):
+#  - Sastrawi      : stemming + stopword Bahasa Indonesia (text analytics)
+#  - scikit-learn  : MDS (sklearn.manifold.MDS) untuk pemetaan persepsi
+# Versi scikit-learn dikunci karena hasil MDS dapat berbeda antarversi.
+Sastrawi==1.0.1
+scikit-learn==1.9.1
+scipy==1.17.1
+joblib==1.5.3
+threadpoolctl==3.7.0

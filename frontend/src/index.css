@@ -1,0 +1,148 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   SatisView design tokens — nuansa biru, kuning, dan putih logo PENS.
+   Biru  #14487A dan kuning #F3C903 diambil langsung dari logo PENS; skala
+   lain diturunkan dari keduanya. Tata letak mengikuti "SatisView Dashboard.html":
+   kartu putih membulat di atas latar biru sangat muda, foto gedung PENS sebagai
+   aksen banner, navigasi pil biru + kuning.
+   ========================================================================== */
+@theme {
+  /* Biru PENS */
+  --color-brand: #14487a;
+  --color-brand-50: #eef3f9;
+  --color-brand-100: #dce6f2;
+  --color-brand-200: #b9cde4;
+  --color-brand-300: #8daed2;
+  --color-brand-400: #5b87b9;
+  --color-brand-500: #2c6db3;
+  --color-brand-600: #1f5fa6;
+  --color-brand-700: #14487a;
+  --color-brand-800: #0f3a64;
+  --color-brand-900: #0b2b4b;
+  --color-brand-950: #071c33;
+
+  /* Kuning PENS (isian & aksen; teks di atasnya selalu biru tua) */
+  --color-gold: #f3c903;
+  --color-gold-50: #fefae6;
+  --color-gold-100: #fdf2c2;
+  --color-gold-200: #fae38a;
+  --color-gold-600: #c98500; /* tanda grafik di atas putih (kontras >= 3:1) */
+  --color-gold-700: #8a6300; /* teks di atas latar kuning muda */
+
+  /* Netral */
+  --color-canvas: #f3f6fa; /* latar halaman */
+  --color-line: #dce4ee;
+  --color-line-strong: #c5d2e2;
+  --color-ink: #10233d;
+  --color-ink-soft: #44556c;
+  --color-ink-muted: #5f6f87;
+
+  /* Status (hanya untuk makna baik/buruk, selalu disertai teks) */
+  --color-good: #1f7a53;
+  --color-good-soft: #e2f2ea;
+  --color-bad: #b83a2b;
+  --color-bad-soft: #fbeae7;
+
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Parisienne', 'Segoe Script', cursive;
+
+  --shadow-card: 0 1px 2px rgb(16 35 61 / 0.04), 0 8px 24px -12px rgb(20 72 122 / 0.16);
+  --shadow-pop: 0 20px 44px -18px rgb(11 43 75 / 0.38);
+  --shadow-banner: 0 18px 40px -22px rgb(7 28 51 / 0.65);
+
+  --animate-shimmer: shimmer 1.6s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.25s ease-out both;
+
+  @keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-gold);
+  }
+  ::selection {
+    background: var(--color-gold-200);
+    color: var(--color-brand-900);
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Area gulir di dalam kartu: scrollbar tipis biru muda. */
+@utility sv-scroll {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-200) transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-brand-200);
+    border-radius: 999px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-300);
+  }
+}
+
+/* Baris pil yang dapat digeser di layar sempit tanpa scrollbar terlihat. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sv-skeleton {
+  background: linear-gradient(90deg, #e6edf5 0%, #f4f7fb 40%, #e6edf5 80%);
+  background-size: 800px 100%;
+  animation: var(--animate-shimmer);
+  border-radius: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Tabel ringkas (koordinat MDS, kategori mutu) */
+.sv-table th {
+  @apply bg-brand-50 px-3 py-2 text-left text-xs font-semibold text-brand-800;
+}
+.sv-table td {
+  @apply border-t border-line px-3 py-2 text-sm text-ink;
+}

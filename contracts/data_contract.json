@@ -1,0 +1,270 @@
+{
+  "versi": 2,
+  "deskripsi": "Kontrak file CSV SatisView. 'preprocessing' = 8 file hasil kode preprocessing tim (disimpan di HDFS /satisview/preprocessed/<responden>/). 'analisis' = 13 file hasil analisis (HDFS /satisview/analysis/<responden>/, lalu satu file = satu tabel di database PostgreSQL analysis_<responden>). {responden} = mahasiswa | dosen | karyawan | mitra_kerjasama | mitra_pengadaan. Nilai 'skala_min'/'skala_maks' diganti skala Likert kelompok tsb. Kolom tambahan boleh ada; kolom di bawah wajib ada.",
+  "preprocessing": {
+    "likert_utama": {
+      "file": "likert_{responden}_utama_clean",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 5",
+      "deskripsi": "response_id + kolom profil + skor butir Likert utama (kolom = judul pertanyaan Google Form).",
+      "kunci_unik": ["response_id"],
+      "kolom_dinamis": "likert",
+      "kolom": {"response_id": {"tipe": "teks", "wajib_isi": true}}
+    },
+    "likert_bersyarat": {
+      "file": "likert_{responden}_{bersyarat}_clean",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 5 (Klinik Kampus)",
+      "deskripsi": "Skor butir bagian bersyarat (hanya responden yang mengisi). Hanya ada bila kelompok punya bagian bersyarat.",
+      "opsional": true,
+      "kunci_unik": ["response_id"],
+      "kolom_dinamis": "likert",
+      "kolom": {"response_id": {"tipe": "teks", "wajib_isi": true}}
+    },
+    "teks": {
+      "file": "teks_{responden}_clean",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 9",
+      "kolom": {
+        "response_id": {"tipe": "teks", "wajib_isi": true},
+        "jenis_pertanyaan": {"tipe": "teks", "wajib_isi": true},
+        "teks_komentar": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "kategori": {
+      "file": "kategori_{responden}_clean",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 10",
+      "kolom": {
+        "response_id": {"tipe": "teks", "wajib_isi": true},
+        "jenis_pertanyaan": {"tipe": "teks", "wajib_isi": true},
+        "pilihan": {"tipe": "teks"}
+      }
+    },
+    "kamus": {
+      "file": "kamus_item_aspek_{responden}",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 6",
+      "kunci_unik": ["item_kode"],
+      "kolom": {
+        "item_kode": {"tipe": "teks", "wajib_isi": true},
+        "pertanyaan": {"tipe": "teks", "wajib_isi": true},
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "nama_kolom_asli": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "skor_aspek": {
+      "file": "skor_aspek_{responden}",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 7",
+      "deskripsi": "Rata-rata skor tiap aspek per responden (kolom = nama aspek).",
+      "kunci_unik": ["response_id"],
+      "kolom_dinamis": "skor",
+      "kolom": {"response_id": {"tipe": "teks", "wajib_isi": true}}
+    },
+    "ringkasan_item": {
+      "file": "ringkasan_item_{responden}",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 8",
+      "kunci_unik": ["item_kode"],
+      "kolom": {
+        "item_kode": {"tipe": "teks", "wajib_isi": true},
+        "pertanyaan": {"tipe": "teks", "wajib_isi": true},
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "rata_rata": {"tipe": "angka", "min": "skala_min", "maks": "skala_maks"},
+        "n_responden": {"tipe": "bilangan_bulat", "min": 0, "wajib_isi": true}
+      }
+    },
+    "ringkasan_aspek": {
+      "file": "ringkasan_aspek_{responden}",
+      "sumber": "preprocssing-mahasiswa-finalpakeygini.ipynb sel 8",
+      "kunci_unik": ["aspek"],
+      "kolom": {
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "rata_rata": {"tipe": "angka", "min": "skala_min", "maks": "skala_maks"},
+        "jumlah_item": {"tipe": "bilangan_bulat", "min": 1, "wajib_isi": true}
+      }
+    }
+  },
+  "analisis": {
+    "kpi_ringkasan": {
+      "file": "kpi_ringkasan_{responden}",
+      "sumber": "KPI dashboard dari ringkasan_item/ringkasan_aspek tim",
+      "deskripsi": "Satu baris per segmen: indeks total (rata-rata aspek / skor maks x 100), aspek tertinggi & terendah.",
+      "kunci_unik": ["segmen"],
+      "kolom": {
+        "segmen": {"tipe": "teks", "wajib_isi": true},
+        "dimensi_segmen": {"tipe": "teks"},
+        "n_responden": {"tipe": "bilangan_bulat", "min": 0, "wajib_isi": true},
+        "jumlah_aspek": {"tipe": "bilangan_bulat", "min": 0},
+        "rata_rata_total": {"tipe": "angka", "min": "skala_min", "maks": "skala_maks"},
+        "indeks_total": {"tipe": "angka", "min": 0, "maks": 100},
+        "mutu": {"tipe": "teks", "pilihan": ["A", "B", "C", "D"]},
+        "kinerja": {"tipe": "teks"},
+        "aspek_tertinggi": {"tipe": "teks"},
+        "indeks_tertinggi": {"tipe": "angka", "min": 0, "maks": 100},
+        "aspek_terendah": {"tipe": "teks"},
+        "indeks_terendah": {"tipe": "angka", "min": 0, "maks": 100},
+        "skala_min": {"tipe": "bilangan_bulat"},
+        "skala_maks": {"tipe": "bilangan_bulat"},
+        "jumlah_komentar": {"tipe": "bilangan_bulat", "min": 0},
+        "jumlah_pengisi_prioritas": {"tipe": "bilangan_bulat", "min": 0},
+        "tanggal_analisis": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "kpi_aspek": {
+      "file": "kpi_aspek_{responden}",
+      "sumber": "ringkasan_aspek tim + indeks 0-100",
+      "kunci_unik": ["segmen", "aspek"],
+      "kolom": {
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "rata_rata": {"tipe": "angka", "min": "skala_min", "maks": "skala_maks", "wajib_isi": true},
+        "jumlah_item": {"tipe": "bilangan_bulat", "min": 1},
+        "n_responden": {"tipe": "bilangan_bulat", "min": 0},
+        "indeks": {"tipe": "angka", "min": 0, "maks": 100, "wajib_isi": true},
+        "mutu": {"tipe": "teks", "pilihan": ["A", "B", "C", "D"]},
+        "kinerja": {"tipe": "teks"},
+        "peringkat": {"tipe": "bilangan_bulat", "min": 1},
+        "urutan": {"tipe": "bilangan_bulat", "min": 1, "wajib_isi": true},
+        "label": {"tipe": "teks", "wajib_isi": true},
+        "singkatan": {"tipe": "teks", "wajib_isi": true},
+        "kelompok": {"tipe": "teks", "pilihan": ["Layanan", "Fasilitas"]},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "kpi_item": {
+      "file": "kpi_item_{responden}",
+      "sumber": "ringkasan_item tim + indeks 0-100",
+      "kunci_unik": ["segmen", "item_kode"],
+      "kolom": {
+        "item_kode": {"tipe": "teks", "wajib_isi": true},
+        "pertanyaan": {"tipe": "teks", "wajib_isi": true},
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "rata_rata": {"tipe": "angka", "min": "skala_min", "maks": "skala_maks", "wajib_isi": true},
+        "n_responden": {"tipe": "bilangan_bulat", "min": 1},
+        "indeks": {"tipe": "angka", "min": 0, "maks": 100, "wajib_isi": true},
+        "urutan_aspek": {"tipe": "bilangan_bulat", "min": 1},
+        "urutan_item": {"tipe": "bilangan_bulat", "min": 1},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "prioritas_aspek": {
+      "file": "prioritas_aspek_{responden}",
+      "sumber": "priority-analysis-mahasiswa.ipynb sel 19",
+      "kunci_unik": ["segmen", "aspek"],
+      "kolom": {
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "skor_kepuasan": {"tipe": "angka", "min": "skala_min", "maks": "skala_maks", "wajib_isi": true},
+        "jumlah_dipilih": {"tipe": "bilangan_bulat", "min": 0},
+        "persen_dipilih": {"tipe": "angka", "min": 0, "maks": 100},
+        "frekuensi_komentar": {"tipe": "bilangan_bulat", "min": 0},
+        "norm_ketidakpuasan": {"tipe": "angka", "min": 0, "maks": 1},
+        "norm_pilihan": {"tipe": "angka", "min": 0, "maks": 1},
+        "norm_komentar": {"tipe": "angka", "min": 0, "maks": 1},
+        "skor_prioritas": {"tipe": "angka", "min": 0, "maks": 1, "wajib_isi": true},
+        "ranking": {"tipe": "bilangan_bulat", "min": 1, "wajib_isi": true},
+        "level_prioritas": {"tipe": "teks", "pilihan": ["Tinggi", "Sedang", "Rendah"], "wajib_isi": true},
+        "kuadran": {"tipe": "teks", "pilihan": ["Prioritas Utama", "Pertahankan", "Prioritas Rendah", "Sudah Cukup"]},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "frekuensi_aspek": {
+      "file": "frekuensi_aspek_{responden}",
+      "sumber": "text-analytics-mahasiswa.ipynb sel 21",
+      "kunci_unik": ["segmen", "aspek"],
+      "kolom": {
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "frekuensi": {"tipe": "bilangan_bulat", "min": 0, "wajib_isi": true},
+        "persen_komentar": {"tipe": "angka", "min": 0, "maks": 100},
+        "ranking": {"tipe": "bilangan_bulat", "min": 1, "wajib_isi": true},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "teks_bersih": {
+      "file": "teks_bersih_{responden}",
+      "sumber": "text-analytics-mahasiswa.ipynb sel 21",
+      "kunci_unik": ["id_komentar"],
+      "kolom": {
+        "response_id": {"tipe": "teks", "wajib_isi": true},
+        "teks_komentar": {"tipe": "teks", "wajib_isi": true},
+        "teks_bersih": {"tipe": "teks"},
+        "aspek": {"tipe": "teks"},
+        "id_komentar": {"tipe": "teks", "wajib_isi": true},
+        "jenis_pertanyaan": {"tipe": "teks"},
+        "segmen_responden": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "aspek_komentar": {
+      "file": "aspek_komentar_{responden}",
+      "sumber": "text-analytics-mahasiswa.ipynb sel 21",
+      "kunci_unik": ["id_komentar", "aspek"],
+      "kolom": {
+        "response_id": {"tipe": "teks", "wajib_isi": true},
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "id_komentar": {"tipe": "teks", "wajib_isi": true},
+        "segmen_responden": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "kata_teratas": {
+      "file": "kata_teratas_{responden}",
+      "sumber": "text-analytics-mahasiswa.ipynb sel 19",
+      "kunci_unik": ["segmen", "kata"],
+      "kolom": {
+        "kata": {"tipe": "teks", "wajib_isi": true},
+        "frekuensi": {"tipe": "bilangan_bulat", "min": 1, "wajib_isi": true},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "mds_titik_aspek": {
+      "file": "mds_titik_aspek_{responden}",
+      "sumber": "mds-mahasiswa.ipynb sel 17",
+      "kunci_unik": ["segmen", "aspek"],
+      "kolom": {
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "dim1": {"tipe": "angka", "wajib_isi": true},
+        "dim2": {"tipe": "angka", "wajib_isi": true},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "mds_titik_aspek_3d": {
+      "file": "mds_titik_aspek_3d_{responden}",
+      "sumber": "perluasan mds-mahasiswa.ipynb sel 17 (n_components=3)",
+      "kunci_unik": ["segmen", "aspek"],
+      "kolom": {
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "dim1": {"tipe": "angka", "wajib_isi": true},
+        "dim2": {"tipe": "angka", "wajib_isi": true},
+        "dim3": {"tipe": "angka", "wajib_isi": true},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "mds_responden": {
+      "file": "mds_responden_{responden}",
+      "sumber": "mds-mahasiswa.ipynb sel 11",
+      "kunci_unik": ["response_id"],
+      "kolom": {
+        "response_id": {"tipe": "teks", "wajib_isi": true},
+        "dim1": {"tipe": "angka", "wajib_isi": true},
+        "dim2": {"tipe": "angka", "wajib_isi": true},
+        "segmen_responden": {"tipe": "teks"}
+      }
+    },
+    "mds_vektor_aspek": {
+      "file": "mds_vektor_aspek_{responden}",
+      "sumber": "mds-mahasiswa.ipynb sel 15",
+      "kunci_unik": ["segmen", "aspek"],
+      "kolom": {
+        "aspek": {"tipe": "teks", "wajib_isi": true},
+        "korelasi_dim1": {"tipe": "angka", "min": -1, "maks": 1},
+        "korelasi_dim2": {"tipe": "angka", "min": -1, "maks": 1},
+        "segmen": {"tipe": "teks", "wajib_isi": true}
+      }
+    },
+    "mds_stress": {
+      "file": "mds_stress_{responden}",
+      "sumber": "mds-mahasiswa.ipynb sel 19 (+ baris mds_aspek_3d)",
+      "kunci_unik": ["segmen", "analisis"],
+      "kolom": {
+        "analisis": {"tipe": "teks", "pilihan": ["mds_responden_2d", "mds_aspek_2d", "mds_aspek_3d"], "wajib_isi": true},
+        "stress1": {"tipe": "angka", "min": 0, "wajib_isi": true},
+        "interpretasi": {"tipe": "teks", "pilihan": ["sangat baik", "baik", "cukup", "kurang baik"]},
+        "segmen": {"tipe": "teks", "wajib_isi": true},
+        "n_responden": {"tipe": "bilangan_bulat", "min": 0},
+        "n_aspek": {"tipe": "bilangan_bulat", "min": 0}
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# Rahasia & konfigurasi lokal
+.env
+secrets/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+frontend/dist/
+backend/coverage/
+
+# Airflow lokal
+airflow/logs/
+airflow/airflow.db
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

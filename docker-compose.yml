@@ -1,0 +1,267 @@
+# ============================================================================
+#  SatisView — Docker Compose
+#  Google Drive → (Airflow) → docker volume → HDFS → preprocessing/analisis
+#  → HDFS → PostgreSQL → API → Dashboard (React)
+#
+#  Jalankan:   cp .env.example .env   &&   docker compose up -d --build
+#  Dashboard:  http://localhost:3000      Airflow:  http://localhost:8080
+#  HDFS UI:    http://localhost:9870
+# ============================================================================
+name: satisview
+
+x-airflow-common: &airflow-common
+  build:
+    context: ./airflow
+  image: satisview/airflow:2.10.5-satisview1.2.0
+  environment: &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${AIRFLOW_DB_USER:-airflow}:${AIRFLOW_DB_PASSWORD:-airflow}@airflow-db/${AIRFLOW_DB_NAME:-airflow}
+    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY:-}
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: Asia/Jakarta
+    AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: Asia/Jakarta
+    AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY:-satisview-ganti-secret-ini}
+    AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "false"
+    AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
+    AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL: "60"
+    PYTHONPATH: /opt/airflow/include
+    # --- SatisView pipeline ---
+    SATISVIEW_DATA_DIR: /opt/satisview/data
+    SATISVIEW_CONTRACT_FILE: /opt/satisview/contracts/data_contract.json
+    WEBHDFS_URL: http://namenode:9870/webhdfs/v1
+    HDFS_USER: root
+    SATISVIEW_PG_HOST: postgres
+    SATISVIEW_PG_PORT: "5432"
+    SATISVIEW_PG_USER: ${POSTGRES_USER:-satisview}
+    SATISVIEW_PG_PASSWORD: ${POSTGRES_PASSWORD:-satisview}
+    DASHBOARD_DB_USER: ${DASHBOARD_DB_USER:-dashboard_reader}
+    SATISVIEW_SCHEDULE: "${SATISVIEW_SCHEDULE:-0 */6 * * *}"
+    SATISVIEW_REPORT_FILENAME: ${SATISVIEW_REPORT_FILENAME:-SatisView_Report.pdf}
+    SATISVIEW_PREPROCESSING_MODULE: ${SATISVIEW_PREPROCESSING_MODULE:-satisview.preprocessing}
+    SATISVIEW_ANALYSIS_MODULE: ${SATISVIEW_ANALYSIS_MODULE:-satisview.analysis}
+    SATISVIEW_MIN_RESPONDEN_MDS: ${SATISVIEW_MIN_RESPONDEN_MDS:-10}
+    SATISVIEW_MAX_GAGAL_KONVERSI: ${SATISVIEW_MAX_GAGAL_KONVERSI:-0.01}
+    GDRIVE_DATA_FOLDER_ID: ${GDRIVE_DATA_FOLDER_ID:-1eGAoqvFkWy0qmNz_hFyMgY8kzQaGntJ7}
+    GDRIVE_REPORT_FOLDER_ID: ${GDRIVE_REPORT_FOLDER_ID:-1USXnj85DRgiZ84qoBUAIWAhg7M6VS6RG}
+    GDRIVE_API_KEY: ${GDRIVE_API_KEY:-}
+    GDRIVE_SERVICE_ACCOUNT_FILE: /opt/satisview/secrets/service-account.json
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/include:/opt/airflow/include
+    - ./contracts:/opt/satisview/contracts:ro
+    - ./secrets:/opt/satisview/secrets:ro
+    - airflow_logs:/opt/airflow/logs
+    - satisview_data:/opt/satisview/data
+  user: "${AIRFLOW_UID:-50000}:0"
+  networks: [satisview]
+  depends_on: &airflow-common-depends-on
+    airflow-db:
+      condition: service_healthy
+    postgres:
+      condition: service_healthy
+
+services:
+  # ---------------------------------------------------------------- HDFS ----
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    platform: linux/amd64
+    container_name: satisview-namenode
+    hostname: namenode
+    restart: unless-stopped
+    environment:
+      CLUSTER_NAME: satisview
+    env_file: ./hadoop/hadoop.env
+    ports:
+      - "${HDFS_UI_PORT:-9870}:9870"
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name
+    networks: [satisview]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9870/ >/dev/null || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    platform: linux/amd64
+    container_name: satisview-datanode
+    hostname: datanode
+    restart: unless-stopped
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+    env_file: ./hadoop/hadoop.env
+    volumes:
+      - hadoop_datanode:/hadoop/dfs/data
+    networks: [satisview]
+    depends_on:
+      namenode:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9864/ >/dev/null || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+
+  # ---------------------------------------------- PostgreSQL (data) ----------
+  postgres:
+    image: postgres:16-alpine
+    container_name: satisview-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-satisview}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-satisview}
+      POSTGRES_DB: ${POSTGRES_DB:-satisview}
+      DASHBOARD_DB_USER: ${DASHBOARD_DB_USER:-dashboard_reader}
+      DASHBOARD_DB_PASSWORD: ${DASHBOARD_DB_PASSWORD:-dashboard_reader}
+      TZ: Asia/Jakarta
+    ports:
+      - "${POSTGRES_HOST_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+    networks: [satisview]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-satisview} -d ${POSTGRES_DB:-satisview}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ------------------------------------------ PostgreSQL (metadata Airflow) -
+  airflow-db:
+    image: postgres:16-alpine
+    container_name: satisview-airflow-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${AIRFLOW_DB_USER:-airflow}
+      POSTGRES_PASSWORD: ${AIRFLOW_DB_PASSWORD:-airflow}
+      POSTGRES_DB: ${AIRFLOW_DB_NAME:-airflow}
+    volumes:
+      - airflow_db_data:/var/lib/postgresql/data
+    networks: [satisview]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${AIRFLOW_DB_USER:-airflow} -d ${AIRFLOW_DB_NAME:-airflow}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ---------------------------------------------------------- Airflow -------
+  airflow-init:
+    <<: *airflow-common
+    container_name: satisview-airflow-init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        mkdir -p /opt/airflow/logs /opt/satisview/data
+        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow/logs /opt/satisview/data
+        chmod -R g+rwX /opt/airflow/logs /opt/satisview/data
+        exec /entrypoint airflow version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: "true"
+      _AIRFLOW_WWW_USER_CREATE: "true"
+      _AIRFLOW_WWW_USER_USERNAME: ${AIRFLOW_ADMIN_USER:-admin}
+      _AIRFLOW_WWW_USER_PASSWORD: ${AIRFLOW_ADMIN_PASSWORD:-admin}
+      _AIRFLOW_WWW_USER_FIRSTNAME: SatisView
+      _AIRFLOW_WWW_USER_LASTNAME: Admin
+      _AIRFLOW_WWW_USER_EMAIL: admin@satisview.local
+    user: "0:0"
+    restart: "no"
+
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: satisview-airflow-webserver
+    command: webserver
+    restart: unless-stopped
+    ports:
+      - "${AIRFLOW_PORT:-8080}:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: satisview-airflow-scheduler
+    command: scheduler
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+      namenode:
+        condition: service_healthy
+
+  # -------------------------------------------------------- API dashboard ---
+  backend:
+    build:
+      context: ./backend
+    image: satisview/backend:1.2.0
+    container_name: satisview-backend
+    restart: unless-stopped
+    environment:
+      PORT: "4000"
+      PGHOST: postgres
+      PGPORT: "5432"
+      PGUSER: ${DASHBOARD_DB_USER:-dashboard_reader}
+      PGPASSWORD: ${DASHBOARD_DB_PASSWORD:-dashboard_reader}
+      RAW_DB: raw_data
+      WEBHDFS_URL: http://namenode:9870/webhdfs/v1
+      HDFS_USER: root
+      HDFS_REPORT_PATH: /satisview/report/${SATISVIEW_REPORT_FILENAME:-SatisView_Report.pdf}
+      CACHE_TTL_SECONDS: "30"
+      SATISVIEW_MIN_RESPONDEN_MDS: ${SATISVIEW_MIN_RESPONDEN_MDS:-10}
+      TZ: Asia/Jakarta
+    networks: [satisview]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4000/api/health/live"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  # ------------------------------------------------------------ Dashboard ---
+  frontend:
+    build:
+      context: ./frontend
+    image: satisview/frontend:1.2.0
+    container_name: satisview-frontend
+    restart: unless-stopped
+    ports:
+      - "${DASHBOARD_PORT:-3000}:80"
+    networks: [satisview]
+    depends_on:
+      backend:
+        condition: service_started
+
+networks:
+  satisview:
+    name: satisview-net
+
+volumes:
+  satisview_data:        # data hasil unduhan Google Drive & staging pipeline
+  hadoop_namenode:
+  hadoop_datanode:
+  postgres_data:
+  airflow_db_data:
+  airflow_logs:
