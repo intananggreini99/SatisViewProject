@@ -7,4 +7,4 @@ pipeline sehingga bisa diuji tanpa Airflow:
     -> analisis -> validasi -> HDFS -> PostgreSQL -> dashboard
 """
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"

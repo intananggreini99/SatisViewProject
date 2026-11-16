@@ -12,15 +12,17 @@ hanya STRUKTUR sheet respons Google Form:
   ``"1 - Tidak Baik"`` ... ``"4 - Sangat Baik"``, bagian Klinik bersyarat.
 * Dosen & Karyawan: judul kolom persis sheet ``... (Responses)`` di Google
   Drive, jawaban ``"Sangat Tidak Puas"`` ... ``"Sangat Puas"``.
-* Mitra Kerja Sama & Mitra Pengadaan: struktur perkiraan (sheet aslinya
-  belum dapat dibaca), dipakai untuk menguji deteksi kolom otomatis.
+* Mitra Kerja Sama & Mitra Pengadaan: judul kolom, opsi & skala persis sheet
+  asli (diambil dari contracts/kuesioner.json), jawaban acak.
 """
 
 from __future__ import annotations
 
 import io
+import json
 import random
 from datetime import datetime, timedelta
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -425,64 +427,47 @@ KOMENTAR_KARYAWAN = [
     ],
 ]
 
-# ------------------------------------------------------------- Mitra (perkiraan)
-MITRA_KS_GRID = [
-    ("Proses Penjajakan Kerja Sama", 3.2, False, [
-        "Seberapa puas Anda dengan kemudahan memperoleh informasi peluang kerja sama dengan PENS?",
-        "Bagaimana penilaian Anda terhadap kejelasan proses penjajakan hingga penandatanganan kerja sama?",
-    ]),
-    ("Administrasi Kerja Sama", 2.9, False, [
-        "Seberapa puas Anda dengan kecepatan penyusunan dokumen kerja sama (MoU/MoA/PKS)?",
-        "Bagaimana penilaian Anda terhadap kemudahan persyaratan administrasi kerja sama?",
-    ]),
-    ("Komunikasi dan Koordinasi", 3.3, False, [
-        "Seberapa puas Anda dengan kecepatan respons komunikasi dari pihak PENS?",
-        "Bagaimana penilaian Anda terhadap koordinasi pelaksanaan kegiatan kerja sama?",
-    ]),
-    ("Pelaksanaan Kerja Sama", 3.1, False, [
-        "Seberapa puas Anda dengan kesesuaian pelaksanaan kegiatan dengan rencana kerja sama?",
-        "Bagaimana penilaian Anda terhadap dukungan sumber daya PENS selama pelaksanaan kerja sama?",
-    ]),
-    ("Manfaat Kerja Sama", 3.4, False, [
-        "Sejauh mana kerja sama memberikan manfaat nyata bagi instansi Anda?",
-        "Seberapa besar minat instansi Anda untuk melanjutkan kerja sama?",
-    ]),
-]
-MITRA_PB_GRID = [
-    ("Informasi Pengadaan", 3.1, False, [
-        "Seberapa puas Anda dengan kejelasan dan keterbukaan informasi paket pengadaan?",
-        "Bagaimana penilaian Anda terhadap kemudahan memahami dokumen pengadaan?",
-    ]),
-    ("Proses Pemilihan Penyedia", 3.2, False, [
-        "Seberapa puas Anda dengan transparansi dan keadilan proses pemilihan penyedia?",
-        "Bagaimana penilaian Anda terhadap kepatuhan jadwal tahapan pengadaan?",
-    ]),
-    ("Administrasi Kontrak", 3.0, False, [
-        "Seberapa puas Anda dengan kecepatan penyusunan dan penandatanganan kontrak?",
-        "Bagaimana penilaian Anda terhadap layanan perubahan kontrak (addendum)?",
-    ]),
-    ("Pembayaran", 2.6, False, [
-        "Seberapa puas Anda dengan ketepatan waktu pembayaran sesuai kontrak?",
-        "Bagaimana penilaian Anda terhadap kejelasan persyaratan dokumen penagihan?",
-    ]),
-    ("Komunikasi dan Koordinasi", 3.25, False, [
-        "Seberapa puas Anda dengan kemudahan menghubungi pejabat pengadaan?",
-        "Bagaimana penilaian Anda terhadap koordinasi selama pelaksanaan pekerjaan?",
-    ]),
-]
-KOMENTAR_MITRA_KS = [
-    "Penyusunan dokumen MoU bisa dipercepat dengan template standar",
-    "Komunikasi dengan koordinator kerja sama sudah responsif",
-    "Perlu laporan berkala hasil pelaksanaan kerja sama",
-    "Koordinasi kegiatan bersama sebaiknya dijadwalkan lebih awal",
-]
-KOMENTAR_MITRA_PB = [
-    "Pembayaran termin kadang terlambat dari jadwal kontrak",
-    "Informasi tender sebaiknya juga diumumkan lewat website kampus",
-    "Persyaratan dokumen penagihan perlu checklist yang jelas",
-    "Pejabat pengadaan cukup responsif saat dihubungi",
-]
+# ------------------------------------------------------------------- Mitra
+# Struktur PERSIS sheet Mitra asli (judul kolom, opsi, skala) diambil dari
+# contracts/kuesioner.json — kontrak yang juga dipakai form web SatisView.
+KONTRAK = json.loads((Path(__file__).resolve().parents[2] / "contracts" / "kuesioner.json").read_text(encoding="utf-8"))
 
+# rata-rata sasaran per aspek grid (skala 1-4)
+MITRA_KS_RATA = {"Komunikasi dan Koordinasi": 3.45, "Pelaksanaan Kerja sama": 3.4, "Manfaat dan Dampak": 3.3,
+                 "Keberlanjutan": 3.6, "Relevansi Program": 3.5, "Keseluruhan": 3.55}
+MITRA_PB_RATA = {"Proses Kerja Sama": 3.5, "Pelaksanaan": 3.45, "Hasil": 3.4, "Dampak": 3.35, "Relevansi": 3.4,
+                 "Keberlanjutan": 3.6, "Keseluruhan": 3.55}
+ANOMALI_SHEET_ASLI = {
+    "mitra_kerjasama": {
+        (0, "Jenis Instansi"): "Lembaga Pendidikan",
+        (1, "Bentuk kerja sama yang pernah dilakukan"): "Masih awal",
+        (2, "Bentuk kerja sama yang pernah dilakukan"): "Penelitian, Pengabdian masyarakat, Magang, ",
+    },
+    "mitra_pengadaan": {
+        (0, "Jenis Mitra"): "Penyedia Jasa Alih Daya",
+        (1, "Hasil [Seberapa sesuai pelaksanaan pekerjaan dengan rencana / kontrak yang disepakati]"): np.nan,
+        (2, "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3 pilihan)"): np.nan,
+        (3, "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3 pilihan)"): "Perencanaan Kebutuhan",
+    },
+}
+
+KOMENTAR_MITRA_KS = {
+    "kelebihan": ["Komunikasi dan respons yang baik serta cepat", "Kooperatif dan memberi banyak ilmu",
+                  "Keterbukaan untuk diskusi program", "Dosen pendamping profesional", "-"],
+    "kendala": ["Tidak ada kendala berarti", "Koordinasi jadwal kegiatan kadang mendadak",
+                "Belum ada kontak person khusus kerja sama", "Proses administrasi MoA cukup lama", "-"],
+    "perbaikan": ["Perbanyak kolaborasi penelitian dan magang", "Tindak lanjut hasil kerja sama lebih rutin",
+                  "Sinkronisasi kurikulum dengan kebutuhan industri", "Program pengabdian yang berdampak bagi masyarakat",
+                  "Tidak ada"],
+}
+KOMENTAR_MITRA_PB = {
+    "paling_memuaskan": ["Pembayaran tepat waktu", "Proses administrasi cepat dan tanggap", "Profesional dan transparan",
+                         "Komunikasi mudah", "Prosesnya cepat"],
+    "kendala": ["Tidak ada", "Spesifikasi barang kurang jelas", "Pencairan pembayaran kadang lama",
+                "Pengurangan anggaran", "Belum ada kendala"],
+    "saran_perbaikan": ["Spesifikasi barang yang diminta supaya lebih jelas", "Semoga kerja sama tetap berlangsung",
+                        "Mempertahankan kualitas yang sekarang", "Informasi pengadaan lewat website", "-"],
+}
 
 # ============================================================ pembangkit acak
 def _skor(rng: np.random.Generator, mean: float, umum: float, kelompok: float, fasilitas: bool) -> int:
@@ -563,6 +548,43 @@ def _build_grid_form(
     return pd.DataFrame(rows)
 
 
+def _build_dari_kontrak(key: str, rata: dict[str, float], komentar: dict[str, list[str]], n: int, seed: int,
+                        mulai: datetime) -> pd.DataFrame:
+    """Respons sintetis berstruktur persis seperti sheet asli (kolom & opsi dari kontrak)."""
+    rng = np.random.default_rng(seed)
+    pyr = random.Random(seed)
+    waktu = _waktu(rng, n, mulai)
+    rows = []
+    for i in range(n):
+        umum = rng.normal(0, 0.35)
+        row = {KONTRAK["kolom_waktu"]: waktu[i].strftime("%d/%m/%Y %H:%M:%S")}
+        for bagian in KONTRAK["kelompok"][key]["bagian"]:
+            for q in bagian["pertanyaan"]:
+                jenis = q["jenis"]
+                if jenis == "grid":
+                    mean = rata[q["judul"]]
+                    kelompok = rng.normal(0, 0.15)
+                    for b in q["baris"]:
+                        row[b["kolom"]] = q["skala"][_skor(rng, mean, umum, kelompok, False) - 1]
+                elif jenis == "teks_singkat":
+                    row[q["kolom"]] = f"Instansi Contoh {i + 1}"
+                elif jenis == "paragraf":
+                    row[q["kolom"]] = pyr.choice(komentar[q["id"]])
+                elif jenis in ("pilihan_ganda", "dropdown"):
+                    row[q["kolom"]] = pyr.choice(q["opsi"])
+                elif jenis == "kotak_centang":
+                    k = int(rng.integers(1, (q.get("maks_pilihan") or 3) + 1))
+                    pilih = set(pyr.sample(q["opsi"], k=min(k, len(q["opsi"]))))
+                    row[q["kolom"]] = ", ".join(o for o in q["opsi"] if o in pilih)
+        rows.append(row)
+    df = pd.DataFrame(rows)
+    # Kasus tepi yang memang ada di sheet asli Mitra (isian "Yang lain", koma
+    # berlebih pada kotak centang, sel kosong pada grid/prioritas).
+    for (i, kolom), nilai in ANOMALI_SHEET_ASLI.get(key, {}).items():
+        df.loc[i, kolom] = nilai
+    return df
+
+
 def build_sample_frames(empty: tuple[str, ...] = ()) -> dict[str, pd.DataFrame]:
     frames = {
         "mahasiswa": build_mahasiswa(),
@@ -574,22 +596,11 @@ def build_sample_frames(empty: tuple[str, ...] = ()) -> dict[str, pd.DataFrame]:
             KARYAWAN_GRID, "Unit Kerja", UNIT_KERJA, KARYAWAN_PRIORITAS, KARYAWAN_PILIHAN, KARYAWAN_TEKS,
             KOMENTAR_KARYAWAN, n=72, seed=33, mulai=datetime(2026, 10, 17, 8, 0, 0),
         ),
-        "mitra_kerjasama": _build_grid_form(
-            MITRA_KS_GRID, "Jenis Instansi", ["Instansi Pemerintah", "Perguruan Tinggi", "Lembaga Penelitian", "Industri"],
-            "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 2)",
-            [(a, w) for a, w in zip([g[0] for g in MITRA_KS_GRID], [0.3, 0.6, 0.2, 0.3, 0.1])],
-            ["Saran dan masukan Anda untuk peningkatan kerja sama dengan PENS"], [KOMENTAR_MITRA_KS],
-            n=24, seed=44, mulai=datetime(2026, 9, 1, 9, 0, 0),
-            ekstra={"Nama Instansi": ["Instansi A", "Instansi B", "Instansi C"]},
+        "mitra_kerjasama": _build_dari_kontrak(
+            "mitra_kerjasama", MITRA_KS_RATA, KOMENTAR_MITRA_KS, n=24, seed=44, mulai=datetime(2026, 9, 11, 9, 0, 0)
         ),
-        "mitra_pengadaan": _build_grid_form(
-            MITRA_PB_GRID, "Jenis Penyedia",
-            ["Penyedia Jasa Konstruksi", "Jasa Konsultasi", "Penyedia Barang", "Penyedia Perawatan dan Perbaikan"],
-            "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 2)",
-            [(a, w) for a, w in zip([g[0] for g in MITRA_PB_GRID], [0.2, 0.2, 0.3, 0.7, 0.1])],
-            ["Saran dan masukan untuk perbaikan layanan pengadaan PENS"], [KOMENTAR_MITRA_PB],
-            n=18, seed=55, mulai=datetime(2026, 9, 6, 9, 0, 0),
-            ekstra={"Nama Perusahaan": ["CV Contoh", "PT Contoh", "UD Contoh"]},
+        "mitra_pengadaan": _build_dari_kontrak(
+            "mitra_pengadaan", MITRA_PB_RATA, KOMENTAR_MITRA_PB, n=18, seed=55, mulai=datetime(2026, 9, 12, 9, 0, 0)
         ),
     }
     for key in empty:

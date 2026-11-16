@@ -65,6 +65,10 @@ DASHBOARD_DB_USER = _env("DASHBOARD_DB_USER")
 SCHEDULE = _env("SATISVIEW_SCHEDULE", "0 */6 * * *")
 if SCHEDULE and SCHEDULE.lower() in {"none", "manual", "off"}:
     SCHEDULE = None
+# Pemeriksaan batch respons form web (Kafka -> HDFS) yang baru masuk.
+FORM_WEB_SCHEDULE = _env("SATISVIEW_FORM_WEB_SCHEDULE", "*/15 * * * *")
+if FORM_WEB_SCHEDULE and FORM_WEB_SCHEDULE.lower() in {"none", "manual", "off"}:
+    FORM_WEB_SCHEDULE = None
 
 # --- Modul preprocessing & analisis ----------------------------------------
 # Default menjalankan kode tim (satisview/tim/). Bisa diarahkan ke modul lain
@@ -92,6 +96,11 @@ class HdfsPaths:
     @staticmethod
     def raw_csv(key: str) -> str:
         return f"{HDFS_ROOT}/raw/csv/kuisioner_{key}.csv"
+
+    @staticmethod
+    def form_web_dir(key: str) -> str:
+        """Batch respons form web yang ditulis Kafka consumer."""
+        return f"{HDFS_ROOT}/raw/form_web/{key}"
 
     @staticmethod
     def report() -> str:

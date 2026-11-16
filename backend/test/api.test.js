@@ -2,21 +2,23 @@
 // (mis. PGHOST=localhost PGPORT=5433 PGUSER=satisview PGPASSWORD=... TEST_WITH_DB=1 npm test).
 import assert from 'node:assert/strict';
 import { after, before, describe, it } from 'node:test';
-import { createApp } from '../src/app.js';
 import { closeAll } from '../src/db.js';
 import { humanize, tableName } from '../src/services/dashboard.js';
+import { startApp } from './helpers/setup.js';
 
-let server;
+let ctx;
 let base;
+let headers;
 
 before(async () => {
-  server = createApp().listen(0);
-  await new Promise((resolve) => server.once('listening', resolve));
-  base = `http://127.0.0.1:${server.address().port}/api`;
+  ctx = await startApp();
+  base = ctx.base;
+  const { body } = await ctx.login();
+  headers = { Authorization: `Bearer ${body.token}` };
 });
 
 after(async () => {
-  await new Promise((resolve) => server.close(resolve));
+  await ctx.close();
   await closeAll();
 });
 
@@ -28,13 +30,13 @@ describe('API dasar', () => {
   });
 
   it('kelompok responden yang tidak dikenal -> 404', async () => {
-    const res = await fetch(`${base}/groups/alumni/kpi`);
+    const res = await fetch(`${base}/groups/alumni/kpi`, { headers });
     assert.equal(res.status, 404);
     assert.match((await res.json()).error, /tidak dikenal/);
   });
 
   it('parameter terlalu panjang ditolak', async () => {
-    const res = await fetch(`${base}/groups/mahasiswa/kpi?segmen=${'x'.repeat(300)}`);
+    const res = await fetch(`${base}/groups/mahasiswa/kpi?segmen=${'x'.repeat(300)}`, { headers });
     assert.equal(res.status, 400);
   });
 
@@ -56,7 +58,7 @@ describe('fungsi bantu', () => {
 
 describe('API dengan PostgreSQL', { skip: process.env.TEST_WITH_DB !== '1' }, () => {
   const get = async (path) => {
-    const res = await fetch(`${base}${path}`);
+    const res = await fetch(`${base}${path}`, { headers });
     assert.equal(res.status, 200, path);
     return res.json();
   };

@@ -23,3 +23,6 @@ airflow/airflow.db
 .idea/
 .DS_Store
 Thumbs.db
+
+# Uji end-to-end
+e2e/hasil/

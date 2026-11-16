@@ -1,9 +1,19 @@
-// Pembungkus fetch: timeout, JSON, dan pesan error yang ramah pengguna.
+// Pembungkus fetch: timeout, JSON, token login, dan pesan error yang ramah pengguna.
 export class ApiError extends Error {
-  constructor(message, status) {
+  constructor(message, status, body = null) {
     super(message);
     this.status = status;
+    this.body = body;
   }
+}
+
+// Token JWT pengelola & penangan sesi berakhir diisi oleh AuthProvider.
+const auth = { token: null, onUnauthorized: null };
+export function setAuthToken(token) {
+  auth.token = token;
+}
+export function setUnauthorizedHandler(handler) {
+  auth.onUnauthorized = handler;
 }
 
 function anySignal(signals) {
@@ -19,27 +29,55 @@ function anySignal(signals) {
   return controller.signal;
 }
 
-export async function fetchJson(url, { signal, timeoutMs = 20_000 } = {}) {
+async function request(url, { method = 'GET', body, signal, timeoutMs = 20_000, withAuth = true, raw = false } = {}) {
   const timeout = AbortSignal.timeout(timeoutMs);
   const combined = signal ? anySignal([signal, timeout]) : timeout;
+  const headers = { Accept: raw ? '*/*' : 'application/json' };
+  if (body !== undefined) headers['Content-Type'] = 'application/json';
+  if (withAuth && auth.token) headers.Authorization = `Bearer ${auth.token}`;
   let response;
   try {
-    response = await fetch(url, { signal: combined, headers: { Accept: 'application/json' } });
+    response = await fetch(url, {
+      method,
+      signal: combined,
+      headers,
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
   } catch (error) {
     if (signal?.aborted) throw error;
     if (timeout.aborted) throw new ApiError('Server terlalu lama merespons. Coba lagi.', 0);
-    throw new ApiError('Tidak dapat terhubung ke server dashboard.', 0);
+    throw new ApiError('Tidak dapat terhubung ke server SatisView. Periksa koneksi internet Anda.', 0);
   }
-  let body = null;
+  if (raw && response.ok) return response;
+  let data = null;
   try {
-    body = await response.json();
+    data = await response.json();
   } catch {
-    body = null;
+    data = null;
   }
   if (!response.ok) {
-    throw new ApiError(body?.error ?? `Permintaan gagal (HTTP ${response.status}).`, response.status);
+    if (response.status === 401 && withAuth && auth.token) auth.onUnauthorized?.(data?.error);
+    throw new ApiError(data?.error ?? `Permintaan gagal (HTTP ${response.status}).`, response.status, data);
   }
-  return body;
+  return data;
+}
+
+export const fetchJson = (url, options = {}) => request(url, options);
+export const postJson = (url, body, options = {}) => request(url, { ...options, method: 'POST', body });
+
+/** Unduh file terlindungi (mis. laporan PDF) memakai token lalu simpan lewat <a download>. */
+export async function downloadFile(url, filename) {
+  const response = await request(url, { raw: true, timeoutMs: 120_000 });
+  const blob = await response.blob();
+  const href = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = href;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(href), 30_000);
+  return blob.size;
 }
 
 const enc = encodeURIComponent;
@@ -55,4 +93,8 @@ export const api = {
     `&q=${enc(search ?? '')}&limit=${limit}&offset=${offset}`,
   reportStatus: () => '/api/report/status',
   report: () => '/api/report',
+  login: () => '/api/auth/masuk',
+  me: () => '/api/auth/saya',
+  logout: () => '/api/auth/keluar',
+  kuesioner: (group) => `/api/kuesioner/${enc(group)}`,
 };

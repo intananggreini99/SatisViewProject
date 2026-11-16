@@ -1,5 +1,5 @@
 import { TABS } from '../lib/constants.js';
-import { DownloadIcon, MenuIcon } from './Icons.jsx';
+import { DownloadIcon, LogOutIcon, MenuIcon } from './Icons.jsx';
 import Logo from './Logo.jsx';
 
 /**
@@ -7,7 +7,7 @@ import Logo from './Logo.jsx';
  * dan tombol Report. Di layar < 1024 px menu analisis disembunyikan dan dipindah
  * ke sidebar (Drawer) yang dibuka lewat tombol menu.
  */
-export default function Header({ tab, onTabChange, onMenu, onReport, reportBusy }) {
+export default function Header({ tab, onTabChange, onMenu, onReport, reportBusy, pengguna, onLogout }) {
   const onKeyDown = (event) => {
     const index = TABS.findIndex((t) => t.key === tab);
     let next = null;
@@ -80,6 +80,23 @@ export default function Header({ tab, onTabChange, onMenu, onReport, reportBusy 
           <span className="hidden sm:inline">{reportBusy ? 'Memeriksa…' : 'Report'}</span>
           <DownloadIcon size={18} className={reportBusy ? 'animate-pulse' : ''} />
         </button>
+        {pengguna && (
+          <div className="flex shrink-0 items-center gap-2">
+            <span className="hidden max-w-[180px] flex-col text-right leading-tight xl:flex" title={pengguna.username}>
+              <span className="truncate text-[13px] font-semibold text-brand-900">{pengguna.nama}</span>
+              <span className="text-[11px] text-ink-muted capitalize">{pengguna.peran}</span>
+            </span>
+            <button
+              type="button"
+              onClick={onLogout}
+              className="grid size-10 place-items-center rounded-full border border-line text-brand transition hover:border-brand-200 hover:bg-brand-50"
+              aria-label={`Keluar (${pengguna.nama})`}
+              title="Keluar"
+            >
+              <LogOutIcon size={18} />
+            </button>
+          </div>
+        )}
       </div>
     </header>
   );

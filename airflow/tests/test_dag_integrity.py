@@ -26,6 +26,7 @@ def test_expected_dags(dagbag):
         "preprocessing_analysis",
         "ingestion_raw_data_kuisioner",
         "ingestion_analysis_result",
+        "form_web_to_pipeline",
     }
 
 
@@ -43,3 +44,20 @@ def test_gdrive_dag_triggers_followups(dagbag):
     dag = dagbag.dags["gdrive_to_hdfs"]
     load = dag.get_task("load_volume_to_hdfs")
     assert load.downstream_task_ids == {"trigger_preprocessing_analysis", "trigger_ingestion_raw_data_kuisioner"}
+
+
+def test_ingestion_divalidasi_per_kelompok(dagbag):
+    """Arsitektur: ingestion_analysis_result, ingestion_raw_data_kuisioner -> validation_ingestion."""
+    for dag_id in ["ingestion_raw_data_kuisioner", "ingestion_analysis_result"]:
+        dag = dagbag.dags[dag_id]
+        for group in ["mahasiswa", "dosen", "karyawan", "mitra_kerjasama", "mitra_pengadaan"]:
+            ingest = dag.get_task(f"ingest_{group}")
+            assert ingest.downstream_task_ids == {f"validation_ingestion_{group}"}
+            assert dag.get_task(f"validation_ingestion_{group}").retries == 0
+
+
+def test_form_web_memicu_pipeline(dagbag):
+    dag = dagbag.dags["form_web_to_pipeline"]
+    cek = dag.get_task("cek_batch_form_web_baru")
+    assert cek.downstream_task_ids >= {"trigger_preprocessing_analysis", "trigger_ingestion_raw_data_kuisioner"}
+    assert dag.get_task("simpan_penanda").upstream_task_ids >= {"trigger_preprocessing_analysis", "trigger_ingestion_raw_data_kuisioner"}

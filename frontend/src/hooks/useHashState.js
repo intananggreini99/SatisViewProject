@@ -1,12 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
 import { GROUPS, SEMUA, TABS } from '../lib/constants.js';
 
-// Status tampilan disimpan di URL (#/mahasiswa/kpi?segmen=...) agar bisa
-// dibagikan, di-bookmark, dan tombol Back browser tetap berfungsi.
+// Status tampilan dashboard disimpan di URL (#/dashboard/mahasiswa/kpi?segmen=...)
+// agar bisa dibagikan, di-bookmark, dan tombol Back browser tetap berfungsi.
+const PREFIX = 'dashboard';
+
 function parse() {
   const raw = window.location.hash.replace(/^#\/?/, '');
   const [path, query = ''] = raw.split('?');
-  const [groupKey, tabKey] = path.split('/');
+  const parts = path.split('/');
+  if (parts[0] === PREFIX) parts.shift();
+  const [groupKey, tabKey] = parts;
   const params = new URLSearchParams(query);
   const group = GROUPS.some((g) => g.key === groupKey) ? groupKey : GROUPS[0].key;
   const tab = TABS.some((t) => t.key === tabKey) ? tabKey : TABS[0].key;
@@ -15,7 +19,7 @@ function parse() {
 
 function build({ group, tab, segment }) {
   const query = segment && segment !== SEMUA ? `?segmen=${encodeURIComponent(segment)}` : '';
-  return `#/${group}/${tab}${query}`;
+  return `#/${PREFIX}/${group}/${tab}${query}`;
 }
 
 export function useHashState() {
@@ -25,7 +29,8 @@ export function useHashState() {
     const onHash = () => setState(parse());
     window.addEventListener('hashchange', onHash);
     window.addEventListener('popstate', onHash);
-    if (!window.location.hash) window.history.replaceState(null, '', build(parse()));
+    const lengkap = build(parse());
+    if (window.location.hash !== lengkap) window.history.replaceState(null, '', lengkap);
     return () => {
       window.removeEventListener('hashchange', onHash);
       window.removeEventListener('popstate', onHash);

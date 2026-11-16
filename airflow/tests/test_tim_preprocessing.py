@@ -110,19 +110,45 @@ def test_dosen_karyawan_judul_kolom_asli(hasil_preprocessing, key, segmen, n_asp
 
 
 @pytest.mark.parametrize(
-    "key, segmen, pii, grid",
+    "key, segmen, pii, aspek, teks",
     [
-        ("mitra_kerjasama", "Jenis Instansi", "Nama Instansi", sample_data.MITRA_KS_GRID),
-        ("mitra_pengadaan", "Jenis Penyedia", "Nama Perusahaan", sample_data.MITRA_PB_GRID),
+        ("mitra_kerjasama", "Jenis Instansi", "Nama Instansi",
+         ["Komunikasi dan Koordinasi", "Pelaksanaan Kerja sama", "Manfaat dan Dampak", "Keberlanjutan",
+          "Relevansi Program", "Keseluruhan"],
+         {"kelebihan", "kendala", "perbaikan"}),
+        ("mitra_pengadaan", "Jenis Mitra", "Nama Instansi Mitra",
+         ["Proses Kerja Sama", "Pelaksanaan", "Hasil", "Dampak", "Relevansi", "Keberlanjutan", "Keseluruhan"],
+         {"paling_memuaskan", "kendala", "saran_perbaikan"}),
     ],
 )
-def test_mitra_kolom_dideteksi_otomatis(hasil_preprocessing, key, segmen, pii, grid):
+def test_mitra_struktur_sheet_asli(hasil_preprocessing, key, segmen, pii, aspek, teks):
+    """Sheet Mitra asli: grid "Aspek [pertanyaan]" berskala Tidak/Kurang/Puas/Sangat (bukan Sangat Tidak Puas)."""
     tabel, meta = hasil_preprocessing[key]
     assert meta["kolom"]["segmen"] == segmen
     assert meta["kolom_pii_dibuang"] == [pii]
-    assert meta["aspek"] == [g[0] for g in grid]
-    assert len(meta["kolom"]["teks"]) == 1 and len(meta["kolom"]["kategori"]) == 1
+    assert meta["aspek"] == aspek
+    assert set(meta["kolom"]["teks"]) == teks and len(meta["kolom"]["kategori"]) == 1
+    assert not meta["kolom"]["tidak_ditemukan"]
+    assert meta["skala"] == {"min": 1, "maks": 4}
+    cek = meta["cek_konversi"][0]
+    assert cek["terisi_asli"] == cek["setelah_konversi"] and cek["di_luar_skala"] == 0
     assert len(tabel[meta["file"]["teks"]]) > 0
+
+
+def test_skala_mitra_tidak_puas_adalah_tingkat_terendah():
+    from satisview.tim.konfigurasi import konfigurasi
+
+    cfg = konfigurasi("mitra_kerjasama")
+    df = pd.DataFrame({"Keberlanjutan [x]": ["Tidak Butuh", "Kurang Butuh", "Butuh", "Sangat Butuh"],
+                       "Keseluruhan [y]": ["Tidak Puas", "Kurang Puas", "Puas", "Sangat puas"]})
+    skala, mapping = pre.deteksi_skala(df, list(df.columns), cfg)
+    assert skala == (1, 4)
+    assert list(pre.ambil_skor(df["Keberlanjutan [x]"], mapping)) == [1, 2, 3, 4]
+    assert list(pre.ambil_skor(df["Keseluruhan [y]"], mapping)) == [1, 2, 3, 4]
+    # sheet bergaya Dosen ("Sangat Tidak Puas" ada) -> "Tidak Puas" = 2
+    df2 = pd.DataFrame({"A [x]": ["Sangat Tidak Puas", "Tidak Puas", "Puas", "Sangat Puas"]})
+    skala2, mapping2 = pre.deteksi_skala(df2, ["A [x]"], cfg)
+    assert list(pre.ambil_skor(df2["A [x]"], mapping2)) == [1, 2, 3, 4]
 
 
 def test_pii_umum_dibuang_dan_judul_dinormalisasi():

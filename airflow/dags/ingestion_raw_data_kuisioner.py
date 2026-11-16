@@ -1,10 +1,15 @@
 """
 ### SatisView · 3a) ingestion_raw_data_kuisioner
 
-Langkah (f) untuk raw data: file CSV raw data respon kuisioner di HDFS
-(`/satisview/raw/csv/kuisioner_<responden>.csv`) diekstraksi lalu disimpan ke
-database PostgreSQL **raw_data** — satu file menjadi satu tabel
-(`kuisioner_<responden>`) dengan kolom dan isi sel sama seperti filenya.
+Langkah (f) untuk raw data: raw data respon kuisioner di HDFS — sheet Google
+Form (`/satisview/raw/csv/kuisioner_<responden>.csv`) ditambah respons form web
+dari Kafka consumer (`/satisview/raw/form_web/<responden>/batch_*.csv`) —
+disimpan ke database PostgreSQL **raw_data**, satu tabel per kelompok
+(`kuisioner_<responden>`, kolom sama dengan sheet + kolom `Sumber`).
+
+**validation_ingestion** lalu memastikan isi tabel sama dengan raw data di HDFS
+(jumlah baris per sumber, kolom, tanpa kolom data pribadi). Laporannya disimpan
+di `/satisview/validation/<responden>/validation_ingestion_raw.json`.
 """
 
 from __future__ import annotations
@@ -35,7 +40,13 @@ def ingestion_raw_data_kuisioner():
 
             return run_step(pipeline.ingest_raw, key)
 
-        ingest(group.key)
+        @task(task_id=f"validation_ingestion_{group.key}", retries=0)
+        def validation_ingestion(hasil: dict, key: str) -> dict:
+            from satisview import pipeline
+
+            return run_step(pipeline.validate_ingestion_raw, key)
+
+        validation_ingestion(ingest(group.key), group.key)
 
 
 ingestion_raw_data_kuisioner()

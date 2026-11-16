@@ -46,6 +46,7 @@
 
   --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-script: 'Parisienne', 'Segoe Script', cursive;
+  --font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
 
   --shadow-card: 0 1px 2px rgb(16 35 61 / 0.04), 0 8px 24px -12px rgb(20 72 122 / 0.16);
   --shadow-pop: 0 20px 44px -18px rgb(11 43 75 / 0.38);
@@ -145,4 +146,39 @@
 }
 .sv-table td {
   @apply border-t border-line px-3 py-2 text-sm text-ink;
+}
+
+/* ---------------------------------------------------------------- landing */
+.sv-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.sv-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@keyframes sv-pan {
+  0%,
+  18% {
+    transform: translateY(0);
+  }
+  50%,
+  68% {
+    transform: translateY(-34%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.sv-auto-pan {
+  animation: sv-pan 11s ease-in-out infinite;
+}
+.sv-delay-1 {
+  animation-delay: 1.5s;
+}
+.sv-delay-2 {
+  animation-delay: 3s;
 }

@@ -1,10 +1,11 @@
 # ============================================================================
 #  SatisView — Docker Compose
-#  Google Drive → (Airflow) → docker volume → HDFS → preprocessing/analisis
-#  → HDFS → PostgreSQL → API → Dashboard (React)
+#  Google Drive → (Airflow) → docker volume → HDFS ┐
+#  Form web → API → Kafka topic → Kafka consumer → HDFS ┤→ preprocessing/analisis
+#  → HDFS → PostgreSQL → API (login JWT) → Dashboard (React)
 #
 #  Jalankan:   cp .env.example .env   &&   docker compose up -d --build
-#  Dashboard:  http://localhost:3000      Airflow:  http://localhost:8080
+#  Web:        http://localhost:3000      Airflow:  http://localhost:8080
 #  HDFS UI:    http://localhost:9870
 # ============================================================================
 name: satisview
@@ -12,7 +13,7 @@ name: satisview
 x-airflow-common: &airflow-common
   build:
     context: ./airflow
-  image: satisview/airflow:2.10.5-satisview1.2.0
+  image: satisview/airflow:2.10.5-satisview1.3.0
   environment: &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${AIRFLOW_DB_USER:-airflow}:${AIRFLOW_DB_PASSWORD:-airflow}@airflow-db/${AIRFLOW_DB_NAME:-airflow}
@@ -38,6 +39,7 @@ x-airflow-common: &airflow-common
     SATISVIEW_PG_PASSWORD: ${POSTGRES_PASSWORD:-satisview}
     DASHBOARD_DB_USER: ${DASHBOARD_DB_USER:-dashboard_reader}
     SATISVIEW_SCHEDULE: "${SATISVIEW_SCHEDULE:-0 */6 * * *}"
+    SATISVIEW_FORM_WEB_SCHEDULE: "${SATISVIEW_FORM_WEB_SCHEDULE:-*/15 * * * *}"
     SATISVIEW_REPORT_FILENAME: ${SATISVIEW_REPORT_FILENAME:-SatisView_Report.pdf}
     SATISVIEW_PREPROCESSING_MODULE: ${SATISVIEW_PREPROCESSING_MODULE:-satisview.preprocessing}
     SATISVIEW_ANALYSIS_MODULE: ${SATISVIEW_ANALYSIS_MODULE:-satisview.analysis}
@@ -209,11 +211,113 @@ services:
       namenode:
         condition: service_healthy
 
-  # -------------------------------------------------------- API dashboard ---
+  # ------------------------------------------------------ Kafka (KRaft) -----
+  # FORM -> Kafka Topic -> Kafka Consumer -> HDFS (raw data respon kuisioner)
+  kafka:
+    image: apache/kafka:3.9.1
+    container_name: satisview-kafka
+    hostname: kafka
+    restart: unless-stopped
+    environment:
+      CLUSTER_ID: ${KAFKA_CLUSTER_ID:-4L6g3nShT-eMCtK--X86sw}
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      KAFKA_HEAP_OPTS: "-Xms256m -Xmx512m"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    networks: [satisview]
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 >/dev/null 2>&1"]
+      interval: 15s
+      timeout: 15s
+      retries: 20
+      start_period: 30s
+
+  kafka-init:
+    image: apache/kafka:3.9.1
+    container_name: satisview-kafka-init
+    restart: "no"
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        set -e
+        /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists \
+          --topic "$${KAFKA_TOPIC_RESPONS}" --partitions 3 --replication-factor 1 \
+          --config retention.ms=2592000000 --config min.insync.replicas=1
+        /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --describe --topic "$${KAFKA_TOPIC_RESPONS}"
+    environment:
+      KAFKA_TOPIC_RESPONS: ${KAFKA_TOPIC_RESPONS:-satisview.kuesioner.respons}
+    networks: [satisview]
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+  kafka-consumer:
+    build:
+      context: ./consumer
+    image: satisview/consumer:1.3.0
+    container_name: satisview-kafka-consumer
+    restart: unless-stopped
+    environment:
+      KAFKA_BROKERS: kafka:9092
+      KAFKA_TOPIC_RESPONS: ${KAFKA_TOPIC_RESPONS:-satisview.kuesioner.respons}
+      KAFKA_GROUP_ID: satisview-hdfs-writer
+      WEBHDFS_URL: http://namenode:9870/webhdfs/v1
+      HDFS_USER: root
+      SATISVIEW_KUESIONER_FILE: /opt/satisview/contracts/kuesioner.json
+      BATCH_MAKS: ${KAFKA_BATCH_MAKS:-200}
+      BATCH_TUNGGU_DETIK: ${KAFKA_BATCH_TUNGGU_DETIK:-10}
+      TZ: Asia/Jakarta
+    volumes:
+      - ./contracts:/opt/satisview/contracts:ro
+    networks: [satisview]
+    depends_on:
+      kafka-init:
+        condition: service_completed_successfully
+      namenode:
+        condition: service_healthy
+
+  # ------------------------------------------- Migrasi database aplikasi -----
+  # Membuat role & tabel akun pengelola (auth.pengguna). Idempoten; satu-satunya
+  # service selain postgres yang memegang password pemilik database.
+  db-migrate:
+    build:
+      context: ./backend
+    image: satisview/backend:1.3.0
+    container_name: satisview-db-migrate
+    restart: "no"
+    command: ["node", "src/cli/migrasi.js"]
+    environment:
+      PGHOST: postgres
+      PGPORT: "5432"
+      POSTGRES_USER: ${POSTGRES_USER:-satisview}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-satisview}
+      POSTGRES_DB: ${POSTGRES_DB:-satisview}
+      AUTH_DB_USER: ${AUTH_DB_USER:-satisview_auth}
+      AUTH_DB_PASSWORD: ${AUTH_DB_PASSWORD:-satisview_auth}
+    networks: [satisview]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ------------------------------------------------ API (login + form) ------
   backend:
     build:
       context: ./backend
-    image: satisview/backend:1.2.0
+    image: satisview/backend:1.3.0
     container_name: satisview-backend
     restart: unless-stopped
     environment:
@@ -229,10 +333,31 @@ services:
       CACHE_TTL_SECONDS: "30"
       SATISVIEW_MIN_RESPONDEN_MDS: ${SATISVIEW_MIN_RESPONDEN_MDS:-10}
       TZ: Asia/Jakarta
+      # Login pengelola (JWT) — akun di tabel auth.pengguna
+      AUTH_DB: ${POSTGRES_DB:-satisview}
+      AUTH_DB_USER: ${AUTH_DB_USER:-satisview_auth}
+      AUTH_DB_PASSWORD: ${AUTH_DB_PASSWORD:-satisview_auth}
+      JWT_SECRET: ${JWT_SECRET:-}
+      JWT_TTL_MINUTES: ${JWT_TTL_MINUTES:-480}
+      SATISVIEW_ADMIN_USERNAME: ${SATISVIEW_ADMIN_USERNAME:-}
+      SATISVIEW_ADMIN_PASSWORD: ${SATISVIEW_ADMIN_PASSWORD:-}
+      SATISVIEW_ADMIN_NAMA: ${SATISVIEW_ADMIN_NAMA:-Administrator SatisView}
+      # Form kuisioner -> Kafka
+      KAFKA_BROKERS: kafka:9092
+      KAFKA_TOPIC_RESPONS: ${KAFKA_TOPIC_RESPONS:-satisview.kuesioner.respons}
+      SATISVIEW_KUESIONER_FILE: /opt/satisview/contracts/kuesioner.json
+      KUESIONER_RATE_LIMIT_PER_MINUTE: ${KUESIONER_RATE_LIMIT_PER_MINUTE:-60}
+      TRUST_PROXY_HOPS: ${TRUST_PROXY_HOPS:-1}
+    volumes:
+      - ./contracts:/opt/satisview/contracts:ro
     networks: [satisview]
     depends_on:
       postgres:
         condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+      kafka:
+        condition: service_started
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:4000/api/health/live"]
       interval: 30s
@@ -244,7 +369,7 @@ services:
   frontend:
     build:
       context: ./frontend
-    image: satisview/frontend:1.2.0
+    image: satisview/frontend:1.3.0
     container_name: satisview-frontend
     restart: unless-stopped
     ports:
@@ -265,3 +390,4 @@ volumes:
   postgres_data:
   airflow_db_data:
   airflow_logs:
+  kafka_data:            # log topik Kafka (respons form web sebelum ditulis ke HDFS)

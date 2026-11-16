@@ -7,6 +7,9 @@ PostgreSQL **analysis_<responden>** (analysis_mahasiswa, analysis_dosen,
 analysis_karyawan, analysis_mitra_kerjasama, analysis_mitra_pengadaan).
 Satu file = satu tabel, kolom & isi sel sama seperti filenya, tanpa relasi
 atau tabel master. Data inilah yang ditampilkan dashboard SatisView.
+
+**validation_ingestion** memeriksa setiap tabel terhadap file CSV sumbernya
+(jumlah baris & kolom) dan memastikan tidak ada tabel tanpa file sumber.
 """
 
 from __future__ import annotations
@@ -37,7 +40,13 @@ def ingestion_analysis_result():
 
             return run_step(pipeline.ingest_analysis, key)
 
-        ingest(group.key)
+        @task(task_id=f"validation_ingestion_{group.key}", retries=0)
+        def validation_ingestion(hasil: dict, key: str) -> dict:
+            from satisview import pipeline
+
+            return run_step(pipeline.validate_ingestion_analysis, key)
+
+        validation_ingestion(ingest(group.key), group.key)
 
 
 ingestion_analysis_result()

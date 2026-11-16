@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { TABS } from '../lib/constants.js';
 import { GRADES, fmtDateTime, fmtIndex, fmtInt } from '../lib/format.js';
-import { BookIcon, CloseIcon, DocIcon, DownloadIcon, UsersIcon } from './Icons.jsx';
+import { BookIcon, CloseIcon, DocIcon, DownloadIcon, LogOutIcon, UserIcon, UsersIcon } from './Icons.jsx';
 import Logo from './Logo.jsx';
 
 const STATUS_TEXT = {
@@ -23,7 +23,7 @@ function SectionTitle({ icon: Icon, children }) {
  * Sidebar (tombol menu): menu analisis — tampil di sini saat layar < 1024 px —,
  * status data tiap kelompok, unduh laporan, dan cara membaca indeks.
  */
-export default function Drawer({ open, onClose, groups, currentGroup, onGroupChange, tab, onTabChange, onReport }) {
+export default function Drawer({ open, onClose, groups, currentGroup, onGroupChange, tab, onTabChange, onReport, pengguna, onLogout }) {
   const panelRef = useRef(null);
   const closeRef = useRef(null);
 
@@ -226,6 +226,27 @@ export default function Drawer({ open, onClose, groups, currentGroup, onGroupCha
             </dl>
           </section>
         </div>
+        {pengguna && (
+          <div className="flex shrink-0 items-center gap-3 border-t border-line px-5 py-3">
+            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-50 text-brand">
+              <UserIcon size={19} />
+            </span>
+            <span className="min-w-0 flex-1 leading-tight">
+              <span className="block truncate text-sm font-semibold text-brand-900">{pengguna.nama}</span>
+              <span className="text-xs text-ink-muted capitalize">{pengguna.peran}</span>
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                onLogout();
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-2 text-xs font-semibold text-brand transition hover:bg-brand-50"
+            >
+              <LogOutIcon size={15} /> Keluar
+            </button>
+          </div>
+        )}
         <p className="shrink-0 border-t border-line px-5 py-4 text-xs text-ink-muted">
           © SatisView Team · Politeknik Elektronika Negeri Surabaya
         </p>

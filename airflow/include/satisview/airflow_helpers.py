@@ -11,6 +11,7 @@ from . import config
 
 START_DATE = pendulum.datetime(2026, 1, 1, tz="Asia/Jakarta")
 SCHEDULE = config.SCHEDULE
+FORM_WEB_SCHEDULE = config.FORM_WEB_SCHEDULE
 
 DEFAULT_ARGS: dict[str, Any] = {
     "owner": "satisview",

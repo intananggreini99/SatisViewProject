@@ -14,11 +14,11 @@ from pathlib import Path
 
 import pandas as pd
 
-from . import config, gdrive, ingestion, plugins
+from . import config, form_web, gdrive, ingestion, plugins
 from .config import HdfsPaths
 from .hdfs import WebHdfsClient
 from .respondents import GROUPS, get_group, match_group_for_filename
-from .validation import ValidationFailed, validate_analysis, validate_preprocessed
+from .validation import ValidationFailed, ValidationReport, validate_analysis, validate_preprocessed
 
 log = logging.getLogger(__name__)
 
@@ -188,19 +188,41 @@ def _laporkan(hdfs: WebHdfsClient, key: str, report, local: Path) -> None:
         raise ValidationFailed(report)
 
 
+def _raw_gabungan(hdfs: WebHdfsClient, key: str, *, sebagai_teks: bool, tandai_sumber: bool = False) -> tuple[pd.DataFrame, dict]:
+    """Raw data respon kuisioner = sheet Google Form (dari Drive) + respons form web (dari Kafka).
+
+    Kolom keduanya sama persis (contracts/kuesioner.json), jadi baris form web
+    tinggal disambung di bawah baris Google Form.
+    """
+    drive = None
+    path = HdfsPaths.raw_csv(key) if sebagai_teks else HdfsPaths.raw_xlsx(key)
+    if hdfs.exists(path):
+        if sebagai_teks:
+            drive = ingestion.read_csv_as_text(hdfs.read_bytes(path))
+        else:
+            local = hdfs.download(path, config.STAGING_DIR / key / f"kuisioner_{key}.xlsx")
+            drive = pd.read_excel(local)  # sama seperti notebook: pd.read_excel(RAW_PATH)
+    web = form_web.baca(hdfs, key, sebagai_teks=sebagai_teks)
+    if drive is None and not len(web):
+        raise SkipGroup(
+            f"Raw data {get_group(key).label} belum ada di HDFS ({path} maupun {HdfsPaths.form_web_dir(key)})."
+        )
+    df = form_web.gabung(drive, web, tandai_sumber=tandai_sumber)
+    sumber = {"google_form": 0 if drive is None else int(len(drive)), "form_web": int(len(web))}
+    log.info("[%s] raw data: %s baris Google Form + %s baris form web", key, sumber["google_form"], sumber["form_web"])
+    return df, sumber
+
+
 def step_preprocessing(key: str) -> dict:
-    """(c) Ambil raw data dari HDFS lalu jalankan kode preprocessing tim."""
+    """(c) Ambil raw data dari HDFS (Google Form + form web) lalu jalankan kode preprocessing tim."""
     group = get_group(key)
     hdfs = _hdfs()
-    raw_path = HdfsPaths.raw_xlsx(key)
-    if not hdfs.exists(raw_path):
-        raise SkipGroup(f"Raw data {group.label} belum ada di HDFS ({raw_path}).")
     work = _work_dir(key, "preprocessed")
-    local_raw = hdfs.download(raw_path, config.STAGING_DIR / key / f"kuisioner_{key}.xlsx")
-    raw_df = pd.read_excel(local_raw)  # sama seperti notebook: pd.read_excel(RAW_PATH)
+    raw_df, sumber = _raw_gabungan(hdfs, key, sebagai_teks=False)
 
     preprocess = plugins.get_preprocessor()
     tabel, meta = preprocess(raw_df, group)
+    meta["sumber_raw"] = sumber
     files = _tulis_tabel(work, tabel)
     meta_path = _write_json(work / f"meta_preprocessing_{key}.json", meta)
     return {
@@ -208,6 +230,7 @@ def step_preprocessing(key: str) -> dict:
         "file": files,
         "meta": str(meta_path),
         "baris": int(meta.get("n_responden", 0)),
+        "sumber_raw": sumber,
     }
 
 
@@ -268,22 +291,26 @@ def kolom_pribadi(df: pd.DataFrame, key: str) -> list[str]:
 
 
 def ingest_raw(key: str) -> dict:
-    """(f) Raw data kuisioner (CSV di HDFS) -> database raw_data, satu tabel per file.
+    """(f) Raw data kuisioner (Google Form + form web, di HDFS) -> database raw_data.
 
-    Kolom data pribadi responden (mis. "Nomor Gopay") tidak ikut dimuat ke
-    PostgreSQL yang dibaca dashboard; arsip lengkapnya tetap di HDFS (raw zone).
+    Satu kelompok = satu tabel ``kuisioner_<responden>`` dengan kolom sheet asli
+    ditambah kolom ``Sumber`` (Google Form / Form Web SatisView). Kolom data
+    pribadi responden (mis. "Nomor Gopay") tidak ikut dimuat ke PostgreSQL yang
+    dibaca dashboard; arsip lengkapnya tetap di HDFS (raw zone).
     """
     group = get_group(key)
     hdfs = _hdfs()
-    path = HdfsPaths.raw_csv(key)
-    if not hdfs.exists(path):
-        raise SkipGroup(f"{path} belum ada di HDFS.")
-    df = ingestion.read_csv_as_text(hdfs.read_bytes(path))
+    df, sumber = _raw_gabungan(hdfs, key, sebagai_teks=True)
     pribadi = kolom_pribadi(df, key)
     if pribadi:
         log.info("[%s] kolom data pribadi tidak dimuat ke PostgreSQL: %s", key, pribadi)
-    hasil = ingestion.load_dataframe(config.RAW_DB, group.raw_table, df.drop(columns=pribadi), f"hdfs://{path}")
-    return {**hasil, "kolom_pribadi_tidak_dimuat": pribadi}
+    df = df.drop(columns=pribadi)
+    df[form_web.KOLOM_SUMBER] = (
+        [form_web.SUMBER_GOOGLE_FORM] * sumber["google_form"] + [form_web.SUMBER_FORM_WEB] * sumber["form_web"]
+    )
+    asal = f"hdfs://{HdfsPaths.raw_csv(key)} + hdfs://{HdfsPaths.form_web_dir(key)}"
+    hasil = ingestion.load_dataframe(config.RAW_DB, group.raw_table, df, asal)
+    return {**hasil, "sumber_raw": sumber, "kolom_pribadi_tidak_dimuat": pribadi}
 
 
 def ingest_analysis(key: str) -> dict:
@@ -322,3 +349,129 @@ def drop_stale_tables(dbname: str, keep: set[str]) -> list[str]:
     finally:
         conn.close()
     return dropped
+
+
+# ======================================================== validation_ingestion
+def _tabel_pg(dbname: str) -> dict[str, dict]:
+    """Tabel di database: {nama: {"baris": n, "kolom": [nama kolom asli...]}}."""
+    from psycopg2 import sql
+
+    conn = ingestion.connect(dbname)
+    try:
+        with conn, conn.cursor() as cur:
+            cur.execute("SELECT tablename FROM pg_tables WHERE schemaname = 'public'")
+            hasil = {}
+            for (tabel,) in cur.fetchall():
+                cur.execute(sql.SQL("SELECT count(*) FROM {}").format(sql.Identifier(tabel)))
+                baris = cur.fetchone()[0]
+                # nama kolom asli disimpan di COMMENT bila dipendekkan (batas 63 byte PostgreSQL)
+                cur.execute(
+                    """SELECT a.attname, col_description(a.attrelid, a.attnum)
+                         FROM pg_attribute a
+                        WHERE a.attrelid = %s::regclass AND a.attnum > 0 AND NOT a.attisdropped
+                        ORDER BY a.attnum""",
+                    (f'public."{tabel}"',),
+                )
+                kolom = [komentar or nama for nama, komentar in cur.fetchall()]
+                hasil[tabel] = {"baris": int(baris), "kolom": kolom}
+            return hasil
+    finally:
+        conn.close()
+
+
+def _simpan_laporan_ingestion(hdfs: WebHdfsClient, key: str, rep: ValidationReport, nama: str) -> dict:
+    local = config.STAGING_DIR / key / nama
+    _laporkan(hdfs, key, rep.finish(), local)  # raise ValidationFailed bila gagal
+    return {"responden": key, "validasi": rep.status, **rep.statistik}
+
+
+def validate_ingestion_raw(key: str) -> dict:
+    """(g) validation_ingestion: tabel raw_data.kuisioner_<responden> = raw data di HDFS.
+
+    Diperiksa: jumlah baris (Google Form + form web), kolom sama dengan sheet,
+    tidak ada kolom data pribadi, dan proporsi sumber sesuai.
+    """
+    group = get_group(key)
+    hdfs = _hdfs()
+    df, sumber = _raw_gabungan(hdfs, key, sebagai_teks=True)
+    pribadi = set(kolom_pribadi(df, key))
+    harapan_kolom = [c for c in df.columns if c not in pribadi] + [form_web.KOLOM_SUMBER]
+    rep = ValidationReport(tahap="ingestion_raw", responden=key)
+    tabel = _tabel_pg(config.RAW_DB).get(group.raw_table)
+    if tabel is None:
+        rep.error(f"Tabel {config.RAW_DB}.{group.raw_table} tidak ada.")
+    else:
+        if tabel["baris"] != len(df):
+            rep.error(f"{group.raw_table}: {tabel['baris']} baris di PostgreSQL, {len(df)} baris raw data di HDFS.")
+        if tabel["kolom"] != harapan_kolom:
+            hilang = [c for c in harapan_kolom if c not in tabel["kolom"]]
+            asing = [c for c in tabel["kolom"] if c not in harapan_kolom]
+            rep.error(f"{group.raw_table}: kolom berbeda (hilang {hilang[:3]}, asing {asing[:3]}).")
+        bocor = [c for c in tabel["kolom"] if c in pribadi]
+        if bocor:
+            rep.error(f"{group.raw_table}: kolom data pribadi ikut dimuat: {bocor}")
+        conn = ingestion.connect(config.RAW_DB)
+        try:
+            from psycopg2 import sql
+
+            with conn, conn.cursor() as cur:
+                cur.execute(
+                    sql.SQL("SELECT {c}, count(*) FROM {t} GROUP BY {c}").format(
+                        c=sql.Identifier(form_web.KOLOM_SUMBER), t=sql.Identifier(group.raw_table)
+                    )
+                )
+                per_sumber = dict(cur.fetchall())
+        finally:
+            conn.close()
+        harapan = {form_web.SUMBER_GOOGLE_FORM: sumber["google_form"], form_web.SUMBER_FORM_WEB: sumber["form_web"]}
+        if {k: v for k, v in per_sumber.items() if v} != {k: v for k, v in harapan.items() if v}:
+            rep.error(f"{group.raw_table}: jumlah per sumber {per_sumber} != {harapan}.")
+    rep.statistik = {"tabel": group.raw_table, "baris": len(df), "sumber_raw": sumber, "kolom_pribadi_dikecualikan": sorted(pribadi)}
+    return _simpan_laporan_ingestion(hdfs, key, rep, "validation_ingestion_raw.json")
+
+
+def validate_ingestion_analysis(key: str) -> dict:
+    """(g) validation_ingestion: setiap CSV hasil analisis di HDFS = satu tabel analysis_<responden>."""
+    group = get_group(key)
+    hdfs = _hdfs()
+    folder = HdfsPaths.analysis_dir(key)
+    files = sorted(
+        f["pathSuffix"] for f in hdfs.list(folder) if f.get("type") == "FILE" and f["pathSuffix"].lower().endswith(".csv")
+    ) if hdfs.exists(folder) else []
+    if not files:
+        raise SkipGroup(f"Belum ada hasil analisis di {folder}.")
+    rep = ValidationReport(tahap="ingestion_analysis", responden=key)
+    tabel_pg = _tabel_pg(group.analysis_db)
+    harapan = set()
+    for name in files:
+        tabel = ingestion.table_name_for(name)
+        harapan.add(tabel)
+        csv_df = ingestion.read_csv_as_text(hdfs.read_bytes(f"{folder}/{name}"))
+        ada = tabel_pg.get(tabel)
+        if ada is None:
+            rep.error(f"Tabel {tabel} tidak ada di {group.analysis_db}.")
+            continue
+        if ada["baris"] != len(csv_df):
+            rep.error(f"{tabel}: {ada['baris']} baris di PostgreSQL, {len(csv_df)} baris di {name}.")
+        if ada["kolom"] != [str(c) for c in csv_df.columns]:
+            rep.error(f"{tabel}: kolom berbeda dengan {name}.")
+    sisa = sorted(set(tabel_pg) - harapan)
+    if sisa:
+        rep.error(f"Tabel tanpa file sumber di HDFS: {sisa}")
+    rep.statistik = {"database": group.analysis_db, "tabel": len(files)}
+    return _simpan_laporan_ingestion(hdfs, key, rep, "validation_ingestion_analysis.json")
+
+
+# ================================================================ form web
+def cek_form_web_baru() -> dict:
+    """Ada batch form web baru di HDFS sejak pemeriksaan terakhir? (DAG form_web_to_pipeline)."""
+    hdfs = _hdfs()
+    penanda = config.DATA_DIR / "form_web_jejak.json"
+    lama = json.loads(penanda.read_text()) if penanda.exists() else {}
+    baru = {g.key: form_web.jejak(hdfs, g.key) for g in GROUPS}
+    berubah = sorted(k for k, v in baru.items() if v and v != lama.get(k))
+    return {"berubah": berubah, "jejak": baru}
+
+
+def simpan_jejak_form_web(jejak: dict) -> None:
+    _write_json(config.DATA_DIR / "form_web_jejak.json", jejak)

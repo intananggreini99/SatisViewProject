@@ -1,0 +1,2335 @@
+{
+  "versi": 1,
+  "keterangan": "Isi kuisioner web SatisView = isi Google Form tim (judul, butir, opsi, skala, urutan). Nilai 'kolom' adalah judul kolom sheet respons Google Form (persis, termasuk spasi di ujung) sehingga respons dari form web berstruktur sama dengan respons Google Form dan diolah pipeline yang sama.",
+  "kolom_waktu": "Timestamp",
+  "format_waktu": "%Y-%m-%d %H:%M:%S",
+  "zona_waktu": "Asia/Jakarta",
+  "pemisah_pilihan": ", ",
+  "kelompok": {
+    "mahasiswa": {
+      "label": "Mahasiswa",
+      "form_google": {
+        "id": "16zXzX4bk_40AmSDm1jqi7Hi7mgKS4abPK_fLUIqWGU4",
+        "judul": "Pelayanan Kepuasan - Mahasiswa"
+      },
+      "judul": "Survei Kepuasan Mahasiswa terhadap Layanan dan Fasilitas Kampus PENS",
+      "deskripsi": "Halo, Mahasiswa PENS! 👋\n\nSurvei ini bertujuan mengetahui pengalaman dan kepuasan mahasiswa terhadap layanan dan fasilitas kampus PENS. Masukan Anda membantu kami mengetahui apa yang sudah baik dan apa yang masih perlu diperbaiki.\n\nSilakan isi sesuai pengalaman yang Anda rasakan. Hasil survei ini akan menjadi umpan balik untuk terus memperbaiki layanan dan fasilitas PENS.\n\nTerima kasih atas partisipasi Anda. 🙏",
+      "pesan_selesai": "Terima kasih atas waktu dan partisipasi Anda dalam mengisi survei ini. Masukan yang diberikan sangat berarti sebagai bahan evaluasi dan peningkatan kualitas layanan di PENS. 🙏",
+      "bagian": [
+        {
+          "id": "profil",
+          "judul": "Profil Responden",
+          "pertanyaan": [
+            {
+              "id": "nomor_gopay",
+              "jenis": "teks_singkat",
+              "judul": "Nomor Gopay",
+              "kolom": "Nomor Gopay",
+              "wajib": true,
+              "validasi": {
+                "pola": "^(\\+62|62|0)8[0-9]{7,12}$",
+                "pesan": "Masukkan nomor Gopay yang valid, mis. 081234567890."
+              },
+              "pribadi": true,
+              "placeholder": "08xxxxxxxxxx"
+            },
+            {
+              "id": "program_studi",
+              "jenis": "dropdown",
+              "judul": "Program Studi",
+              "kolom": "Program Studi",
+              "wajib": true,
+              "opsi": [
+                "S3 Sistem Siber Fisik",
+                "S2 Teknik Elektro",
+                "S2 Teknik Informatika dan Komputer",
+                "S2 Keamanan Siber",
+                "STr./D3 Teknik Elektronika",
+                "STr./D3 Teknik Telekomunikasi",
+                "STr./D3 Teknik Elektro Industri",
+                "STr. Teknologi Rekayasa Internet",
+                "STr. Teknologi Rekayasa Keselamatan (K3)",
+                "STr./D3 Teknik Informatika",
+                "STr. Teknik Komputer",
+                "STr. Sains Data Terapan",
+                "STr. Teknik Mekatronika",
+                "STr. Sistem Pembangkit Energi",
+                "STr. Teknologi Rekayasa Perancangan Manufaktur",
+                "STr. Teknologi Game",
+                "STr. Teknologi Rekayasa Multimedia",
+                "STr. Bisnis Digital",
+                "D3 Multimedia Broadcasting",
+                "D3 PSDKU Lamongan",
+                "D3 PSDKU Sumenep"
+              ]
+            },
+            {
+              "id": "semester",
+              "jenis": "pilihan_ganda",
+              "judul": "Semester",
+              "kolom": "Semester",
+              "wajib": true,
+              "opsi": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "adm_akademik",
+          "judul": "Layanan Administrasi Akademik",
+          "pertanyaan": [
+            {
+              "id": "adm_akademik",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Persyaratan untuk mengurus layanan akademik jelas dan mudah dipenuhi",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Persyaratan untuk mengurus layanan akademik jelas dan mudah dipenuhi]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Langkah-langkah untuk mendapatkan layanan akademik jelas dan mudah dilakukan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Langkah-langkah untuk mendapatkan layanan akademik jelas dan mudah dilakukan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Layanan akademik diselesaikan dengan cepat sesuai waktu yang dijanjikan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Layanan akademik diselesaikan dengan cepat sesuai waktu yang dijanjikan]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Informasi mengenai biaya layanan, jika ada, jelas dan sesuai dengan ketentuan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Informasi mengenai biaya layanan, jika ada, jelas dan sesuai dengan ketentuan]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Hasil layanan akademik yang diterima sesuai dengan kebutuhan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Hasil layanan akademik yang diterima sesuai dengan kebutuhan]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Petugas mampu memberikan informasi dan membantu menyelesaikan kebutuhan akademik",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Petugas mampu memberikan informasi dan membantu menyelesaikan kebutuhan akademik]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Petugas ramah, sopan, dan membantu saat memberikan layanan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Petugas ramah, sopan, dan membantu saat memberikan layanan]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut]"
+                },
+                {
+                  "id": "b9",
+                  "teks": "Fasilitas dan sistem layanan akademik mudah digunakan dan berfungsi dengan baik",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Akademik berikut?   [Fasilitas dan sistem layanan akademik mudah digunakan dan berfungsi dengan baik]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kemahasiswaan",
+          "judul": "Layanan Kemahasiswaan",
+          "pertanyaan": [
+            {
+              "id": "kemahasiswaan",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Persyaratan untuk mendapatkan layanan kemahasiswaan jelas dan mudah dipenuhi",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Persyaratan untuk mendapatkan layanan kemahasiswaan jelas dan mudah dipenuhi]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Langkah-langkah untuk mendapatkan layanan kemahasiswaan jelas dan mudah dilakukan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Langkah-langkah untuk mendapatkan layanan kemahasiswaan jelas dan mudah dilakukan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Layanan kemahasiswaan diproses dengan cepat sesuai waktu yang dijanjikan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Layanan kemahasiswaan diproses dengan cepat sesuai waktu yang dijanjikan]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Informasi mengenai biaya layanan, jika ada, jelas dan sesuai ketentuan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Informasi mengenai biaya layanan, jika ada, jelas dan sesuai ketentuan]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Layanan yang diterima sesuai dengan kebutuhan sebagai mahasiswa",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Layanan yang diterima sesuai dengan kebutuhan sebagai mahasiswa]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Petugas mampu memberikan informasi dan membantu menyelesaikan kebutuhan mahasiswa",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Petugas mampu memberikan informasi dan membantu menyelesaikan kebutuhan mahasiswa]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Petugas ramah, sopan, dan membantu saat memberikan layanan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Petugas ramah, sopan, dan membantu saat memberikan layanan]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut]"
+                },
+                {
+                  "id": "b9",
+                  "teks": "Fasilitas dan media informasi layanan kemahasiswaan mudah diakses dan digunakan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Fasilitas dan media informasi layanan kemahasiswaan mudah diakses dan digunakan]"
+                },
+                {
+                  "id": "b10",
+                  "teks": "Informasi dan pengelolaan layanan beasiswa mahasiswa jelas dan mudah diakses",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Kemahasiswaan berikut?   [Informasi dan pengelolaan layanan beasiswa mahasiswa jelas dan mudah diakses]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "adm_keuangan",
+          "judul": "Layanan Administrasi Keuangan",
+          "pertanyaan": [
+            {
+              "id": "adm_keuangan",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Persyaratan untuk mengurus administrasi keuangan jelas dan mudah dipenuhi",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Persyaratan untuk mengurus administrasi keuangan jelas dan mudah dipenuhi]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Proses pembayaran dan pengurusan administrasi keuangan jelas dan mudah dilakukan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Proses pembayaran dan pengurusan administrasi keuangan jelas dan mudah dilakukan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Masalah administrasi keuangan ditangani dengan cepat",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Masalah administrasi keuangan ditangani dengan cepat]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Informasi mengenai UKT, tagihan, dan biaya lainnya jelas dan mudah dipahami",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Informasi mengenai UKT, tagihan, dan biaya lainnya jelas dan mudah dipahami]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Informasi dan hasil layanan keuangan yang diterima benar dan sesuai kebutuhan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Informasi dan hasil layanan keuangan yang diterima benar dan sesuai kebutuhan]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Petugas mampu menjelaskan dan membantu menyelesaikan masalah administrasi keuangan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Petugas mampu menjelaskan dan membantu menyelesaikan masalah administrasi keuangan]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Petugas ramah, sopan, dan membantu saat memberikan layanan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Petugas ramah, sopan, dan membantu saat memberikan layanan]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Masalah pembayaran atau tagihan mudah disampaikan dan mendapatkan penyelesaian",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Masalah pembayaran atau tagihan mudah disampaikan dan mendapatkan penyelesaian]"
+                },
+                {
+                  "id": "b9",
+                  "teks": "Sistem dan fasilitas layanan keuangan mudah digunakan dan berfungsi dengan baik",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Keuangan berikut?   [Sistem dan fasilitas layanan keuangan mudah digunakan dan berfungsi dengan baik]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "adm_umum",
+          "judul": "Layanan Administrasi Umum",
+          "pertanyaan": [
+            {
+              "id": "adm_umum",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Persyaratan untuk mendapatkan layanan administrasi umum jelas dan mudah dipenuhi",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Persyaratan untuk mendapatkan layanan administrasi umum jelas dan mudah dipenuhi]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Langkah-langkah mendapatkan layanan jelas dan mudah dilakukan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Langkah-langkah mendapatkan layanan jelas dan mudah dilakukan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Layanan diselesaikan dengan cepat sesuai waktu yang dijanjikan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Layanan diselesaikan dengan cepat sesuai waktu yang dijanjikan]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Informasi mengenai biaya layanan, jika ada, jelas dan sesuai ketentuan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Informasi mengenai biaya layanan, jika ada, jelas dan sesuai ketentuan]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Hasil layanan yang diterima sesuai dengan kebutuhan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Hasil layanan yang diterima sesuai dengan kebutuhan]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Petugas mampu memberikan informasi dan membantu kebutuhan mahasiswa",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Petugas mampu memberikan informasi dan membantu kebutuhan mahasiswa]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Petugas ramah, sopan, dan membantu saat memberikan layanan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Petugas ramah, sopan, dan membantu saat memberikan layanan]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Keluhan atau masalah mudah disampaikan dan mendapatkan tindak lanjut]"
+                },
+                {
+                  "id": "b9",
+                  "teks": "Tempat dan fasilitas pelayanan nyaman dan mendukung proses pelayanan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan Administrasi Umum berikut?   [Tempat dan fasilitas pelayanan nyaman dan mendukung proses pelayanan]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ruang_kuliah",
+          "judul": "Ruang Kuliah",
+          "pertanyaan": [
+            {
+              "id": "ruang_kuliah",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap Ruang Kuliah?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Ruang kuliah bersih dan nyaman digunakan",
+                  "kolom": "Bagaimana penilaian Anda terhadap Ruang Kuliah?   [Ruang kuliah bersih dan nyaman digunakan]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Pencahayaan dan suhu/ventilasi ruang kuliah sudah nyaman",
+                  "kolom": "Bagaimana penilaian Anda terhadap Ruang Kuliah?   [Pencahayaan dan suhu/ventilasi ruang kuliah sudah nyaman]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Meja, kursi, papan tulis, proyektor/TV, dan fasilitas pembelajaran lainnya tersedia dan berfungsi dengan baik",
+                  "kolom": "Bagaimana penilaian Anda terhadap Ruang Kuliah?   [Meja, kursi, papan tulis, proyektor/TV, dan fasilitas pembelajaran lainnya tersedia dan berfungsi dengan baik]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laboratorium",
+          "judul": "Laboratorium",
+          "pertanyaan": [
+            {
+              "id": "laboratorium",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap fasilitas Laboratorium?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Alat dan fasilitas laboratorium tersedia sesuai kebutuhan praktikum",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Laboratorium?   [Alat dan fasilitas laboratorium tersedia sesuai kebutuhan praktikum]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Alat laboratorium dalam kondisi baik dan dapat digunakan",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Laboratorium?   [Alat laboratorium dalam kondisi baik dan dapat digunakan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Laboratorium bersih, nyaman, dan aman digunakan untuk praktikum",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Laboratorium?   [Laboratorium bersih, nyaman, dan aman digunakan untuk praktikum]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "perpustakaan",
+          "judul": "Perpustakaan",
+          "pertanyaan": [
+            {
+              "id": "perpustakaan",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap fasilitas dan layanan Perpustakaan?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Buku, referensi, dan sumber belajar yang tersedia sesuai dengan kebutuhan",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas dan layanan Perpustakaan?   [Buku, referensi, dan sumber belajar yang tersedia sesuai dengan kebutuhan]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Layanan dan sumber digital perpustakaan mudah diakses",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas dan layanan Perpustakaan?   [Layanan dan sumber digital perpustakaan mudah diakses]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Ruang perpustakaan nyaman digunakan untuk membaca dan belajar",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas dan layanan Perpustakaan?   [Ruang perpustakaan nyaman digunakan untuk membaca dan belajar]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tik",
+          "judul": "TIK & Sistem Informasi",
+          "pertanyaan": [
+            {
+              "id": "tik",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap layanan TIK dan Sistem Informasi kampus?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Internet/Wi-Fi kampus mudah diakses dan memiliki koneksi yang memadai",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan TIK dan Sistem Informasi kampus?   [Internet/Wi-Fi kampus mudah diakses dan memiliki koneksi yang memadai]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Sistem informasi/aplikasi kampus mudah digunakan dan dapat diakses saat dibutuhkan",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan TIK dan Sistem Informasi kampus?   [Sistem informasi/aplikasi kampus mudah digunakan dan dapat diakses saat dibutuhkan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Ketika terjadi kendala TIK, bantuan atau penanganannya mudah diperoleh",
+                  "kolom": "Bagaimana penilaian Anda terhadap layanan TIK dan Sistem Informasi kampus?   [Ketika terjadi kendala TIK, bantuan atau penanganannya mudah diperoleh]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "toilet",
+          "judul": "Toilet",
+          "pertanyaan": [
+            {
+              "id": "toilet",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap fasilitas Toilet kampus?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Toilet kampus bersih, tidak bau dan nyaman digunakan",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Toilet kampus?   [Toilet kampus bersih, tidak bau dan nyaman digunakan]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Air, sabun, dan fasilitas pendukung toilet tersedia dengan baik",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Toilet kampus?   [Air, sabun, dan fasilitas pendukung toilet tersedia dengan baik]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Jumlah dan kondisi toilet memadai untuk kebutuhan mahasiswa",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Toilet kampus?   [Jumlah dan kondisi toilet memadai untuk kebutuhan mahasiswa]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parkir",
+          "judul": "Parkir",
+          "pertanyaan": [
+            {
+              "id": "parkir",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap fasilitas Parkir kampus?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Tempat parkir cukup untuk menampung kendaraan mahasiswa",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Parkir kampus?   [Tempat parkir cukup untuk menampung kendaraan mahasiswa]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Area parkir tertata dan mudah digunakan",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Parkir kampus?   [Area parkir tertata dan mudah digunakan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Kendaraan cukup aman ketika diparkir di lingkungan kampus",
+                  "kolom": "Bagaimana penilaian Anda terhadap fasilitas Parkir kampus?   [Kendaraan cukup aman ketika diparkir di lingkungan kampus]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lingkungan",
+          "judul": "Lingkungan Kampus",
+          "pertanyaan": [
+            {
+              "id": "lingkungan",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap Lingkungan Kampus?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Lingkungan kampus bersih dan nyaman",
+                  "kolom": "Bagaimana penilaian Anda terhadap Lingkungan Kampus?   [Lingkungan kampus bersih dan nyaman]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Lingkungan kampus aman untuk aktivitas mahasiswa",
+                  "kolom": "Bagaimana penilaian Anda terhadap Lingkungan Kampus?   [Lingkungan kampus aman untuk aktivitas mahasiswa]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Ruang terbuka, penghijauan, dan fasilitas umum di kampus sudah memadai",
+                  "kolom": "Bagaimana penilaian Anda terhadap Lingkungan Kampus?   [Ruang terbuka, penghijauan, dan fasilitas umum di kampus sudah memadai]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "klinik",
+          "judul": "Layanan Klinik Kampus",
+          "pertanyaan": [
+            {
+              "id": "pernah_klinik",
+              "jenis": "pilihan_ganda",
+              "judul": "Apakah Anda pernah menggunakan layanan Klinik Kampus PENS?",
+              "kolom": "Apakah Anda pernah menggunakan layanan Klinik Kampus PENS?  ",
+              "wajib": true,
+              "opsi": [
+                "Ya",
+                "Tidak"
+              ],
+              "lompat": {
+                "Tidak": "saran"
+              }
+            }
+          ]
+        },
+        {
+          "id": "penilaian_klinik",
+          "judul": "Penilaian Layanan Klinik",
+          "pertanyaan": [
+            {
+              "id": "penilaian_klinik",
+              "jenis": "grid",
+              "judul": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?",
+              "wajib": true,
+              "skala": [
+                "1 - Tidak Baik",
+                "2 - Kurang Baik",
+                "3 - Baik",
+                "4 - Sangat Baik"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Persyaratan untuk mendapatkan layanan klinik mudah dipenuhi",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Persyaratan untuk mendapatkan layanan klinik mudah dipenuhi]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Proses untuk mendapatkan layanan klinik mudah dilakukan",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Proses untuk mendapatkan layanan klinik mudah dilakukan]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Pelayanan klinik dapat diperoleh dengan cepat saat dibutuhkan",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Pelayanan klinik dapat diperoleh dengan cepat saat dibutuhkan]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Informasi mengenai jadwal, jenis layanan, dan ketentuan pelayanan klinik disampaikan dengan jelas",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Informasi mengenai jadwal, jenis layanan, dan ketentuan pelayanan klinik disampaikan dengan jelas]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Layanan klinik yang diberikan sesuai dengan kebutuhan mahasiswa",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Layanan klinik yang diberikan sesuai dengan kebutuhan mahasiswa]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Petugas klinik mampu memberikan pelayanan dan informasi dengan baik",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Petugas klinik mampu memberikan pelayanan dan informasi dengan baik]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Petugas klinik ramah, sopan, dan membantu",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Petugas klinik ramah, sopan, dan membantu]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Keluhan atau kendala terkait layanan klinik mudah disampaikan dan mendapatkan tindak lanjut",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Keluhan atau kendala terkait layanan klinik mudah disampaikan dan mendapatkan tindak lanjut]"
+                },
+                {
+                  "id": "b9",
+                  "teks": "Ruang dan fasilitas klinik bersih, nyaman, dan mendukung pelayanan",
+                  "kolom": "Bagaimana penilaian Anda terhadap aspek layanan Klinik Kampus berikut?   [Ruang dan fasilitas klinik bersih, nyaman, dan mendukung pelayanan]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "saran",
+          "judul": "Saran dan Perbaikan",
+          "pertanyaan": [
+            {
+              "id": "prioritas",
+              "jenis": "kotak_centang",
+              "judul": "Menurut Anda, layanan atau fasilitas mana yang paling perlu ditingkatkan (pilih maksimum 3)?",
+              "kolom": "Menurut Anda, layanan atau fasilitas mana yang paling perlu ditingkatkan (pilih maksimum 3)?  ",
+              "wajib": true,
+              "opsi": [
+                "Administrasi Akademik",
+                "Layanan Kemahasiswaan",
+                "Administrasi Keuangan",
+                "Administrasi Umum",
+                "Ruang Kuliah",
+                "Laboratorium",
+                "Perpustakaan",
+                "Internet/Wi-Fi dan Sistem Informasi",
+                "Toilet",
+                "Parkir",
+                "Lingkungan Kampus",
+                "Layanan Klinik"
+              ],
+              "maks_pilihan": 3
+            },
+            {
+              "id": "saran_perbaikan",
+              "jenis": "paragraf",
+              "judul": "Menurut Anda, layanan atau fasilitas apa yang perlu diperbaiki di kampus? Jelaskan perbaikan yang Anda harapkan. (Opsional)",
+              "kolom": "Menurut Anda, layanan atau fasilitas apa yang perlu diperbaiki di kampus? Jelaskan perbaikan yang Anda harapkan. (Opsional)",
+              "wajib": false
+            }
+          ]
+        }
+      ]
+    },
+    "dosen": {
+      "label": "Dosen",
+      "form_google": {
+        "id": "1n84F7W1DAJjTEsU6nUBOLzAC9Tv8DpMhHoAwQ3KEMUc",
+        "judul": "Pelayanan Kepuasan - Dosen"
+      },
+      "judul": "Survei Kepuasan Dosen terhadap Layanan dan Fasilitas Kampus PENS",
+      "deskripsi": "Yth. Bapak/Ibu Dosen,\n\nKami mengundang Bapak/Ibu untuk berpartisipasi dalam \"Survei Kepuasan Layanan Kampus\". Partisipasi dan masukan objektif dari Bapak/Ibu sangat berharga bagi institusi dalam upaya mewujudkan pelayanan akademik maupun non-akademik yang prima. Kerahasiaan identitas dan jawaban Bapak/Ibu sepenuhnya terjamin.\n\nTerima kasih atas kerja sama dan dedikasi yang diberikan.🙏",
+      "pesan_selesai": null,
+      "bagian": [
+        {
+          "id": "profil",
+          "judul": null,
+          "pertanyaan": [
+            {
+              "id": "departemen",
+              "jenis": "dropdown",
+              "judul": "Departemen",
+              "kolom": "Departemen",
+              "wajib": true,
+              "opsi": [
+                "Departement Teknik Elektro",
+                "Departement Teknik Informatika dan Komputer",
+                "Departement Teknik Mekanika dan Energi",
+                "Departement Teknologi Multimedia Kreatif"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "penilaian",
+          "judul": "Penilaian Kepuasan Layanan",
+          "pertanyaan": [
+            {
+              "id": "administrasi_akademik",
+              "jenis": "grid",
+              "judul": "Administrasi Akademik",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa puas Anda dengan kejelasan informasi kalender akademik, jadwal, dan kegiatan perkuliahan?",
+                  "kolom": "Administrasi Akademik [Seberapa puas Anda dengan kejelasan informasi kalender akademik, jadwal, dan kegiatan perkuliahan?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana penilaian anda terhadap pengelolaan dan kemudahan proses administrasi pelaksanaan perkuliahan?",
+                  "kolom": "Administrasi Akademik [Bagaimana penilaian anda terhadap pengelolaan dan kemudahan proses administrasi pelaksanaan perkuliahan?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap ketersediaan dan ketepatan data akademik pendukung kerja?",
+                  "kolom": "Administrasi Akademik [Bagaimana tingkat kepuasan Anda terhadap ketersediaan dan ketepatan data akademik pendukung kerja?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Seberapa puas Anda dengan kecepatan penyelesaian layanan administrasi akademik?",
+                  "kolom": "Administrasi Akademik [Seberapa puas Anda dengan kecepatan penyelesaian layanan administrasi akademik?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Bagaimana penilaian Anda terhadap kemampuan petugas dalam melayani dan menyelesaikan kebutuhan akademik?",
+                  "kolom": "Administrasi Akademik [Bagaimana penilaian Anda terhadap kemampuan petugas dalam melayani dan menyelesaikan kebutuhan akademik?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Sejauh mana Anda merasa puas dengan keramahan dan kesigapan petugas akademik?",
+                  "kolom": "Administrasi Akademik [Sejauh mana Anda merasa puas dengan keramahan dan kesigapan petugas akademik?]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap sistem informasi layanan akademik?",
+                  "kolom": "Administrasi Akademik [Bagaimana tingkat kepuasan Anda terhadap sistem informasi layanan akademik?]"
+                }
+              ]
+            },
+            {
+              "id": "kemahasiswaan",
+              "jenis": "grid",
+              "judul": "Kemahasiswaan",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa puas Anda dengan kejelasan informasi kegiatan, program, dan layanan kemahasiswaan?",
+                  "kolom": "Kemahasiswaan [Seberapa puas Anda dengan kejelasan informasi kegiatan, program, dan layanan kemahasiswaan?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana penilaian Anda terhadap dukungan administrasi untuk kegiatan atau organisasi mahasiswa?",
+                  "kolom": "Kemahasiswaan [Bagaimana penilaian Anda terhadap dukungan administrasi untuk kegiatan atau organisasi mahasiswa?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Sejauh mana Anda merasa puas dengan koordinasi unit kemahasiswaan dengan dosen atau staf lainnya?",
+                  "kolom": "Kemahasiswaan [Sejauh mana Anda merasa puas dengan koordinasi unit kemahasiswaan dengan dosen atau staf lainnya?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kecepatan respons petugas terkait kebutuhan kemahasiswaan?",
+                  "kolom": "Kemahasiswaan [Bagaimana tingkat kepuasan Anda terhadap kecepatan respons petugas terkait kebutuhan kemahasiswaan?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Seberapa puas Anda dengan kemampuan dan sikap petugas kemahasiswaan?",
+                  "kolom": "Kemahasiswaan [Seberapa puas Anda dengan kemampuan dan sikap petugas kemahasiswaan?]"
+                }
+              ]
+            },
+            {
+              "id": "administrasi_keuangan",
+              "jenis": "grid",
+              "judul": "Administrasi Keuangan",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana penilaian Anda terhadap kejelasan informasi dan ketentuan administrasi keuangan?",
+                  "kolom": "Administrasi Keuangan [Bagaimana penilaian Anda terhadap kejelasan informasi dan ketentuan administrasi keuangan?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Sejauh mana Anda merasa puas dengan kemudahan proses pembayaran atau reimbursement?",
+                  "kolom": "Administrasi Keuangan [Sejauh mana Anda merasa puas dengan kemudahan proses pembayaran atau reimbursement?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap layanan administrasi keuangan untuk perjalanan dinas?",
+                  "kolom": "Administrasi Keuangan [Bagaimana tingkat kepuasan Anda terhadap layanan administrasi keuangan untuk perjalanan dinas?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Seberapa puas Anda dengan dukungan administrasi keuangan untuk pelaksanaan kegiatan Anda?",
+                  "kolom": "Administrasi Keuangan [Seberapa puas Anda dengan dukungan administrasi keuangan untuk pelaksanaan kegiatan Anda?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Bagaimana penilaian Anda terhadap kecepatan proses administrasi keuangan?",
+                  "kolom": "Administrasi Keuangan [Bagaimana penilaian Anda terhadap kecepatan proses administrasi keuangan?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Sejauh mana Anda merasa puas dengan ketepatan informasi administrasi keuangan yang diterima?",
+                  "kolom": "Administrasi Keuangan [Sejauh mana Anda merasa puas dengan ketepatan informasi administrasi keuangan yang diterima?]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kemampuan petugas dalam membantu menyelesaikan masalah keuangan?",
+                  "kolom": "Administrasi Keuangan [Bagaimana tingkat kepuasan Anda terhadap kemampuan petugas dalam membantu menyelesaikan masalah keuangan?]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Seberapa puas Anda dengan sistem atau aplikasi layanan administrasi keuangan?",
+                  "kolom": "Administrasi Keuangan [Seberapa puas Anda dengan sistem atau aplikasi layanan administrasi keuangan?]"
+                }
+              ]
+            },
+            {
+              "id": "administrasi_umum",
+              "jenis": "grid",
+              "judul": "Administrasi Umum",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana penilaian Anda terhadap dukungan administrasi umum untuk rapat atau kebutuhan kedinasan?",
+                  "kolom": "Administrasi Umum [Bagaimana penilaian Anda terhadap dukungan administrasi umum untuk rapat atau kebutuhan kedinasan?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Sejauh mana Anda merasa puas dengan kecepatan penyelesaian layanan administrasi umum?",
+                  "kolom": "Administrasi Umum [Sejauh mana Anda merasa puas dengan kecepatan penyelesaian layanan administrasi umum?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kemampuan petugas administrasi umum?",
+                  "kolom": "Administrasi Umum [Bagaimana tingkat kepuasan Anda terhadap kemampuan petugas administrasi umum?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Seberapa puas Anda dengan keramahan dan kesigapan petugas administrasi umum?",
+                  "kolom": "Administrasi Umum [Seberapa puas Anda dengan keramahan dan kesigapan petugas administrasi umum?]"
+                }
+              ]
+            },
+            {
+              "id": "sdm_kepegawaian",
+              "jenis": "grid",
+              "judul": "SDM/Kepegawaian",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana penilaian Anda terhadap kemudahan memperoleh informasi kepegawaian?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana penilaian Anda terhadap kemudahan memperoleh informasi kepegawaian?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Sejauh mana Anda merasa puas dengan layanan dan sistem presensi pegawai?",
+                  "kolom": "SDM/Kepegawaian [Sejauh mana Anda merasa puas dengan layanan dan sistem presensi pegawai?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap proses pengajuan cuti atau izin?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana tingkat kepuasan Anda terhadap proses pengajuan cuti atau izin?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Seberapa puas Anda dengan layanan administrasi terkait kinerja pegawai?",
+                  "kolom": "SDM/Kepegawaian [Seberapa puas Anda dengan layanan administrasi terkait kinerja pegawai?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Bagaimana penilaian Anda terhadap layanan informasi terkait karier atau kenaikan pangkat?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana penilaian Anda terhadap layanan informasi terkait karier atau kenaikan pangkat?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Sejauh mana Anda merasa puas dengan fasilitas pelatihan dan pengembangan kompetensi?",
+                  "kolom": "SDM/Kepegawaian [Sejauh mana Anda merasa puas dengan fasilitas pelatihan dan pengembangan kompetensi?]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap pengurusan dan ketepatan dokumen kepegawaian?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana tingkat kepuasan Anda terhadap pengurusan dan ketepatan dokumen kepegawaian?]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Seberapa puas Anda dengan kemampuan petugas menyelesaikan permasalahan kepegawaian?",
+                  "kolom": "SDM/Kepegawaian [Seberapa puas Anda dengan kemampuan petugas menyelesaikan permasalahan kepegawaian?]"
+                },
+                {
+                  "id": "b9",
+                  "teks": "Bagaimana penilaian Anda terhadap sistem informasi kepegawaian?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana penilaian Anda terhadap sistem informasi kepegawaian?]"
+                },
+                {
+                  "id": "b10",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap layanan dan pendampingan dalam proses penilaian kinerja tahunan (misalnya SKP atau evaluasi kinerja lainnya)?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana tingkat kepuasan Anda terhadap layanan dan pendampingan dalam proses penilaian kinerja tahunan (misalnya SKP atau evaluasi kinerja lainnya)?]"
+                }
+              ]
+            },
+            {
+              "id": "penelitian_pengabdian",
+              "jenis": "grid",
+              "judul": "Penelitian & Pengabdian",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Sejauh mana Anda merasa puas dengan kejelasan informasi program penelitian dan pengabdian?",
+                  "kolom": "Penelitian & Pengabdian [Sejauh mana Anda merasa puas dengan kejelasan informasi program penelitian dan pengabdian?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap proses pengajuan dan seleksi proposal penelitian/pengabdian?",
+                  "kolom": "Penelitian & Pengabdian [Bagaimana tingkat kepuasan Anda terhadap proses pengajuan dan seleksi proposal penelitian/pengabdian?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Seberapa puas Anda dengan dukungan administrasi selama pelaksanaan penelitian/pengabdian?",
+                  "kolom": "Penelitian & Pengabdian [Seberapa puas Anda dengan dukungan administrasi selama pelaksanaan penelitian/pengabdian?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana penilaian Anda terhadap proses pelaporan administrasi penelitian/pengabdian?",
+                  "kolom": "Penelitian & Pengabdian [Bagaimana penilaian Anda terhadap proses pelaporan administrasi penelitian/pengabdian?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Sejauh mana Anda merasa puas dengan layanan publikasi, HKI, atau luaran penelitian/pengabdian?",
+                  "kolom": "Penelitian & Pengabdian [Sejauh mana Anda merasa puas dengan layanan publikasi, HKI, atau luaran penelitian/pengabdian?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Seberapa puas Anda dengan kecepatan pelayanan penelitian dan pengabdian?",
+                  "kolom": "Penelitian & Pengabdian [Seberapa puas Anda dengan kecepatan pelayanan penelitian dan pengabdian?]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Bagaimana penilaian Anda terhadap kemampuan petugas dalam memberikan informasi dan pendampingan?",
+                  "kolom": "Penelitian & Pengabdian [Bagaimana penilaian Anda terhadap kemampuan petugas dalam memberikan informasi dan pendampingan?]"
+                }
+              ]
+            },
+            {
+              "id": "tik_sistem_informasi",
+              "jenis": "grid",
+              "judul": "TIK & Sistem Informasi",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Sejauh mana Anda merasa puas dengan kualitas dan kestabilan internet/Wi-Fi di kampus?",
+                  "kolom": "TIK & Sistem Informasi [Sejauh mana Anda merasa puas dengan kualitas dan kestabilan internet/Wi-Fi di kampus?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap sistem informasi akademik yang digunakan?",
+                  "kolom": "TIK & Sistem Informasi [Bagaimana tingkat kepuasan Anda terhadap sistem informasi akademik yang digunakan?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Seberapa puas Anda dengan kemudahan penggunaan sistem atau aplikasi internal kampus?",
+                  "kolom": "TIK & Sistem Informasi [Seberapa puas Anda dengan kemudahan penggunaan sistem atau aplikasi internal kampus?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana penilaian Anda terhadap keandalan dan ketersediaan sistem informasi saat dibutuhkan?",
+                  "kolom": "TIK & Sistem Informasi [Bagaimana penilaian Anda terhadap keandalan dan ketersediaan sistem informasi saat dibutuhkan?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Sejauh mana Anda merasa puas dengan kecepatan penanganan saat terjadi masalah TIK (Bantuan/Helpdesk)?",
+                  "kolom": "TIK & Sistem Informasi [Sejauh mana Anda merasa puas dengan kecepatan penanganan saat terjadi masalah TIK (Bantuan/Helpdesk)?]"
+                }
+              ]
+            },
+            {
+              "id": "ruang_kerja",
+              "jenis": "grid",
+              "judul": "Ruang Kerja",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kebersihan dan kenyamanan ruang kerja?",
+                  "kolom": "Ruang Kerja [Bagaimana tingkat kepuasan Anda terhadap kebersihan dan kenyamanan ruang kerja?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Seberapa puas Anda dengan ketersediaan dan kondisi fasilitas kerja Anda?",
+                  "kolom": "Ruang Kerja [Seberapa puas Anda dengan ketersediaan dan kondisi fasilitas kerja Anda?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana penilaian Anda terhadap lingkungan ruang kerja (pencahayaan, suhu, dan ventilasi)?",
+                  "kolom": "Ruang Kerja [Bagaimana penilaian Anda terhadap lingkungan ruang kerja (pencahayaan, suhu, dan ventilasi)?]"
+                }
+              ]
+            },
+            {
+              "id": "laboratorium",
+              "jenis": "grid",
+              "judul": "Laboratorium",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Sejauh mana Anda merasa puas dengan ketersediaan peralatan laboratorium?",
+                  "kolom": "Laboratorium [Sejauh mana Anda merasa puas dengan ketersediaan peralatan laboratorium?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kondisi dan fungsi peralatan laboratorium?",
+                  "kolom": "Laboratorium [Bagaimana tingkat kepuasan Anda terhadap kondisi dan fungsi peralatan laboratorium?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Seberapa puas Anda dengan kesiapan laboratorium dalam mendukung kegiatan praktikum?",
+                  "kolom": "Laboratorium [Seberapa puas Anda dengan kesiapan laboratorium dalam mendukung kegiatan praktikum?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana penilaian Anda terhadap kebersihan, keamanan, dan keselamatan di lingkungan laboratorium?",
+                  "kolom": "Laboratorium [Bagaimana penilaian Anda terhadap kebersihan, keamanan, dan keselamatan di lingkungan laboratorium?]"
+                }
+              ]
+            },
+            {
+              "id": "toilet",
+              "jenis": "grid",
+              "judul": "Toilet",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kebersihan dan kenyamanan toilet?",
+                  "kolom": "Toilet [Bagaimana tingkat kepuasan Anda terhadap kebersihan dan kenyamanan toilet?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Seberapa puas Anda dengan ketersediaan air, sabun, dan fasilitas pendukung toilet?",
+                  "kolom": "Toilet [Seberapa puas Anda dengan ketersediaan air, sabun, dan fasilitas pendukung toilet?]"
+                }
+              ]
+            },
+            {
+              "id": "parkir",
+              "jenis": "grid",
+              "judul": "Parkir",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap ketersediaan tempat parkir?",
+                  "kolom": "Parkir [Bagaimana tingkat kepuasan Anda terhadap ketersediaan tempat parkir?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap keteraturan dan keamanan area parkir?",
+                  "kolom": "Parkir [Bagaimana tingkat kepuasan Anda terhadap keteraturan dan keamanan area parkir?]"
+                }
+              ]
+            },
+            {
+              "id": "lingkungan_kampus",
+              "jenis": "grid",
+              "judul": "Lingkungan Kampus",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kebersihan lingkungan kampus?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap kebersihan lingkungan kampus?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kenyamanan lingkungan kampus untuk bekerja dan beraktivitas?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap kenyamanan lingkungan kampus untuk bekerja dan beraktivitas?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap keamanan lingkungan kampus?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap keamanan lingkungan kampus?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap ruang terbuka, penghijauan, dan fasilitas umum kampus?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap ruang terbuka, penghijauan, dan fasilitas umum kampus?]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prioritas",
+          "judul": "Prioritas Peningkatan",
+          "pertanyaan": [
+            {
+              "id": "prioritas",
+              "jenis": "kotak_centang",
+              "judul": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3)",
+              "kolom": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3) ",
+              "wajib": false,
+              "opsi": [
+                "Administrasi Akademik",
+                "Kemahasiswaan",
+                "Administrasi Keuangan",
+                "Administrasi Umum",
+                "SDM/Kepegawaian",
+                "Penelitian & Pengabdian",
+                "TIK & Sistem Informasi",
+                "Laboratorium"
+              ],
+              "maks_pilihan": 3
+            }
+          ]
+        },
+        {
+          "id": "saran",
+          "judul": "Saran & Pesan",
+          "pertanyaan": [
+            {
+              "id": "saran_perbaikan",
+              "jenis": "paragraf",
+              "judul": "Layanan atau fasilitas apa yang menurut Anda paling perlu diperbaiki? Jelaskan perbaikan yang Anda harapkan.",
+              "kolom": "Layanan atau fasilitas apa yang menurut Anda paling perlu diperbaiki? Jelaskan perbaikan yang Anda harapkan.",
+              "wajib": true
+            },
+            {
+              "id": "birokrasi_penelitian",
+              "jenis": "paragraf",
+              "judul": "Apakah proses birokrasi terkait pengajuan dana hibah penelitian atau publikasi jurnal sudah cukup efisien? Berikan saran perbaikan Anda.",
+              "kolom": "Apakah proses birokrasi terkait pengajuan dana hibah penelitian atau publikasi jurnal sudah cukup efisien? Berikan saran perbaikan Anda.  ",
+              "wajib": true
+            }
+          ],
+          "info_penutup": "Kami mengucapkan terima kasih atas partisipasi dan masukan berharga dari Bapak/Ibu. Tanggapan yang Bapak/Ibu berikan akan menjadi landasan penting bagi institusi dalam mewujudkan pelayanan yang lebih prima. 🙏"
+        }
+      ]
+    },
+    "karyawan": {
+      "label": "Karyawan",
+      "form_google": {
+        "id": "1of2TqES3BD5a2Qt-6HAUBNy4-VbuDnR8Qy7ch5Ea4tg",
+        "judul": "Pelayanan Kepuasan - Karyawan"
+      },
+      "judul": "Survei Kepuasan Karyawan/ terhadap Layanan dan Fasilitas Kampus PENS",
+      "deskripsi": "Yth. Bapak/Ibu Karyawan/Tendik,\n\nSurvei ini bertujuan untuk mengevaluasi dan meningkatkan kualitas layanan di lingkungan kampus kita. Kami memohon kesediaan Bapak/Ibu untuk meluangkan waktu sekitar 5-10 menit guna memberikan penilaian serta masukan. Seluruh respons yang diberikan akan dijaga kerahasiaannya dan murni digunakan untuk keperluan perbaikan layanan dan fasilitas kerja.\n\nTerima kasih atas waktu dan partisipasi Bapak/Ibu.🙏",
+      "pesan_selesai": null,
+      "bagian": [
+        {
+          "id": "profil",
+          "judul": null,
+          "pertanyaan": [
+            {
+              "id": "unit_kerja",
+              "jenis": "dropdown",
+              "judul": "Unit Kerja",
+              "kolom": "Unit Kerja",
+              "wajib": false,
+              "opsi": [
+                "Satuan Pengawas Internal (SPI)",
+                "Pusat Penelitian & Pengabdian kepada Masyarakat (P3M)",
+                "Pusat Penjaminan Mutu & Pengembangan Pembelajaran (PPMPP)",
+                "UPA Perpustakaan",
+                "UPA Bahasa",
+                "UPA Layanan Uji Kompetensi",
+                "UPA Perawatan & Perbaikan",
+                "UPA Pengembangan Karir & Kewirausahaan",
+                "UPA Teknologi Informasi & Komunikasi",
+                "UPA Pengembangan Teknologi & Produk Unggulan",
+                "Bagian Akademik & Kemahasiswaan",
+                "Bagian Perencanaan, Keuangan, & Umum",
+                "Kesekretariatan",
+                "Pengembangan SDM",
+                "Kantor Urusan Internasional",
+                "Unit Bisnis Masyarakat",
+                "Unit Perencanaan dan Pelaporan",
+                "Hubungan Masyarakat",
+                "Tim Kerja Pemrosesan Data Elektronik",
+                "Tim Kerja Teknologi Komunikasi dan Pembelajaran",
+                "Tim Kerja Teknologi Informasi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "penilaian",
+          "judul": "Penilaian Kepuasan Layanan",
+          "pertanyaan": [
+            {
+              "id": "administrasi_kepegawaian",
+              "jenis": "grid",
+              "judul": "Administrasi Kepegawaian",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa puas Anda dengan kejelasan informasi peraturan kepegawaian, cuti, hak/kewajiban, dan pengembangan karier?",
+                  "kolom": "Administrasi Kepegawaian [Seberapa puas Anda dengan kejelasan informasi peraturan kepegawaian, cuti, hak/kewajiban, dan pengembangan karier?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana penilaian Anda terhadap sistem pengelolaan presensi, jadwal kerja, dan fleksibilitas penyesuaian jam kerja?",
+                  "kolom": "Administrasi Kepegawaian [Bagaimana penilaian Anda terhadap sistem pengelolaan presensi, jadwal kerja, dan fleksibilitas penyesuaian jam kerja?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Sejauh mana Anda merasa puas dengan kemudahan proses administrasi kepegawaian (cuti, klaim, dll.)?",
+                  "kolom": "Administrasi Kepegawaian [Sejauh mana Anda merasa puas dengan kemudahan proses administrasi kepegawaian (cuti, klaim, dll.)?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap ketepatan, pembaruan, dan kemudahan akses data pribadi kepegawaian?",
+                  "kolom": "Administrasi Kepegawaian [Bagaimana tingkat kepuasan Anda terhadap ketepatan, pembaruan, dan kemudahan akses data pribadi kepegawaian?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Seberapa puas Anda dengan kecepatan dan ketepatan pengurusan dokumen kepegawaian?",
+                  "kolom": "Administrasi Kepegawaian [Seberapa puas Anda dengan kecepatan dan ketepatan pengurusan dokumen kepegawaian?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Bagaimana penilaian Anda terhadap kemampuan staf HR dalam memberikan solusi dan penjelasan masalah kepegawaian?",
+                  "kolom": "Administrasi Kepegawaian [Bagaimana penilaian Anda terhadap kemampuan staf HR dalam memberikan solusi dan penjelasan masalah kepegawaian?]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Sejauh mana Anda merasa puas dengan keramahan dan kesigapan staf kepegawaian dalam melayani Anda?",
+                  "kolom": "Administrasi Kepegawaian [Sejauh mana Anda merasa puas dengan keramahan dan kesigapan staf kepegawaian dalam melayani Anda?]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap Sistem Informasi Kepegawaian yang digunakan?",
+                  "kolom": "Administrasi Kepegawaian [Bagaimana tingkat kepuasan Anda terhadap Sistem Informasi Kepegawaian yang digunakan?]"
+                }
+              ]
+            },
+            {
+              "id": "kepegawaian",
+              "jenis": "grid",
+              "judul": "Kepegawaian",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa puas Anda dengan kejelasan informasi kebijakan, peraturan, kesejahteraan, dan layanan kepegawaian?",
+                  "kolom": "Kepegawaian [Seberapa puas Anda dengan kejelasan informasi kebijakan, peraturan, kesejahteraan, dan layanan kepegawaian?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana penilaian Anda terhadap dukungan administrasi untuk kegiatan pengembangan kapasitas (pelatihan/sertifikasi)?",
+                  "kolom": "Kepegawaian [Bagaimana penilaian Anda terhadap dukungan administrasi untuk kegiatan pengembangan kapasitas (pelatihan/sertifikasi)?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Sejauh mana Anda merasa puas dengan layanan dan pendampingan proses penilaian kinerja (misal SKP)?",
+                  "kolom": "Kepegawaian [Sejauh mana Anda merasa puas dengan layanan dan pendampingan proses penilaian kinerja (misal SKP)?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap pengelolaan layanan hak pegawai (cuti, kesehatan, tunjangan)?",
+                  "kolom": "Kepegawaian [Bagaimana tingkat kepuasan Anda terhadap pengelolaan layanan hak pegawai (cuti, kesehatan, tunjangan)?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Seberapa puas Anda dengan koordinasi bagian kepegawaian dengan unit kerja Anda dalam urusan SDM?",
+                  "kolom": "Kepegawaian [Seberapa puas Anda dengan koordinasi bagian kepegawaian dengan unit kerja Anda dalam urusan SDM?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Bagaimana penilaian Anda terhadap kecepatan petugas kepegawaian merespons kebutuhan administratif?",
+                  "kolom": "Kepegawaian [Bagaimana penilaian Anda terhadap kecepatan petugas kepegawaian merespons kebutuhan administratif?]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Sejauh mana Anda merasa puas dengan kemampuan dan sikap petugas dalam memberikan layanan kepegawaian?",
+                  "kolom": "Kepegawaian [Sejauh mana Anda merasa puas dengan kemampuan dan sikap petugas dalam memberikan layanan kepegawaian?]"
+                }
+              ]
+            },
+            {
+              "id": "administrasi_keuangan",
+              "jenis": "grid",
+              "judul": "Administrasi Keuangan",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kejelasan informasi dan ketentuan administrasi keuangan pekerjaan Anda?",
+                  "kolom": "Administrasi Keuangan [Bagaimana tingkat kepuasan Anda terhadap kejelasan informasi dan ketentuan administrasi keuangan pekerjaan Anda?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Seberapa puas Anda dengan kemudahan proses pembayaran atau reimbursement kegiatan Anda?",
+                  "kolom": "Administrasi Keuangan [Seberapa puas Anda dengan kemudahan proses pembayaran atau reimbursement kegiatan Anda?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana penilaian Anda terhadap layanan administrasi keuangan untuk perjalanan dinas?",
+                  "kolom": "Administrasi Keuangan [Bagaimana penilaian Anda terhadap layanan administrasi keuangan untuk perjalanan dinas?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Sejauh mana Anda merasa puas dengan dukungan administrasi keuangan untuk pelaksanaan kegiatan Anda?",
+                  "kolom": "Administrasi Keuangan [Sejauh mana Anda merasa puas dengan dukungan administrasi keuangan untuk pelaksanaan kegiatan Anda?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kecepatan proses administrasi keuangan?",
+                  "kolom": "Administrasi Keuangan [Bagaimana tingkat kepuasan Anda terhadap kecepatan proses administrasi keuangan?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Seberapa puas Anda dengan ketepatan hasil dan informasi administrasi keuangan yang diterima?",
+                  "kolom": "Administrasi Keuangan [Seberapa puas Anda dengan ketepatan hasil dan informasi administrasi keuangan yang diterima?]"
+                },
+                {
+                  "id": "b7",
+                  "teks": "Bagaimana penilaian Anda terhadap kemampuan petugas dalam membantu menyelesaikan permasalahan keuangan?",
+                  "kolom": "Administrasi Keuangan [Bagaimana penilaian Anda terhadap kemampuan petugas dalam membantu menyelesaikan permasalahan keuangan?]"
+                },
+                {
+                  "id": "b8",
+                  "teks": "Sejauh mana Anda merasa puas dengan sistem atau aplikasi pendukung layanan administrasi keuangan?",
+                  "kolom": "Administrasi Keuangan [Sejauh mana Anda merasa puas dengan sistem atau aplikasi pendukung layanan administrasi keuangan?]"
+                }
+              ]
+            },
+            {
+              "id": "administrasi_umum",
+              "jenis": "grid",
+              "judul": "Administrasi Umum",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap layanan surat-menyurat dan dokumen kedinasan?",
+                  "kolom": "Administrasi Umum [Bagaimana tingkat kepuasan Anda terhadap layanan surat-menyurat dan dokumen kedinasan?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Seberapa puas Anda dengan kecepatan pengelolaan dan penyampaian dokumen?",
+                  "kolom": "Administrasi Umum [Seberapa puas Anda dengan kecepatan pengelolaan dan penyampaian dokumen?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana penilaian Anda terhadap dukungan administrasi umum untuk rapat atau kegiatan kedinasan?",
+                  "kolom": "Administrasi Umum [Bagaimana penilaian Anda terhadap dukungan administrasi umum untuk rapat atau kegiatan kedinasan?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Sejauh mana Anda merasa puas dengan kecepatan penyelesaian layanan administrasi umum?",
+                  "kolom": "Administrasi Umum [Sejauh mana Anda merasa puas dengan kecepatan penyelesaian layanan administrasi umum?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kemampuan petugas dalam membantu kebutuhan administrasi umum?",
+                  "kolom": "Administrasi Umum [Bagaimana tingkat kepuasan Anda terhadap kemampuan petugas dalam membantu kebutuhan administrasi umum?]"
+                },
+                {
+                  "id": "b6",
+                  "teks": "Seberapa puas Anda dengan keramahan dan kesigapan petugas administrasi umum?",
+                  "kolom": "Administrasi Umum [Seberapa puas Anda dengan keramahan dan kesigapan petugas administrasi umum?]"
+                }
+              ]
+            },
+            {
+              "id": "sdm_kepegawaian",
+              "jenis": "grid",
+              "judul": "SDM/Kepegawaian",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana penilaian Anda terhadap layanan administrasi yang berkaitan dengan kinerja pegawai?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana penilaian Anda terhadap layanan administrasi yang berkaitan dengan kinerja pegawai?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Sejauh mana Anda merasa puas dengan layanan terkait karier, kenaikan pangkat, atau pengembangan profesi?",
+                  "kolom": "SDM/Kepegawaian [Sejauh mana Anda merasa puas dengan layanan terkait karier, kenaikan pangkat, atau pengembangan profesi?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap fasilitasi pelatihan dan pengembangan kompetensi pegawai?",
+                  "kolom": "SDM/Kepegawaian [Bagaimana tingkat kepuasan Anda terhadap fasilitasi pelatihan dan pengembangan kompetensi pegawai?]"
+                }
+              ]
+            },
+            {
+              "id": "tik_sistem_informasi",
+              "jenis": "grid",
+              "judul": "TIK & Sistem Informasi",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa puas Anda dengan kualitas dan kestabilan internet/Wi-Fi untuk mendukung pekerjaan?",
+                  "kolom": "TIK & Sistem Informasi [Seberapa puas Anda dengan kualitas dan kestabilan internet/Wi-Fi untuk mendukung pekerjaan?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana penilaian Anda terhadap sistem informasi akademik yang digunakan?",
+                  "kolom": "TIK & Sistem Informasi [Bagaimana penilaian Anda terhadap sistem informasi akademik yang digunakan?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Sejauh mana Anda merasa puas dengan kemudahan penggunaan sistem atau aplikasi internal kampus?",
+                  "kolom": "TIK & Sistem Informasi [Sejauh mana Anda merasa puas dengan kemudahan penggunaan sistem atau aplikasi internal kampus?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap keandalan dan ketersediaan sistem informasi saat dibutuhkan?",
+                  "kolom": "TIK & Sistem Informasi [Bagaimana tingkat kepuasan Anda terhadap keandalan dan ketersediaan sistem informasi saat dibutuhkan?]"
+                },
+                {
+                  "id": "b5",
+                  "teks": "Seberapa puas Anda dengan kecepatan penanganan masalah TIK (Bantuan/Helpdesk)?",
+                  "kolom": "TIK & Sistem Informasi [Seberapa puas Anda dengan kecepatan penanganan masalah TIK (Bantuan/Helpdesk)?]"
+                }
+              ]
+            },
+            {
+              "id": "ruang_kerja",
+              "jenis": "grid",
+              "judul": "Ruang Kerja",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana penilaian Anda terhadap kebersihan dan kenyamanan ruang kerja?",
+                  "kolom": "Ruang Kerja [Bagaimana penilaian Anda terhadap kebersihan dan kenyamanan ruang kerja?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Sejauh mana Anda merasa puas dengan ketersediaan fasilitas yang mendukung pekerjaan Anda?",
+                  "kolom": "Ruang Kerja [Sejauh mana Anda merasa puas dengan ketersediaan fasilitas yang mendukung pekerjaan Anda?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap pencahayaan, suhu, ventilasi, dan kondisi ruang kerja?",
+                  "kolom": "Ruang Kerja [Bagaimana tingkat kepuasan Anda terhadap pencahayaan, suhu, ventilasi, dan kondisi ruang kerja?]"
+                }
+              ]
+            },
+            {
+              "id": "toilet",
+              "jenis": "grid",
+              "judul": "Toilet",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa puas Anda dengan kebersihan dan kenyamanan toilet?",
+                  "kolom": "Toilet [Seberapa puas Anda dengan kebersihan dan kenyamanan toilet?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap ketersediaan air, sabun, dan fasilitas pendukung toilet?",
+                  "kolom": "Toilet [Bagaimana tingkat kepuasan Anda terhadap ketersediaan air, sabun, dan fasilitas pendukung toilet?]"
+                }
+              ]
+            },
+            {
+              "id": "parkir",
+              "jenis": "grid",
+              "judul": "Parkir",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap ketersediaan tempat parkir?",
+                  "kolom": "Parkir [Bagaimana tingkat kepuasan Anda terhadap ketersediaan tempat parkir?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap keteraturan dan keamanan area parkir?",
+                  "kolom": "Parkir [Bagaimana tingkat kepuasan Anda terhadap keteraturan dan keamanan area parkir?]"
+                }
+              ]
+            },
+            {
+              "id": "lingkungan_kampus",
+              "jenis": "grid",
+              "judul": "Lingkungan Kampus",
+              "wajib": true,
+              "skala": [
+                "Sangat Tidak Puas",
+                "Tidak Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kebersihan lingkungan kampus?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap kebersihan lingkungan kampus?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kenyamanan lingkungan kampus untuk bekerja dan beraktivitas?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap kenyamanan lingkungan kampus untuk bekerja dan beraktivitas?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap keamanan lingkungan kampus?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap keamanan lingkungan kampus?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap ruang terbuka, penghijauan, dan fasilitas umum kampus?",
+                  "kolom": "Lingkungan Kampus [Bagaimana tingkat kepuasan Anda terhadap ruang terbuka, penghijauan, dan fasilitas umum kampus?]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prioritas",
+          "judul": "Prioritas Peningkatan",
+          "pertanyaan": [
+            {
+              "id": "prioritas",
+              "jenis": "kotak_centang",
+              "judul": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3)",
+              "kolom": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3) ",
+              "wajib": true,
+              "opsi": [
+                "Administrasi Kepegawaian",
+                "Kepegawaian",
+                "Administrasi Keuangan",
+                "Administrasi Umum",
+                "SDM/Kepegawaian",
+                "TIK & Sistem Informasi"
+              ],
+              "maks_pilihan": 3
+            }
+          ]
+        },
+        {
+          "id": "saran",
+          "judul": "Saran & Pesan",
+          "pertanyaan": [
+            {
+              "id": "saran_perbaikan",
+              "jenis": "paragraf",
+              "judul": "Layanan atau fasilitas apa yang menurut Anda paling perlu diperbaiki? Jelaskan perbaikan yang Anda harapkan.",
+              "kolom": "Layanan atau fasilitas apa yang menurut Anda paling perlu diperbaiki? Jelaskan perbaikan yang Anda harapkan.",
+              "wajib": false
+            },
+            {
+              "id": "pengembangan_karier",
+              "jenis": "paragraf",
+              "judul": "Jelaskan pengalaman Anda terkait dukungan kampus terhadap pengembangan karir dan kompetensi Anda (misalnya pelatihan teknis atau workshop). Apa jenis pelatihan yang paling Anda butuhkan saat ini?",
+              "kolom": "Jelaskan pengalaman Anda terkait dukungan kampus terhadap pengembangan karir dan kompetensi Anda (misalnya pelatihan teknis atau workshop). Apa jenis pelatihan yang paling Anda butuhkan saat ini?  ",
+              "wajib": false
+            }
+          ],
+          "info_penutup": "Terima kasih atas waktu dan kesediaan Bapak/Ibu dalam mengisi survei ini. Masukan serta saran yang diberikan sangat berarti bagi evaluasi dan perbaikan kualitas layanan kampus kita ke depannya. 🙏"
+        }
+      ]
+    },
+    "mitra_kerjasama": {
+      "label": "Mitra Kerja Sama",
+      "form_google": {
+        "id": "1konht2icYrlWCzTwbn67HQvAbDidDKvnfctFu2Io6kY",
+        "judul": "Pelayanan Kepuasan - Mitra Kerja sama"
+      },
+      "judul": "Kuisioner Kepuasan Mitra terhadap Layanan Kampus PENS",
+      "deskripsi": "Formulir ini merupakan bagian dari SatisView, sistem analitik kepuasan stakeholder Politekniknya Elektronika Negeri Surabaya (PENS). Survei ini bertujuan untuk mengetahui pengalaman dan tingkat kepuasan Bapak/Ibu Dosen terhadap layanan akademik dan penunjang dalam mendukung pelaksanaan Tridharma Perguruan Tinggi.\n\nMasukan Bapak/Ibu akan menjadi bahan evaluasi untuk melihat layanan yang sudah berjalan baik maupun yang masih perlu diperbaiki, sehingga PENS dapat terus meningkatkan kualitas layanan dan lingkungan kerja secara berkelanjutan.\n\nSeluruh data yang diberikan akan dijaga kerahasiaannya dan hanya digunakan untuk kepentingan evaluasi dan pengembangan layanan PENS. Terima kasih atas waktu dan masukan Bapak/Ibu.",
+      "pesan_selesai": "Tanggapan yang telah diberikan sangat berarti bagi PENS dalam meningkatkan kualitas dan transparansi proses kerja sama ke depannya. Kami menghargai waktu dan kepercayaan Bapak/Ibu sebagai mitra kerja PENS. Terima kasih",
+      "bagian": [
+        {
+          "id": "profil",
+          "judul": null,
+          "pertanyaan": [
+            {
+              "id": "nama_instansi",
+              "jenis": "teks_singkat",
+              "judul": "Nama Instansi",
+              "kolom": "Nama Instansi",
+              "wajib": true,
+              "validasi": {
+                "min": 2,
+                "maks": 150,
+                "pesan": "Isi nama instansi (2–150 karakter)."
+              },
+              "pribadi": true
+            },
+            {
+              "id": "jenis_instansi",
+              "jenis": "pilihan_ganda",
+              "judul": "Jenis Instansi",
+              "kolom": "Jenis Instansi",
+              "wajib": true,
+              "opsi": [
+                "Instansi Pemerintah",
+                "Perguruan Tinggi",
+                "Lembaga Penelitian",
+                "Organisasi Kemasyarakatan",
+                "Dunia Usaha/Industri"
+              ],
+              "lainnya": true
+            },
+            {
+              "id": "lama_kerja_sama",
+              "jenis": "pilihan_ganda",
+              "judul": "Lama Kerja sama",
+              "kolom": "Lama Kerja sama",
+              "wajib": true,
+              "opsi": [
+                "< 1 tahun",
+                "1 - 3 tahun",
+                "3 - 5 tahun",
+                "> 5 tahun"
+              ]
+            },
+            {
+              "id": "bentuk_kerja_sama",
+              "jenis": "kotak_centang",
+              "judul": "Bentuk kerja sama yang pernah dilakukan",
+              "kolom": "Bentuk kerja sama yang pernah dilakukan",
+              "wajib": true,
+              "opsi": [
+                "Penelitian",
+                "Pengabdian masyarakat",
+                "Magang",
+                "Pelatihan",
+                "Seminar"
+              ],
+              "lainnya": true
+            },
+            {
+              "id": "mou",
+              "jenis": "pilihan_ganda",
+              "judul": "Apakah kerja sama ini didasarkan pada **Memorandum of Understanding (MoU)**?",
+              "kolom": "Apakah kerja sama ini didasarkan pada Memorandum of Understanding (MoU)?  ",
+              "wajib": true,
+              "opsi": [
+                "Ya",
+                "Tidak",
+                "Tidak Mengetahui"
+              ]
+            },
+            {
+              "id": "moa_pks",
+              "jenis": "pilihan_ganda",
+              "judul": "Apakah kerja sama ini memiliki **Memorandum of Agreement (MoA)** atau Perjanjian Kerja Sama (PKS)?",
+              "kolom": "Apakah kerja sama ini memiliki Memorandum of Agreement (MoA) atau Perjanjian Kerja Sama (PKS)?  ",
+              "wajib": true,
+              "opsi": [
+                "Ya",
+                "Tidak",
+                "Tidak Mengetahui"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pengalaman",
+          "judul": "Pengalaman Kerja Sama",
+          "pertanyaan": [
+            {
+              "id": "komunikasi_dan_koordinasi",
+              "jenis": "grid",
+              "judul": "Komunikasi dan Koordinasi",
+              "wajib": true,
+              "skala": [
+                "Tidak Puas",
+                "Kurang Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap komunikasi dan kecepatan respons pihak kampus selama kerja sama?",
+                  "kolom": "Komunikasi dan Koordinasi [Bagaimana tingkat kepuasan Anda terhadap komunikasi dan kecepatan respons pihak kampus selama kerja sama?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kemudahan proses administrasi dan koordinasi kerja sama?",
+                  "kolom": "Komunikasi dan Koordinasi [Bagaimana tingkat kepuasan Anda terhadap kemudahan proses administrasi dan koordinasi kerja sama?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan anda terhadap kejelasan kampus memberikan informasi mengenai kerja sama?",
+                  "kolom": "Komunikasi dan Koordinasi [Bagaimana tingkat kepuasan anda terhadap kejelasan kampus memberikan informasi mengenai kerja sama?]"
+                }
+              ]
+            },
+            {
+              "id": "pelaksanaan_kerja_sama",
+              "jenis": "grid",
+              "judul": "Pelaksanaan Kerja sama",
+              "wajib": true,
+              "skala": [
+                "Tidak Puas",
+                "Kurang Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kesesuaian pelaksanaan kegiatan dengan rencana atau kesepakatan bersama?",
+                  "kolom": "Pelaksanaan Kerja sama [Bagaimana tingkat kepuasan Anda terhadap kesesuaian pelaksanaan kegiatan dengan rencana atau kesepakatan bersama?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kompetensi dan profesionalisme dosen, tenaga kependidikan, dan/atau mahasiswa yang terlibat?",
+                  "kolom": "Pelaksanaan Kerja sama [Bagaimana tingkat kepuasan Anda terhadap kompetensi dan profesionalisme dosen, tenaga kependidikan, dan/atau mahasiswa yang terlibat?]"
+                }
+              ]
+            },
+            {
+              "id": "manfaat_dan_dampak",
+              "jenis": "grid",
+              "judul": "Manfaat dan Dampak",
+              "wajib": true,
+              "skala": [
+                "Tidak Puas",
+                "Kurang Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kualitas hasil atau luaran yang dihasilkan dari kerja sama?",
+                  "kolom": "Manfaat dan Dampak [Bagaimana tingkat kepuasan Anda terhadap kualitas hasil atau luaran yang dihasilkan dari kerja sama?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap manfaat kerja sama dalam mendukung kebutuhan, kegiatan, atau pengembangan institusi/usaha/masyarakat Anda?",
+                  "kolom": "Manfaat dan Dampak [Bagaimana tingkat kepuasan Anda terhadap manfaat kerja sama dalam mendukung kebutuhan, kegiatan, atau pengembangan institusi/usaha/masyarakat Anda?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Bagaimana tingkat kepuasan Anda terhadap kontribusi kerja sama dalam membantu menyelesaikan permasalahan atau kebutuhan nyata mitra?",
+                  "kolom": "Manfaat dan Dampak [Bagaimana tingkat kepuasan Anda terhadap kontribusi kerja sama dalam membantu menyelesaikan permasalahan atau kebutuhan nyata mitra?]"
+                }
+              ]
+            },
+            {
+              "id": "keberlanjutan",
+              "jenis": "grid",
+              "judul": "Keberlanjutan",
+              "wajib": true,
+              "skala": [
+                "Tidak Butuh",
+                "Kurang Butuh",
+                "Butuh",
+                "Sangat Butuh"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Apakah menurut Anda butuh untuk diadakan keberlanjutan dari program kerja sama ini setelah kegiatan selesai?",
+                  "kolom": "Keberlanjutan [Apakah menurut Anda butuh untuk diadakan keberlanjutan dari program kerja sama ini setelah kegiatan selesai?]"
+                }
+              ]
+            },
+            {
+              "id": "relevansi_program",
+              "jenis": "grid",
+              "judul": "Relevansi Program",
+              "wajib": true,
+              "skala": [
+                "Tidak Relevan",
+                "Kurang Relevan",
+                "Relevan",
+                "Sangat Relevan"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Apakah kegiatan kerja sama ini relevan dengan program pemerintah, prioritas pembangunan, atau kebutuhan masyarakat yang berlaku?",
+                  "kolom": "Relevansi Program [Apakah kegiatan kerja sama ini relevan dengan program pemerintah, prioritas pembangunan, atau kebutuhan masyarakat yang berlaku?]"
+                }
+              ]
+            },
+            {
+              "id": "keseluruhan",
+              "jenis": "grid",
+              "judul": "Keseluruhan",
+              "wajib": true,
+              "skala": [
+                "Tidak Puas",
+                "Kurang Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Secara keseluruhan, bagaimana tingkat kepuasan Anda terhadap kerja sama yang telah dilaksanakan dengan kampus?",
+                  "kolom": "Keseluruhan [Secara keseluruhan, bagaimana tingkat kepuasan Anda terhadap kerja sama yang telah dilaksanakan dengan kampus?]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "harapan",
+          "judul": "Harapan dan kesan",
+          "pertanyaan": [
+            {
+              "id": "kelebihan",
+              "jenis": "paragraf",
+              "judul": "Apa kelebihan atau yang perlu dipertahankan dari pihak kampus?",
+              "kolom": "Apa kelebihan atau yang perlu dipertahankan dari pihak kampus?",
+              "wajib": true
+            },
+            {
+              "id": "kendala",
+              "jenis": "paragraf",
+              "judul": "Apa kendala yang kamu alami saat bekerjasama dengan pihak kampus?",
+              "kolom": "Apa kendala yang kamu alami saat bekerjasama dengan pihak kampus?",
+              "wajib": true
+            },
+            {
+              "id": "perbaikan",
+              "jenis": "paragraf",
+              "judul": "Apa hal utama yang perlu diperbaiki atau dikembangkan agar kerja sama berikutnya memberikan manfaat dan dampak yang lebih besar bagi mitra?",
+              "kolom": "Apa hal utama yang perlu diperbaiki atau dikembangkan agar kerja sama berikutnya memberikan manfaat dan dampak yang lebih besar bagi mitra?  ",
+              "wajib": true
+            }
+          ]
+        },
+        {
+          "id": "prioritas",
+          "judul": "Prioritas Peningkatan",
+          "pertanyaan": [
+            {
+              "id": "prioritas",
+              "jenis": "kotak_centang",
+              "judul": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3)",
+              "kolom": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3) ",
+              "wajib": true,
+              "opsi": [
+                "Komunikasi dan koordinasi",
+                "Pelaksanaan kerja sama",
+                "Maanfaat dan dampak",
+                "Keberlanjutan",
+                "Relevansi program"
+              ],
+              "maks_pilihan": 3
+            }
+          ]
+        }
+      ]
+    },
+    "mitra_pengadaan": {
+      "label": "Mitra Pengadaan",
+      "form_google": {
+        "id": "1pFzaHRgk5VpsaB70YcyUUOnG9ewvU86LWXp8jzYTrQI",
+        "judul": "Pelayanan Kepuasan - Mitra pengadaan barang & jasa"
+      },
+      "judul": "Form Pelayanan Kepuasan - Mitra Pengadaan Barang & Jasa",
+      "deskripsi": "Formulir ini merupakan bagian dari inisiatif SatisView, sistem analitik kepuasan stakeholder Politeknik Elektronika Negeri Surabaya (PENS), yang ditujukan bagi Bapak/Ibu Dosen di lingkungan PENS. Survei ini bertujuan untuk mengukur tingkat kepuasan Bapak/Ibu terhadap layanan akademik dan penunjang yang disediakan oleh institusi dalam mendukung pelaksanaan Tridharma Perguruan Tinggi.\n\nData yang terkumpul akan diolah menjadi indeks kepuasan terukur yang menjadi dasar evaluasi kinerja layanan di berbagai unit kerja, mencakup layanan akademik, kepegawaian, sarana-prasarana, hingga dukungan penelitian dan pengabdian masyarakat. Hasil survei membantu pimpinan mengidentifikasi aspek layanan yang telah optimal maupun yang memerlukan perbaikan.\n\nMasukan Bapak/Ibu akan menjadi landasan bagi PENS dalam menyempurnakan kebijakan dan standar layanan internal, sehingga tercipta lingkungan kerja akademik yang lebih kondusif dan mendukung produktivitas Bapak/Ibu dalam menjalankan tugas Tridharma.\n\nSeluruh data yang Bapak/Ibu berikan akan dijaga kerahasiaannya dan hanya digunakan untuk kepentingan evaluasi internal PENS.",
+      "pesan_selesai": "Tanggapan yang telah diberikan sangat berarti bagi PENS dalam meningkatkan kualitas dan transparansi proses pengadaan barang/jasa ke depannya. Kami menghargai waktu dan kepercayaan Bapak/Ibu sebagai mitra kerja PENS. Terima kasih",
+      "bagian": [
+        {
+          "id": "profil",
+          "judul": null,
+          "pertanyaan": [
+            {
+              "id": "nama_instansi",
+              "jenis": "teks_singkat",
+              "judul": "Nama Instansi Mitra",
+              "kolom": "Nama Instansi Mitra",
+              "wajib": true,
+              "validasi": {
+                "min": 2,
+                "maks": 150,
+                "pesan": "Isi nama instansi (2–150 karakter)."
+              },
+              "pribadi": true
+            },
+            {
+              "id": "jenis_mitra",
+              "jenis": "pilihan_ganda",
+              "judul": "Jenis Mitra",
+              "kolom": "Jenis Mitra",
+              "wajib": true,
+              "opsi": [
+                "Penyedia Barang",
+                "Penyedia Jasa Konstruksi",
+                "Jasa Konsultasi",
+                "Penyedia Perawatan dan Perbaikan"
+              ],
+              "lainnya": true
+            },
+            {
+              "id": "metode_pengadaan",
+              "jenis": "pilihan_ganda",
+              "judul": "Metode pengadaan yang diikuti",
+              "kolom": "Metode pengadaan yang diikuti",
+              "wajib": true,
+              "opsi": [
+                "Penunjukan Langsung",
+                "Pengadaan Langsung",
+                "Online Purchasing"
+              ]
+            },
+            {
+              "id": "lama_mitra",
+              "jenis": "pilihan_ganda",
+              "judul": "Sudah berapa lama menjadi mitra PENS?",
+              "kolom": "Sudah berapa lama menjadi mitra PENS?",
+              "wajib": true,
+              "opsi": [
+                "< 3 Tahun",
+                "3 - 5 Tahun",
+                "> 5 Tahun"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "unsur_kepuasan",
+          "judul": "Unsur Kepuasan (Performance form)",
+          "pertanyaan": [
+            {
+              "id": "proses_kerja_sama",
+              "jenis": "grid",
+              "judul": "Proses Kerja Sama",
+              "wajib": true,
+              "skala": [
+                "Tidak Puas",
+                "Kurang Puas",
+                "Puas",
+                "Sangat Puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa jelas persyaratan dokumen pengadaan yang ditetapkan kampus PENS?",
+                  "kolom": "Proses Kerja Sama [Seberapa jelas persyaratan dokumen pengadaan yang ditetapkan kampus PENS?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Seberapa mudah proses administrasi dan koordinasi selama pengadaan berlangsung?",
+                  "kolom": "Proses Kerja Sama [Seberapa mudah proses administrasi dan koordinasi selama pengadaan berlangsung?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Seberapa tepat waktu proses evaluasi dan pengumuman hasil pengadaan?",
+                  "kolom": "Proses Kerja Sama [Seberapa tepat waktu proses evaluasi dan pengumuman hasil pengadaan?]"
+                },
+                {
+                  "id": "b4",
+                  "teks": "Seberapa cepat dan responsif komunikasi pihak kampus selama proses berlangsung?",
+                  "kolom": "Proses Kerja Sama [Seberapa cepat dan responsif komunikasi pihak kampus selama proses berlangsung?]"
+                }
+              ]
+            },
+            {
+              "id": "pelaksanaan",
+              "jenis": "grid",
+              "judul": "Pelaksanaan",
+              "wajib": true,
+              "skala": [
+                "Tidak puas",
+                "Kurang puas",
+                "Puas",
+                "Sangat puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa sesuai pelaksanaan pekerjaan dengan rencana / kontrak yang disepakati?",
+                  "kolom": "Pelaksanaan [Seberapa sesuai pelaksanaan pekerjaan dengan rencana / kontrak yang disepakati?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Seberapa kompeten dan profesional panitia pengadaan yang menangani kerja dengan anda?",
+                  "kolom": "Pelaksanaan [Seberapa kompeten dan profesional panitia pengadaan yang menangani kerja dengan anda?]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Seberapa tepat waktu pembayaran dilakukan setelah serah terima barang / jasa?",
+                  "kolom": "Pelaksanaan [Seberapa tepat waktu pembayaran dilakukan setelah serah terima barang / jasa?]"
+                }
+              ]
+            },
+            {
+              "id": "hasil",
+              "jenis": "grid",
+              "judul": "Hasil",
+              "wajib": true,
+              "skala": [
+                "Tidak puas",
+                "Kurang puas",
+                "Puas",
+                "Sangat puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa sesuai pelaksanaan pekerjaan dengan rencana / kontrak yang disepakati",
+                  "kolom": "Hasil [Seberapa sesuai pelaksanaan pekerjaan dengan rencana / kontrak yang disepakati]"
+                }
+              ]
+            },
+            {
+              "id": "dampak",
+              "jenis": "grid",
+              "judul": "Dampak",
+              "wajib": true,
+              "skala": [
+                "Tidak puas",
+                "Kurang puas",
+                "Puas",
+                "Sangat puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa besar manfaat pengadaan barang / jasa terhadap kelancaran operasional usaha Anda sebagai mitra?",
+                  "kolom": "Dampak [Seberapa besar manfaat pengadaan barang / jasa terhadap kelancaran operasional usaha Anda sebagai mitra?]"
+                }
+              ]
+            },
+            {
+              "id": "relevansi",
+              "jenis": "grid",
+              "judul": "Relevansi",
+              "wajib": true,
+              "skala": [
+                "Tidak puas",
+                "Kurang puas",
+                "Puas",
+                "Sangat puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa sesuai barang/jasa yang diadakan dengan kebutuhan unit pengguna di PENS?",
+                  "kolom": "Relevansi [Seberapa sesuai barang/jasa yang diadakan dengan kebutuhan unit pengguna di PENS?]"
+                }
+              ]
+            },
+            {
+              "id": "keberlanjutan",
+              "jenis": "grid",
+              "judul": "Keberlanjutan",
+              "wajib": true,
+              "skala": [
+                "Tidak puas",
+                "Kurang puas",
+                "Puas",
+                "Sangat puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Seberapa besar minat Anda untuk kembali mengikuti pengadaan atau menjadi rekanan PENS di masa mendatang?",
+                  "kolom": "Keberlanjutan [Seberapa besar minat Anda untuk kembali mengikuti pengadaan atau menjadi rekanan PENS di masa mendatang?]"
+                }
+              ]
+            },
+            {
+              "id": "keseluruhan",
+              "jenis": "grid",
+              "judul": "Keseluruhan",
+              "wajib": true,
+              "skala": [
+                "Tidak puas",
+                "Kurang puas",
+                "Puas",
+                "Sangat puas"
+              ],
+              "baris": [
+                {
+                  "id": "b1",
+                  "teks": "Secara keseluruhan, seberapa puas Anda menjadi mitra pengadaan PENS?",
+                  "kolom": "Keseluruhan [Secara keseluruhan, seberapa puas Anda menjadi mitra pengadaan PENS?]"
+                },
+                {
+                  "id": "b2",
+                  "teks": "Seberapa besar kemungkinan Anda mengikuti pengadaan di PENS lagi di masa depan?",
+                  "kolom": "Keseluruhan [Seberapa besar kemungkinan Anda mengikuti pengadaan di PENS lagi di masa depan? ]"
+                },
+                {
+                  "id": "b3",
+                  "teks": "Dibanding institusi lain yang pernah Anda ikuti pengadaannya, bagaimana perbandingan kualitas layanan PENS",
+                  "kolom": "Keseluruhan [Dibanding institusi lain yang pernah Anda ikuti pengadaannya, bagaimana perbandingan kualitas layanan PENS]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evaluasi",
+          "judul": "Evaluasi",
+          "pertanyaan": [
+            {
+              "id": "paling_memuaskan",
+              "jenis": "paragraf",
+              "judul": "Apa hal yang paling memuaskan dari proses pengadaan di PENS?",
+              "kolom": "Apa hal yang paling memuaskan dari proses pengadaan di PENS?",
+              "wajib": true
+            },
+            {
+              "id": "kendala",
+              "jenis": "paragraf",
+              "judul": "Apa kendala utama yang Anda alami selama menjadi mitra pengadaan?",
+              "kolom": "Apa kendala utama yang Anda alami selama menjadi mitra pengadaan?",
+              "wajib": true
+            },
+            {
+              "id": "saran_perbaikan",
+              "jenis": "paragraf",
+              "judul": "Saran perbaikan apa yang ingin Anda sampaikan ke PENS?",
+              "kolom": "Saran perbaikan apa yang ingin Anda sampaikan ke PENS?",
+              "wajib": true
+            }
+          ]
+        },
+        {
+          "id": "prioritas",
+          "judul": "Prioritas Peningkatan",
+          "pertanyaan": [
+            {
+              "id": "prioritas",
+              "jenis": "kotak_centang",
+              "judul": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3 pilihan)",
+              "kolom": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3 pilihan)",
+              "wajib": false,
+              "opsi": [
+                "Kecepatan pelayanan",
+                "Komunikasi",
+                "Administrasi",
+                "Profesionalisme tim",
+                "Kualitas program",
+                "Tindak lanjut hasil kerja sama",
+                "Pemanfaatan teknologi informasi"
+              ],
+              "lainnya": true,
+              "maks_pilihan": 3
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

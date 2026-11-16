@@ -26,7 +26,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from .konfigurasi import MAPPING_LIKERT_5, KonfigurasiResponden
+from .konfigurasi import MAPPING_LIKERT_5, MAPPING_LIKERT_UMUM, KonfigurasiResponden
 
 log = logging.getLogger(__name__)
 
@@ -240,6 +240,9 @@ def kolom_likert_tunggal(df: pd.DataFrame, kolom: str) -> bool:
     return not angka_polos or bool(_POLA_JUDUL_PENILAIAN.search(kolom))
 
 
+_LABEL_SANGAT_TIDAK = {"sangat tidak puas", "sangat tidak baik", "sangat tidak setuju"}
+
+
 def deteksi_skala(df: pd.DataFrame, kolom: list[str], cfg: KonfigurasiResponden) -> tuple[tuple[int, int], dict[str, int]]:
     """[perluasan] Skala & pemetaan label untuk kelompok berskala otomatis (``cfg.skala = None``).
 
@@ -254,7 +257,10 @@ def deteksi_skala(df: pd.DataFrame, kolom: list[str], cfg: KonfigurasiResponden)
     angka = pd.to_numeric(nilai.str.extract(r"^\s*(\d+)")[0], errors="coerce").dropna()
     label = nilai[~nilai.str.match(r"^\s*\d")]
     lima_tingkat = any(_POLA_LABEL_TENGAH.match(_normalisasi_label(v) or "") for v in label.unique())
-    mapping = dict(MAPPING_LIKERT_5) if lima_tingkat else cfg.mapping_likert
+    mapping = dict(MAPPING_LIKERT_5) if lima_tingkat else dict(cfg.mapping_likert)
+    if not lima_tingkat and any(_normalisasi_label(v) in _LABEL_SANGAT_TIDAK for v in label.unique()):
+        # empat tingkat bergaya "Sangat Tidak ... < Tidak ... < ..." (seperti form Dosen/Karyawan)
+        mapping.update(MAPPING_LIKERT_UMUM)
     maks = max(int(angka.max()) if len(angka) else 0, 5 if lima_tingkat else 4)
     maks = next(batas for batas in (4, 5, 7, 10) if maks <= batas) if maks <= 10 else int(maks)
     minimum = 0 if len(angka) and int(angka.min()) == 0 else 1

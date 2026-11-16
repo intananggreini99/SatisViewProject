@@ -224,10 +224,37 @@ KARYAWAN = KonfigurasiResponden(
 )
 
 # ------------------------------------------------------------------ Mitra
-# Sheet Mitra: kolom teks, kategori, PII, segmen, skala, dan butir Likert
-# dideteksi otomatis. Komponen & butir Mitra Kerja Sama diambil dari sheet tim
-# "ItemKuisioner" (tab "Mitra KS") di folder Google Drive "Form Kuisioner".
-_MKS_KOMPONEN: dict[str, list[str]] = {
+# Struktur sheet "Pelayanan Kepuasan - Mitra Kerja sama (Responses)" dan
+# "Pelayanan Kepuasan - Mitra pengadaan barang & jasa (Responses)" di folder
+# Drive "Data Responden" (sama dengan contracts/kuesioner.json): grid
+# "Aspek [pertanyaan]" berskala empat tingkat tanpa angka.
+
+# Form Mitra memakai "Tidak Puas" sebagai tingkat TERENDAH (Tidak < Kurang <
+# Puas < Sangat Puas), berbeda dengan form Dosen/Karyawan (Sangat Tidak Puas <
+# Tidak Puas < ...). Bila sheet ternyata memuat "Sangat Tidak Puas", deteksi
+# skala otomatis kembali memakai MAPPING_LIKERT_UMUM.
+MAPPING_LIKERT_MITRA: dict[str, int] = {
+    "Tidak Puas": 1,
+    "Kurang Puas": 2,
+    "Puas": 3,
+    "Sangat Puas": 4,
+    "Tidak Butuh": 1,
+    "Kurang Butuh": 2,
+    "Butuh": 3,
+    "Sangat Butuh": 4,
+    "Tidak Relevan": 1,
+    "Kurang Relevan": 2,
+    "Relevan": 3,
+    "Sangat Relevan": 4,
+    "Tidak Baik": 1,
+    "Kurang Baik": 2,
+    "Baik": 3,
+    "Sangat Baik": 4,
+}
+
+# [perluasan] Komponen bila form Mitra memakai pertanyaan tunggal (bukan grid);
+# diambil dari sheet tim "ItemKuisioner" (tab "Mitra KS").
+KOMPONEN_MITRA_KS: dict[str, list[str]] = {
     "Komunikasi dan Koordinasi": ["komunikasi dan kecepatan respons", "kemudahan proses administrasi dan koordinasi"],
     "Pelaksanaan Kerja Sama": ["kesesuaian pelaksanaan kegiatan", "kompetensi dan profesionalisme"],
     "Kualitas Luaran": ["kualitas hasil atau luaran", "kualitas hasil"],
@@ -240,38 +267,103 @@ _MKS_KOMPONEN: dict[str, list[str]] = {
 MITRA_KERJASAMA = KonfigurasiResponden(
     key="mitra_kerjasama",
     prefix_id="MKS",
+    kolom_pii=("Nama Instansi",),
+    kolom_profil=(
+        "Timestamp",
+        "Jenis Instansi",
+        "Lama Kerja sama",
+        "Bentuk kerja sama yang pernah dilakukan",
+        "Apakah kerja sama ini didasarkan pada Memorandum of Understanding (MoU)?",
+        "Apakah kerja sama ini memiliki Memorandum of Agreement (MoA) atau Perjanjian Kerja Sama (PKS)?",
+    ),
+    kolom_segmen="Jenis Instansi",
     pola_segmen=(
         r"jenis\s*(instansi|mitra|lembaga|organisasi|institusi)",
         r"(kategori|tipe|bentuk|sektor)\s*(instansi|mitra|lembaga|organisasi)",
         r"\bsektor\b",
     ),
-    skala=None,
+    kolom_teks={
+        "kelebihan": "Apa kelebihan atau yang perlu dipertahankan dari pihak kampus?",
+        "kendala": "Apa kendala yang kamu alami saat bekerjasama dengan pihak kampus?",
+        "perbaikan": "Apa hal utama yang perlu diperbaiki atau dikembangkan agar kerja sama berikutnya memberikan "
+        "manfaat dan dampak yang lebih besar bagi mitra?",
+    },
+    kolom_kategori={"prioritas": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3)"},
+    skala=None,  # empat tingkat berlabel; dikenali otomatis (lihat MAPPING_LIKERT_MITRA)
+    mapping_likert=dict(MAPPING_LIKERT_MITRA),
     likert_tanpa_grid=True,
-    aspek_pertanyaan=_MKS_KOMPONEN,
+    aspek_pertanyaan=KOMPONEN_MITRA_KS,
     aspek_kata_kunci={
-        "Komunikasi dan Koordinasi": ["komunikasi", "koordinasi", "respons", "respon", "balas", "kontak", "informasi",
-                                      "administrasi", "birokrasi", "surat", "mou", "moa", "pks", "proses"],
-        "Pelaksanaan Kerja Sama": ["pelaksanaan", "kegiatan", "jadwal", "rencana", "kesepakatan", "dosen", "mahasiswa",
-                                   "tenaga", "profesional", "kompetensi", "pendamping"],
-        "Kualitas Luaran": ["kualitas", "hasil", "luaran", "output", "produk", "laporan", "prototipe"],
-        "Manfaat dan Dampak": ["manfaat", "dampak", "masalah", "solusi", "kebutuhan", "bermanfaat", "membantu"],
-        "Relevansi Program": ["relevan", "relevansi", "program", "pemerintah", "prioritas", "pembangunan", "masyarakat"],
-        "Keberlanjutan Kerja Sama": ["berkelanjutan", "keberlanjutan", "lanjut", "lanjutan", "jangka panjang",
-                                     "pengembangan", "tindak lanjut", "follow up", "rutin"],
-        "Kepuasan Keseluruhan": ["keseluruhan", "secara umum", "puas"],
+        "Komunikasi dan Koordinasi": ["komunikasi", "koordinasi", "respons", "respon", "responsif", "balas", "kontak",
+                                      "cp", "informasi", "administrasi", "birokrasi", "surat", "mou", "moa", "pks",
+                                      "jadwal", "timeline", "diskusi", "keterbukaan"],
+        "Pelaksanaan Kerja sama": ["pelaksanaan", "kegiatan", "rencana", "kesepakatan", "dosen", "mahasiswa", "pengajar",
+                                   "tenaga", "profesional", "kompetensi", "pendamping", "magang", "pelatihan",
+                                   "seminar", "workshop", "penelitian", "riset", "kooperatif"],
+        "Manfaat dan Dampak": ["manfaat", "bermanfaat", "dampak", "berdampak", "hasil", "luaran", "kualitas", "solusi",
+                               "masalah", "problem", "kebutuhan", "membantu", "ilmu", "hilirisasi", "hiliriset"],
+        "Keberlanjutan": ["lanjut", "lanjutan", "kelanjutan", "keberlanjutan", "berkelanjutan", "ke depan", "kedepan",
+                          "jangka panjang", "tindak lanjut", "rutin", "kolaborasi", "diperluas"],
+        "Relevansi Program": ["relevan", "relevansi", "program", "pemerintah", "prioritas", "pembangunan", "masyarakat",
+                              "kurikulum", "sinkron", "sinkronisasi", "kesesuaian"],
+        "Keseluruhan": ["keseluruhan", "secara umum", "puas"],
+    },
+    kata_pilihan={
+        "Komunikasi dan Koordinasi": ["komunikasi", "koordinasi"],
+        "Pelaksanaan Kerja sama": ["pelaksanaan"],
+        "Manfaat dan Dampak": ["manfaat", "maanfaat", "dampak"],  # opsi form tertulis "Maanfaat dan dampak"
+        "Keberlanjutan": ["keberlanjutan"],
+        "Relevansi Program": ["relevansi"],
     },
 )
 
 MITRA_PENGADAAN = KonfigurasiResponden(
     key="mitra_pengadaan",
     prefix_id="MPB",
+    kolom_pii=("Nama Instansi Mitra",),
+    kolom_profil=(
+        "Timestamp",
+        "Jenis Mitra",
+        "Metode pengadaan yang diikuti",
+        "Sudah berapa lama menjadi mitra PENS?",
+    ),
+    kolom_segmen="Jenis Mitra",
     pola_segmen=(
         r"jenis\s*(penyedia|mitra|usaha|pengadaan|vendor|perusahaan|layanan)",
         r"(kategori|tipe|bidang)\s*(penyedia|mitra|usaha|vendor|perusahaan)",
         r"bidang\s*usaha",
     ),
+    kolom_teks={
+        "paling_memuaskan": "Apa hal yang paling memuaskan dari proses pengadaan di PENS?",
+        "kendala": "Apa kendala utama yang Anda alami selama menjadi mitra pengadaan?",
+        "saran_perbaikan": "Saran perbaikan apa yang ingin Anda sampaikan ke PENS?",
+    },
+    kolom_kategori={"prioritas": "Menurut Anda, aspek mana yang paling perlu ditingkatkan? (Maksimal 3 pilihan)"},
     skala=None,
+    mapping_likert=dict(MAPPING_LIKERT_MITRA),
     likert_tanpa_grid=True,
+    aspek_kata_kunci={
+        "Proses Kerja Sama": ["persyaratan", "dokumen", "administrasi", "koordinasi", "evaluasi", "pengumuman",
+                              "komunikasi", "responsif", "respon", "proses", "prosedur", "birokrasi", "transparan",
+                              "berbelit", "tanggap", "cepat"],
+        "Pelaksanaan": ["pelaksanaan", "kontrak", "panitia", "profesional", "kompeten", "pembayaran", "bayar",
+                        "pencairan", "serah terima", "schedule", "jadwal", "tepat waktu"],
+        "Hasil": ["hasil", "kualitas", "spesifikasi", "satuan barang"],
+        "Dampak": ["manfaat", "dampak", "operasional", "usaha", "anggaran"],
+        "Relevansi": ["kebutuhan", "unit pengguna", "sesuai kebutuhan", "relevan"],
+        "Keberlanjutan": ["lanjut", "kembali", "rekanan", "partner", "kerja sama lagi", "kerjasama", "ke depan",
+                          "kedepan", "proyek", "berlangsung"],
+        "Keseluruhan": ["keseluruhan", "secara umum", "puas", "kredibilitas", "integritas"],
+    },
+    # Opsi prioritas form Mitra Pengadaan tidak bernama aspek; dipetakan ke aspek
+    # grid yang paling dekat maknanya (silakan sesuaikan bila tim menetapkan lain).
+    # "Pemanfaatan teknologi informasi" tidak punya padanan aspek (tidak terpetakan).
+    kata_pilihan={
+        "Proses Kerja Sama": ["kecepatan pelayanan", "komunikasi", "administrasi"],
+        "Pelaksanaan": ["profesionalisme"],
+        "Hasil": ["kualitas program"],
+        "Keberlanjutan": ["tindak lanjut"],
+    },
 )
 
 KONFIGURASI: dict[str, KonfigurasiResponden] = {

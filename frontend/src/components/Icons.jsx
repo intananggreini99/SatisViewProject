@@ -189,3 +189,84 @@ export const BookIcon = (p) => (
     <path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" />
   </svg>
 );
+
+export const ArrowLeftIcon = (p) => (
+  <svg {...base(p)}>
+    <path d="M19 12H5" />
+    <path d="m11 18-6-6 6-6" />
+  </svg>
+);
+
+export const ArrowRightIcon = (p) => (
+  <svg {...base(p)}>
+    <path d="M5 12h14" />
+    <path d="m13 6 6 6-6 6" />
+  </svg>
+);
+
+export const LockIcon = (p) => (
+  <svg {...base(p)}>
+    <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
+    <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
+  </svg>
+);
+
+export const LogOutIcon = (p) => (
+  <svg {...base(p)}>
+    <path d="M10 4H6.5A2.5 2.5 0 0 0 4 6.5v11A2.5 2.5 0 0 0 6.5 20H10" />
+    <path d="M15 16l4-4-4-4" />
+    <path d="M19 12H9" />
+  </svg>
+);
+
+export const EyeIcon = (p) => (
+  <svg {...base(p)}>
+    <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+export const EyeOffIcon = (p) => (
+  <svg {...base(p)}>
+    <path d="M10.6 5.6A9.7 9.7 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4" />
+    <path d="M6.4 6.9C3.9 8.6 2.5 12 2.5 12S6 18.5 12 18.5a9.3 9.3 0 0 0 4.4-1.1" />
+    <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+    <path d="m3 3 18 18" />
+  </svg>
+);
+
+export const UserIcon = (p) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="8" r="4" />
+    <path d="M4.5 20.5a7.5 7.5 0 0 1 15 0" />
+  </svg>
+);
+
+export const SendIcon = (p) => (
+  <svg {...base(p)}>
+    <path d="M21 3 10.5 13.5" />
+    <path d="M21 3 14.5 21l-4-7.5L3 9.5z" />
+  </svg>
+);
+
+export const ClipboardIcon = (p) => (
+  <svg {...base(p)}>
+    <rect x="5" y="4.5" width="14" height="17" rx="2.5" />
+    <path d="M9 4.5V3.5h6v1" />
+    <path d="M9 11h6M9 15h4" />
+  </svg>
+);
+
+export const ShieldIcon = (p) => (
+  <svg {...base(p)}>
+    <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+);
+
+export const ClockIcon = (p) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M12 7.5V12l3 2" />
+  </svg>
+);

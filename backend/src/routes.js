@@ -1,9 +1,12 @@
 import { Readable } from 'node:stream';
-import { Router } from 'express';
+import express, { Router } from 'express';
 import { createCache } from './cache.js';
 import { config } from './config.js';
 import { query } from './db.js';
+import { HttpError } from './errors.js';
 import { findGroup, GROUPS } from './groups.js';
+import { createKuesionerRouter } from './kuesioner/routes.js';
+import { createRateLimiter } from './rateLimit.js';
 import {
   SEMUA,
   getComments,
@@ -16,13 +19,6 @@ import {
 import { getReportStatus, openReportStream, reportFilename } from './services/report.js';
 
 const cache = createCache(config.cacheTtlMs);
-
-class HttpError extends Error {
-  constructor(status, message) {
-    super(message);
-    this.status = status;
-  }
-}
 
 const cleanText = (value, max = 200) => {
   if (value === undefined || value === null) return '';
@@ -45,8 +41,9 @@ function requireGroup(req) {
 
 const segmentOf = (req) => cleanText(req.query.segmen) || SEMUA;
 
-export function createRouter() {
+export function createRouter({ auth, producer, kontrak } = {}) {
   const router = Router();
+  const loginLimiter = createRateLimiter({ limit: 20, windowMs: 10 * 60_000 });
 
   router.use((req, res, next) => {
     res.set('Cache-Control', 'private, max-age=15');
@@ -54,6 +51,32 @@ export function createRouter() {
   });
 
   router.get('/health/live', (req, res) => res.json({ status: 'ok' }));
+
+  // ---- Login pengelola (JWT) ------------------------------------------------
+  const json = express.json({ limit: '16kb' });
+  router.post('/auth/masuk', json, async (req, res) => {
+    res.set('Cache-Control', 'no-store');
+    const gate = loginLimiter.hit(req.ip);
+    if (!gate.allowed) {
+      res.set('Retry-After', String(gate.retryAfterSeconds));
+      throw new HttpError(429, 'Terlalu banyak percobaan masuk. Coba lagi dalam beberapa menit.');
+    }
+    const { username, password } = req.body ?? {};
+    const hasil = await auth.login(username, password);
+    loginLimiter.reset(req.ip);
+    res.json(hasil);
+  });
+
+  const requireAuth = auth.middleware();
+  router.get('/auth/saya', requireAuth, (req, res) => {
+    res.set('Cache-Control', 'no-store');
+    res.json({ pengguna: req.user });
+  });
+  // Token JWT bersifat stateless; keluar = token dihapus di browser.
+  router.post('/auth/keluar', (req, res) => res.status(204).end());
+
+  // ---- Form kuisioner (publik) -> Kafka ---------------------------------------
+  router.use('/kuesioner', createKuesionerRouter({ producer, kontrak }));
 
   router.get('/health', async (req, res) => {
     const checks = { api: 'ok' };
@@ -68,6 +91,9 @@ export function createRouter() {
     const healthy = checks.postgres.startsWith('ok');
     res.status(healthy ? 200 : 503).json({ status: healthy ? 'ok' : 'degraded', checks });
   });
+
+  // ---- Data dashboard: hanya pengguna terdaftar --------------------------------
+  router.use(['/groups', '/report'], requireAuth);
 
   router.get('/groups', async (req, res) => {
     const data = await cache.wrap('groups', async () => ({
@@ -144,8 +170,12 @@ export function createRouter() {
 
   // eslint-disable-next-line no-unused-vars
   router.use((error, req, res, next) => {
-    if (error instanceof HttpError) return res.status(error.status).json({ error: error.message });
-    const unreachable = ['ECONNREFUSED', 'ENOTFOUND', 'ETIMEDOUT', '57P03'].includes(error.code);
+    if (error instanceof HttpError) {
+      return res.status(error.status).json({ error: error.message, ...(error.extra ?? {}) });
+    }
+    if (error?.type === 'entity.parse.failed') return res.status(400).json({ error: 'Format JSON tidak valid.' });
+    if (error?.type === 'entity.too.large') return res.status(413).json({ error: 'Data yang dikirim terlalu besar.' });
+    const unreachable = ['ECONNREFUSED', 'ENOTFOUND', 'ETIMEDOUT', '57P03', '3D000', '42P01'].includes(error.code);
     console.error(`[api] ${req.method} ${req.originalUrl}:`, error.message);
     return res.status(unreachable ? 503 : 500).json({
       error: unreachable ? 'Database belum dapat dihubungi. Coba lagi sebentar.' : 'Terjadi kesalahan pada server.',
